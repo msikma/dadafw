@@ -1,0 +1,54 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Ruby Annotations
+// ---------------------------------------------------------------------
+// This code has been adapted from the first comment on this page:
+// <https://web.archive.org/web/20120325122505/http://sideshowbarker.net/2009/11/13/html5-ruby/>
+
+ruby {
+  // We're using a table display mechanism to position
+  // the top text above the baseline without interrupting the flow.
+  display: inline-table;
+  // Center the text atop the base.
+  text-align: center;
+  // Align the element to the bottom, which really keeps it aligned with
+  // other text at the baseline.
+  vertical-align: bottom;
+}
+// The superscript elements are displayed as table headers to correspond
+// to our inline-table <ruby> element.
+ruby > rt,
+rtc {
+  display: table-header-group;
+  text-align: center;
+}
+ruby > rb,
+rbc,
+ruby > rt + rt,
+rtc + rtc {
+  display: table-row;
+}
+// Reduce the size of the top text.
+ruby > rt, rtc {
+  // Note: Webkit's value.
+  font-size: $font-ruby-size;
+  line-height: $font-ruby-lineheight;
+}
+// Remove fallback elements.
+rp {
+  display: none;
+}
+// Prevents internal linebreaks.
+rtc > rt,
+rbc > rb {
+  display: table-cell;
+}
+// This should enable support for the rbspan attribute.
+// However, the column-span attribute doesn't work yet in any browser.
+rtc > rt[rbspan] {
+  column-span: attr(rbspan);
+}

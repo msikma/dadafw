@@ -1,0 +1,47 @@
+/*!
+ * Dada Web Framework
+ * ---------------------------------------------------------------------
+ * Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+ * All Rights Reserved
+ *
+ * Contains code from the normalize.css v2 and HTML5 Boilerplate projects (both MIT license) and the Font Awesome project (SIL OFL 1.1 and MIT license).
+ */
+
+// Show copyright notice in compiler output.
+@debug 'Dada Web Framework';
+@debug 'Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>';
+@debug '-------------------------------------------------------------';
+@debug 'Compiling the entire framework.';
+
+@import "includes/defaults.scss";     // Default Settings
+@import "settings.scss";              // User-Defined Settings
+@import "includes/theme-ante.scss";   // Theme-Defined Settings
+
+// Check whether we're generating code for browser compatibility (recommended).
+@if $ddfw-compatibility-mode == true {
+  @debug 'Including vendor prefixes and browser hacks (compatibility mode).';
+}
+@else {
+  @debug 'Not including vendor prefixes and browser hacks (CSS3 standards-compliance mode; see README note).';
+}
+// Print out which optional items we're including in the compile.
+@debug 'Grid debugging:      '+if($grid-debug-include, 'included', 'not included');
+@debug 'Color classes:       '+if($color-classes-include, 'included', 'not included');
+@debug 'Prettify support:    '+if($syn-prettify-include, 'included', 'not included');
+@debug 'Pygments support:    '+if($syn-pygments-include, 'included', 'not included');
+
+@import "externals/externals.scss";   // External Projects Loader
+@import "includes/functions.scss";    // Internal Functions
+@import "includes/xbrowser.scss";     // Cross-Browser Support Functions
+@import "includes/animation.scss";    // Animation Support Functions
+@import "includes/colors.scss";       // Color Helper Classes
+@import "includes/grid.scss";         // Grid System
+@import "includes/typography.scss";   // General Styling and Typography
+@import "includes/syntax.scss";       // Syntax Highlighting
+@import "includes/ruby.scss";         // Ruby Annotations
+@import "includes/tables.scss";       // Table Styling
+@import "includes/buttons.scss";      // Button Styling
+@import "includes/components.scss";   // Components and User Interface Elements
+@import "includes/forms.scss";        // Forms and Input Elements
+@import "includes/helpers.scss";      // General Helper Classes
+@import "includes/theme-post.scss";   // Theme Overrides Hook

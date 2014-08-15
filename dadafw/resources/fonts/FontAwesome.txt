@@ -1,0 +1,3 @@
+Copyright (C) Font Awesome (SIL OFL 1.1 and MIT license)
+<http://fortawesome.github.io/Font-Awesome/>
+

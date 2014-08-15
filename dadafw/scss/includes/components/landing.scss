@@ -1,0 +1,29 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+// Landing Page
+// ---------------------------------------------------------------------
+
+.landing-page {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  color: $color-white;
+  
+  @media screen and (max-width: $viewport-width-s - 1) {
+    margin: 0 -15px;
+  }
+  
+  .banner {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    position: relative;
+    z-index: 10;
+  }
+}

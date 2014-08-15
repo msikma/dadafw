@@ -1,0 +1,87 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Tags
+// ---------------------------------------------------------------------
+
+.tag {
+  @include border-radius("s");
+  @include transition((border 0.08s, opacity 0.08s));
+  display: inline-block;
+  border: 1px solid rgba($color-black, 0.08);
+  border-bottom: 1px solid rgba($color-black, 0.22);
+  white-space: nowrap;
+  background: mix($color-gray-m2, $color-gray-m3, 50%);
+  opacity: 1;
+  color: $color-white;
+  padding: $tag-padding-top $tag-padding-left $tag-padding-bottom $tag-padding-right;
+  margin-top: -0.15em;
+  margin-bottom: 5px;
+  font-weight: 700;
+  position: relative;
+  vertical-align: baseline;
+  font-size: $font-small-size;
+  cursor: pointer;
+  // A much smaller line height.
+  line-height: $tag-height;
+  
+  // If the tag is to appear inside a running text, we should remove
+  // the margin on the bottom.
+  &.inline {
+    margin-bottom: 0;
+  }
+  
+  &:hover {
+    opacity: 0.8;
+    border-color: rgba($color-black, 0.2);
+    border-bottom-color: rgba($color-black, 0.3);
+  }
+  
+  // Several icons are displayable.
+  $icon-width: $tag-padding-left + $tag-padding-right + $tag-icon-width;
+  
+  &.removable {
+    // Fit the button exactly.
+    padding-right: $icon-width + ($tag-padding-right / 2);
+    
+    .remove {
+      @include border-radius(1px);
+      @include transition((color 0.08s, background 0.08s, border 0.08s));
+      @include font-awesome-icon;
+      @include box-sizing(content-box);
+      @include border-radius("s", ("tr", "br"));
+      // Add a border, and move the button around to overlap with the
+      // main tag body's border.
+      // The border starts out transparent and becomes visible on hover.
+      border: 1px solid transparent;
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      z-index: 10;
+      padding: 0;
+      font-weight: bold;
+      width: $icon-width;
+      line-height: $tag-icon-height;
+      text-align: center;
+      
+      &:hover {
+        background: rgba($color-black, 0.2);
+        color: $color-gray-l1;
+        border-color: rgba($color-black, 0.1);
+        border-left-color: rgba($color-black, 0.2);
+        border-bottom-color: rgba($color-black, 0.3);
+      }
+      
+      &:before {
+        content: "×";
+        // The Helvetica font actually looks better than Helvetica Neue
+        // for this interface glyph.
+        font-family: $font-primary;
+        font-size: $font-base-size + 1px;
+      }
+    }
+  }
+}

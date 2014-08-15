@@ -1,0 +1,52 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Horizontal List
+// ---------------------------------------------------------------------
+
+.list-hrz {
+  @include displayfix;
+  $list-margin: 3em;
+  margin-left: -$list-margin;
+  
+  > li {
+    display: list-item;
+    float: left;
+    margin-left: $list-margin;
+  }
+  
+  // A justified horizontal list is a single row containing inline-block
+  // elements that are justified across the full width, regardless of amount.
+  // e.g. [ [element 1]    [element 2]    [element 3] ].
+  // This removes the bullets and adds an extraneous newline at the bottom.
+  // We've removed the newline by removing a value equal to the line height
+  // from the bottom through a negative margin.
+  // If the content exceeds the container, wrapping will occur.
+  &.justified {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: -$font-base-lineheight * 1em;
+    text-align: justify;
+    @include text-justify(distribute-all-lines);
+  
+    // Add an :after inline-block to enable justification of the last line
+    // in the absence of text-justify support.
+    &:after {
+      content: "";
+      display: inline-block;
+      font-size: 0;
+      line-height: 0;
+      width: 100%;
+    }
+  
+    // The only thing left to do is set the list items to inline-block.
+    > li {
+      display: inline-block;
+      float: none;
+      margin-left: 0;
+    }
+  }
+}

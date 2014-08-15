@@ -1,0 +1,922 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Color Helper Classes
+// ---------------------------------------------------------------------
+// Note that all of these helper classes use the !important keyword
+// to override settings from other classes.
+//
+// This is because in the majority of cases, whatever element
+// you're targeting will already have a color attribute with
+// greater priority, defeating the purpose of these classes.
+//
+// These classes can be optionally removed from the compiled
+// framework CSS by turning off $color-classes-include in your settings.
+// If it's turned off, none of this file is compiled.
+
+@if $color-classes-include == true {
+  // White and black
+  .bg-white {
+    background-color: $color-white !important;
+  }
+  .fg-white {
+    color: $color-white !important;
+  }
+  .bg-black {
+    background-color: $color-black !important;
+  }
+  .fg-black {
+    color: $color-black !important;
+  }
+
+  // Gray
+  .bg-gray-l1 {
+    background-color: $color-gray-l1 !important;
+  }
+  .fg-gray-l1 {
+    color: $color-gray-l1 !important;
+  }
+  .bg-gray-l2 {
+    background-color: $color-gray-l2 !important;
+  }
+  .fg-gray-l2 {
+    color: $color-gray-l2 !important;
+  }
+  .bg-gray-l3 {
+    background-color: $color-gray-l3 !important;
+  }
+  .fg-gray-l3 {
+    color: $color-gray-l3 !important;
+  }
+  .bg-gray-l4 {
+    background-color: $color-gray-l4 !important;
+  }
+  .fg-gray-l4 {
+    color: $color-gray-l4 !important;
+  }
+  .bg-gray-m1 {
+    background-color: $color-gray-m1 !important;
+  }
+  .fg-gray-m1 {
+    color: $color-gray-m1 !important;
+  }
+  .bg-gray-m2 {
+    background-color: $color-gray-m2 !important;
+  }
+  .fg-gray-m2 {
+    color: $color-gray-m2 !important;
+  }
+  .bg-gray-m3 {
+    background-color: $color-gray-m3 !important;
+  }
+  .fg-gray-m3 {
+    color: $color-gray-m3 !important;
+  }
+  .bg-gray-m4 {
+    background-color: $color-gray-m4 !important;
+  }
+  .fg-gray-m4 {
+    color: $color-gray-m4 !important;
+  }
+  .bg-gray-d1 {
+    background-color: $color-gray-d1 !important;
+  }
+  .fg-gray-d1 {
+    color: $color-gray-d1 !important;
+  }
+  .bg-gray-d2 {
+    background-color: $color-gray-d2 !important;
+  }
+  .fg-gray-d2 {
+    color: $color-gray-d2 !important;
+  }
+  .bg-gray-d3 {
+    background-color: $color-gray-d3 !important;
+  }
+  .fg-gray-d3 {
+    color: $color-gray-d3 !important;
+  }
+  .bg-gray-d4 {
+    background-color: $color-gray-d4 !important;
+  }
+  .fg-gray-d4 {
+    color: $color-gray-d4 !important;
+  }
+
+  // Red
+  .bg-red-l1 {
+    background-color: $color-red-l1 !important;
+  }
+  .fg-red-l1 {
+    color: $color-red-l1 !important;
+  }
+  .bg-red-l2 {
+    background-color: $color-red-l2 !important;
+  }
+  .fg-red-l2 {
+    color: $color-red-l2 !important;
+  }
+  .bg-red-l3 {
+    background-color: $color-red-l3 !important;
+  }
+  .fg-red-l3 {
+    color: $color-red-l3 !important;
+  }
+  .bg-red-l4 {
+    background-color: $color-red-l4 !important;
+  }
+  .fg-red-l4 {
+    color: $color-red-l4 !important;
+  }
+  .bg-red-m1 {
+    background-color: $color-red-m1 !important;
+  }
+  .fg-red-m1 {
+    color: $color-red-m1 !important;
+  }
+  .bg-red-m2 {
+    background-color: $color-red-m2 !important;
+  }
+  .fg-red-m2 {
+    color: $color-red-m2 !important;
+  }
+  .bg-red-m3 {
+    background-color: $color-red-m3 !important;
+  }
+  .fg-red-m3 {
+    color: $color-red-m3 !important;
+  }
+  .bg-red-m4 {
+    background-color: $color-red-m4 !important;
+  }
+  .fg-red-m4 {
+    color: $color-red-m4 !important;
+  }
+  .bg-red-d1 {
+    background-color: $color-red-d1 !important;
+  }
+  .fg-red-d1 {
+    color: $color-red-d1 !important;
+  }
+  .bg-red-d2 {
+    background-color: $color-red-d2 !important;
+  }
+  .fg-red-d2 {
+    color: $color-red-d2 !important;
+  }
+  .bg-red-d3 {
+    background-color: $color-red-d3 !important;
+  }
+  .fg-red-d3 {
+    color: $color-red-d3 !important;
+  }
+  .bg-red-d4 {
+    background-color: $color-red-d4 !important;
+  }
+  .fg-red-d4 {
+    color: $color-red-d4 !important;
+  }
+
+  // Orange
+  .bg-orange-l1 {
+    background-color: $color-orange-l1 !important;
+  }
+  .fg-orange-l1 {
+    color: $color-orange-l1 !important;
+  }
+  .bg-orange-l2 {
+    background-color: $color-orange-l2 !important;
+  }
+  .fg-orange-l2 {
+    color: $color-orange-l2 !important;
+  }
+  .bg-orange-l3 {
+    background-color: $color-orange-l3 !important;
+  }
+  .fg-orange-l3 {
+    color: $color-orange-l3 !important;
+  }
+  .bg-orange-l4 {
+    background-color: $color-orange-l4 !important;
+  }
+  .fg-orange-l4 {
+    color: $color-orange-l4 !important;
+  }
+  .bg-orange-m1 {
+    background-color: $color-orange-m1 !important;
+  }
+  .fg-orange-m1 {
+    color: $color-orange-m1 !important;
+  }
+  .bg-orange-m2 {
+    background-color: $color-orange-m2 !important;
+  }
+  .fg-orange-m2 {
+    color: $color-orange-m2 !important;
+  }
+  .bg-orange-m3 {
+    background-color: $color-orange-m3 !important;
+  }
+  .fg-orange-m3 {
+    color: $color-orange-m3 !important;
+  }
+  .bg-orange-m4 {
+    background-color: $color-orange-m4 !important;
+  }
+  .fg-orange-m4 {
+    color: $color-orange-m4 !important;
+  }
+  .bg-orange-d1 {
+    background-color: $color-orange-d1 !important;
+  }
+  .fg-orange-d1 {
+    color: $color-orange-d1 !important;
+  }
+  .bg-orange-d2 {
+    background-color: $color-orange-d2 !important;
+  }
+  .fg-orange-d2 {
+    color: $color-orange-d2 !important;
+  }
+  .bg-orange-d3 {
+    background-color: $color-orange-d3 !important;
+  }
+  .fg-orange-d3 {
+    color: $color-orange-d3 !important;
+  }
+  .bg-orange-d4 {
+    background-color: $color-orange-d4 !important;
+  }
+  .fg-orange-d4 {
+    color: $color-orange-d4 !important;
+  }
+
+  // Yellow
+  .bg-yellow-l1 {
+    background-color: $color-yellow-l1 !important;
+  }
+  .fg-yellow-l1 {
+    color: $color-yellow-l1 !important;
+  }
+  .bg-yellow-l2 {
+    background-color: $color-yellow-l2 !important;
+  }
+  .fg-yellow-l2 {
+    color: $color-yellow-l2 !important;
+  }
+  .bg-yellow-l3 {
+    background-color: $color-yellow-l3 !important;
+  }
+  .fg-yellow-l3 {
+    color: $color-yellow-l3 !important;
+  }
+  .bg-yellow-l4 {
+    background-color: $color-yellow-l4 !important;
+  }
+  .fg-yellow-l4 {
+    color: $color-yellow-l4 !important;
+  }
+  .bg-yellow-m1 {
+    background-color: $color-yellow-m1 !important;
+  }
+  .fg-yellow-m1 {
+    color: $color-yellow-m1 !important;
+  }
+  .bg-yellow-m2 {
+    background-color: $color-yellow-m2 !important;
+  }
+  .fg-yellow-m2 {
+    color: $color-yellow-m2 !important;
+  }
+  .bg-yellow-m3 {
+    background-color: $color-yellow-m3 !important;
+  }
+  .fg-yellow-m3 {
+    color: $color-yellow-m3 !important;
+  }
+  .bg-yellow-m4 {
+    background-color: $color-yellow-m4 !important;
+  }
+  .fg-yellow-m4 {
+    color: $color-yellow-m4 !important;
+  }
+  .bg-yellow-d1 {
+    background-color: $color-yellow-d1 !important;
+  }
+  .fg-yellow-d1 {
+    color: $color-yellow-d1 !important;
+  }
+  .bg-yellow-d2 {
+    background-color: $color-yellow-d2 !important;
+  }
+  .fg-yellow-d2 {
+    color: $color-yellow-d2 !important;
+  }
+  .bg-yellow-d3 {
+    background-color: $color-yellow-d3 !important;
+  }
+  .fg-yellow-d3 {
+    color: $color-yellow-d3 !important;
+  }
+  .bg-yellow-d4 {
+    background-color: $color-yellow-d4 !important;
+  }
+  .fg-yellow-d4 {
+    color: $color-yellow-d4 !important;
+  }
+
+  // Green
+  .bg-green-l1 {
+    background-color: $color-green-l1 !important;
+  }
+  .fg-green-l1 {
+    color: $color-green-l1 !important;
+  }
+  .bg-green-l2 {
+    background-color: $color-green-l2 !important;
+  }
+  .fg-green-l2 {
+    color: $color-green-l2 !important;
+  }
+  .bg-green-l3 {
+    background-color: $color-green-l3 !important;
+  }
+  .fg-green-l3 {
+    color: $color-green-l3 !important;
+  }
+  .bg-green-l4 {
+    background-color: $color-green-l4 !important;
+  }
+  .fg-green-l4 {
+    color: $color-green-l4 !important;
+  }
+  .bg-green-m1 {
+    background-color: $color-green-m1 !important;
+  }
+  .fg-green-m1 {
+    color: $color-green-m1 !important;
+  }
+  .bg-green-m2 {
+    background-color: $color-green-m2 !important;
+  }
+  .fg-green-m2 {
+    color: $color-green-m2 !important;
+  }
+  .bg-green-m3 {
+    background-color: $color-green-m3 !important;
+  }
+  .fg-green-m3 {
+    color: $color-green-m3 !important;
+  }
+  .bg-green-m4 {
+    background-color: $color-green-m4 !important;
+  }
+  .fg-green-m4 {
+    color: $color-green-m4 !important;
+  }
+  .bg-green-d1 {
+    background-color: $color-green-d1 !important;
+  }
+  .fg-green-d1 {
+    color: $color-green-d1 !important;
+  }
+  .bg-green-d2 {
+    background-color: $color-green-d2 !important;
+  }
+  .fg-green-d2 {
+    color: $color-green-d2 !important;
+  }
+  .bg-green-d3 {
+    background-color: $color-green-d3 !important;
+  }
+  .fg-green-d3 {
+    color: $color-green-d3 !important;
+  }
+  .bg-green-d4 {
+    background-color: $color-green-d4 !important;
+  }
+  .fg-green-d4 {
+    color: $color-green-d4 !important;
+  }
+
+  // Aqua
+  .bg-aqua-l1 {
+    background-color: $color-aqua-l1 !important;
+  }
+  .fg-aqua-l1 {
+    color: $color-aqua-l1 !important;
+  }
+  .bg-aqua-l2 {
+    background-color: $color-aqua-l2 !important;
+  }
+  .fg-aqua-l2 {
+    color: $color-aqua-l2 !important;
+  }
+  .bg-aqua-l3 {
+    background-color: $color-aqua-l3 !important;
+  }
+  .fg-aqua-l3 {
+    color: $color-aqua-l3 !important;
+  }
+  .bg-aqua-l4 {
+    background-color: $color-aqua-l4 !important;
+  }
+  .fg-aqua-l4 {
+    color: $color-aqua-l4 !important;
+  }
+  .bg-aqua-m1 {
+    background-color: $color-aqua-m1 !important;
+  }
+  .fg-aqua-m1 {
+    color: $color-aqua-m1 !important;
+  }
+  .bg-aqua-m2 {
+    background-color: $color-aqua-m2 !important;
+  }
+  .fg-aqua-m2 {
+    color: $color-aqua-m2 !important;
+  }
+  .bg-aqua-m3 {
+    background-color: $color-aqua-m3 !important;
+  }
+  .fg-aqua-m3 {
+    color: $color-aqua-m3 !important;
+  }
+  .bg-aqua-m4 {
+    background-color: $color-aqua-m4 !important;
+  }
+  .fg-aqua-m4 {
+    color: $color-aqua-m4 !important;
+  }
+  .bg-aqua-d1 {
+    background-color: $color-aqua-d1 !important;
+  }
+  .fg-aqua-d1 {
+    color: $color-aqua-d1 !important;
+  }
+  .bg-aqua-d2 {
+    background-color: $color-aqua-d2 !important;
+  }
+  .fg-aqua-d2 {
+    color: $color-aqua-d2 !important;
+  }
+  .bg-aqua-d3 {
+    background-color: $color-aqua-d3 !important;
+  }
+  .fg-aqua-d3 {
+    color: $color-aqua-d3 !important;
+  }
+  .bg-aqua-d4 {
+    background-color: $color-aqua-d4 !important;
+  }
+  .fg-aqua-d4 {
+    color: $color-aqua-d4 !important;
+  }
+
+  // Cyan
+  .bg-cyan-l1 {
+    background-color: $color-cyan-l1 !important;
+  }
+  .fg-cyan-l1 {
+    color: $color-cyan-l1 !important;
+  }
+  .bg-cyan-l2 {
+    background-color: $color-cyan-l2 !important;
+  }
+  .fg-cyan-l2 {
+    color: $color-cyan-l2 !important;
+  }
+  .bg-cyan-l3 {
+    background-color: $color-cyan-l3 !important;
+  }
+  .fg-cyan-l3 {
+    color: $color-cyan-l3 !important;
+  }
+  .bg-cyan-l4 {
+    background-color: $color-cyan-l4 !important;
+  }
+  .fg-cyan-l4 {
+    color: $color-cyan-l4 !important;
+  }
+  .bg-cyan-m1 {
+    background-color: $color-cyan-m1 !important;
+  }
+  .fg-cyan-m1 {
+    color: $color-cyan-m1 !important;
+  }
+  .bg-cyan-m2 {
+    background-color: $color-cyan-m2 !important;
+  }
+  .fg-cyan-m2 {
+    color: $color-cyan-m2 !important;
+  }
+  .bg-cyan-m3 {
+    background-color: $color-cyan-m3 !important;
+  }
+  .fg-cyan-m3 {
+    color: $color-cyan-m3 !important;
+  }
+  .bg-cyan-m4 {
+    background-color: $color-cyan-m4 !important;
+  }
+  .fg-cyan-m4 {
+    color: $color-cyan-m4 !important;
+  }
+  .bg-cyan-d1 {
+    background-color: $color-cyan-d1 !important;
+  }
+  .fg-cyan-d1 {
+    color: $color-cyan-d1 !important;
+  }
+  .bg-cyan-d2 {
+    background-color: $color-cyan-d2 !important;
+  }
+  .fg-cyan-d2 {
+    color: $color-cyan-d2 !important;
+  }
+  .bg-cyan-d3 {
+    background-color: $color-cyan-d3 !important;
+  }
+  .fg-cyan-d3 {
+    color: $color-cyan-d3 !important;
+  }
+  .bg-cyan-d4 {
+    background-color: $color-cyan-d4 !important;
+  }
+  .fg-cyan-d4 {
+    color: $color-cyan-d4 !important;
+  }
+
+  // Bondi
+  .bg-bondi-l1 {
+    background-color: $color-bondi-l1 !important;
+  }
+  .fg-bondi-l1 {
+    color: $color-bondi-l1 !important;
+  }
+  .bg-bondi-l2 {
+    background-color: $color-bondi-l2 !important;
+  }
+  .fg-bondi-l2 {
+    color: $color-bondi-l2 !important;
+  }
+  .bg-bondi-l3 {
+    background-color: $color-bondi-l3 !important;
+  }
+  .fg-bondi-l3 {
+    color: $color-bondi-l3 !important;
+  }
+  .bg-bondi-l4 {
+    background-color: $color-bondi-l4 !important;
+  }
+  .fg-bondi-l4 {
+    color: $color-bondi-l4 !important;
+  }
+  .bg-bondi-m1 {
+    background-color: $color-bondi-m1 !important;
+  }
+  .fg-bondi-m1 {
+    color: $color-bondi-m1 !important;
+  }
+  .bg-bondi-m2 {
+    background-color: $color-bondi-m2 !important;
+  }
+  .fg-bondi-m2 {
+    color: $color-bondi-m2 !important;
+  }
+  .bg-bondi-m3 {
+    background-color: $color-bondi-m3 !important;
+  }
+  .fg-bondi-m3 {
+    color: $color-bondi-m3 !important;
+  }
+  .bg-bondi-m4 {
+    background-color: $color-bondi-m4 !important;
+  }
+  .fg-bondi-m4 {
+    color: $color-bondi-m4 !important;
+  }
+  .bg-bondi-d1 {
+    background-color: $color-bondi-d1 !important;
+  }
+  .fg-bondi-d1 {
+    color: $color-bondi-d1 !important;
+  }
+  .bg-bondi-d2 {
+    background-color: $color-bondi-d2 !important;
+  }
+  .fg-bondi-d2 {
+    color: $color-bondi-d2 !important;
+  }
+  .bg-bondi-d3 {
+    background-color: $color-bondi-d3 !important;
+  }
+  .fg-bondi-d3 {
+    color: $color-bondi-d3 !important;
+  }
+  .bg-bondi-d4 {
+    background-color: $color-bondi-d4 !important;
+  }
+  .fg-bondi-d4 {
+    color: $color-bondi-d4 !important;
+  }
+
+  // Blue
+  .bg-blue-l1 {
+    background-color: $color-blue-l1 !important;
+  }
+  .fg-blue-l1 {
+    color: $color-blue-l1 !important;
+  }
+  .bg-blue-l2 {
+    background-color: $color-blue-l2 !important;
+  }
+  .fg-blue-l2 {
+    color: $color-blue-l2 !important;
+  }
+  .bg-blue-l3 {
+    background-color: $color-blue-l3 !important;
+  }
+  .fg-blue-l3 {
+    color: $color-blue-l3 !important;
+  }
+  .bg-blue-l4 {
+    background-color: $color-blue-l4 !important;
+  }
+  .fg-blue-l4 {
+    color: $color-blue-l4 !important;
+  }
+  .bg-blue-m1 {
+    background-color: $color-blue-m1 !important;
+  }
+  .fg-blue-m1 {
+    color: $color-blue-m1 !important;
+  }
+  .bg-blue-m2 {
+    background-color: $color-blue-m2 !important;
+  }
+  .fg-blue-m2 {
+    color: $color-blue-m2 !important;
+  }
+  .bg-blue-m3 {
+    background-color: $color-blue-m3 !important;
+  }
+  .fg-blue-m3 {
+    color: $color-blue-m3 !important;
+  }
+  .bg-blue-m4 {
+    background-color: $color-blue-m4 !important;
+  }
+  .fg-blue-m4 {
+    color: $color-blue-m4 !important;
+  }
+  .bg-blue-d1 {
+    background-color: $color-blue-d1 !important;
+  }
+  .fg-blue-d1 {
+    color: $color-blue-d1 !important;
+  }
+  .bg-blue-d2 {
+    background-color: $color-blue-d2 !important;
+  }
+  .fg-blue-d2 {
+    color: $color-blue-d2 !important;
+  }
+  .bg-blue-d3 {
+    background-color: $color-blue-d3 !important;
+  }
+  .fg-blue-d3 {
+    color: $color-blue-d3 !important;
+  }
+  .bg-blue-d4 {
+    background-color: $color-blue-d4 !important;
+  }
+  .fg-blue-d4 {
+    color: $color-blue-d4 !important;
+  }
+
+  // Purple
+  .bg-purple-l1 {
+    background-color: $color-purple-l1 !important;
+  }
+  .fg-purple-l1 {
+    color: $color-purple-l1 !important;
+  }
+  .bg-purple-l2 {
+    background-color: $color-purple-l2 !important;
+  }
+  .fg-purple-l2 {
+    color: $color-purple-l2 !important;
+  }
+  .bg-purple-l3 {
+    background-color: $color-purple-l3 !important;
+  }
+  .fg-purple-l3 {
+    color: $color-purple-l3 !important;
+  }
+  .bg-purple-l4 {
+    background-color: $color-purple-l4 !important;
+  }
+  .fg-purple-l4 {
+    color: $color-purple-l4 !important;
+  }
+  .bg-purple-m1 {
+    background-color: $color-purple-m1 !important;
+  }
+  .fg-purple-m1 {
+    color: $color-purple-m1 !important;
+  }
+  .bg-purple-m2 {
+    background-color: $color-purple-m2 !important;
+  }
+  .fg-purple-m2 {
+    color: $color-purple-m2 !important;
+  }
+  .bg-purple-m3 {
+    background-color: $color-purple-m3 !important;
+  }
+  .fg-purple-m3 {
+    color: $color-purple-m3 !important;
+  }
+  .bg-purple-m4 {
+    background-color: $color-purple-m4 !important;
+  }
+  .fg-purple-m4 {
+    color: $color-purple-m4 !important;
+  }
+  .bg-purple-d1 {
+    background-color: $color-purple-d1 !important;
+  }
+  .fg-purple-d1 {
+    color: $color-purple-d1 !important;
+  }
+  .bg-purple-d2 {
+    background-color: $color-purple-d2 !important;
+  }
+  .fg-purple-d2 {
+    color: $color-purple-d2 !important;
+  }
+  .bg-purple-d3 {
+    background-color: $color-purple-d3 !important;
+  }
+  .fg-purple-d3 {
+    color: $color-purple-d3 !important;
+  }
+  .bg-purple-d4 {
+    background-color: $color-purple-d4 !important;
+  }
+  .fg-purple-d4 {
+    color: $color-purple-d4 !important;
+  }
+
+  // Magenta
+  .bg-magenta-l1 {
+    background-color: $color-magenta-l1 !important;
+  }
+  .fg-magenta-l1 {
+    color: $color-magenta-l1 !important;
+  }
+  .bg-magenta-l2 {
+    background-color: $color-magenta-l2 !important;
+  }
+  .fg-magenta-l2 {
+    color: $color-magenta-l2 !important;
+  }
+  .bg-magenta-l3 {
+    background-color: $color-magenta-l3 !important;
+  }
+  .fg-magenta-l3 {
+    color: $color-magenta-l3 !important;
+  }
+  .bg-magenta-l4 {
+    background-color: $color-magenta-l4 !important;
+  }
+  .fg-magenta-l4 {
+    color: $color-magenta-l4 !important;
+  }
+  .bg-magenta-m1 {
+    background-color: $color-magenta-m1 !important;
+  }
+  .fg-magenta-m1 {
+    color: $color-magenta-m1 !important;
+  }
+  .bg-magenta-m2 {
+    background-color: $color-magenta-m2 !important;
+  }
+  .fg-magenta-m2 {
+    color: $color-magenta-m2 !important;
+  }
+  .bg-magenta-m3 {
+    background-color: $color-magenta-m3 !important;
+  }
+  .fg-magenta-m3 {
+    color: $color-magenta-m3 !important;
+  }
+  .bg-magenta-m4 {
+    background-color: $color-magenta-m4 !important;
+  }
+  .fg-magenta-m4 {
+    color: $color-magenta-m4 !important;
+  }
+  .bg-magenta-d1 {
+    background-color: $color-magenta-d1 !important;
+  }
+  .fg-magenta-d1 {
+    color: $color-magenta-d1 !important;
+  }
+  .bg-magenta-d2 {
+    background-color: $color-magenta-d2 !important;
+  }
+  .fg-magenta-d2 {
+    color: $color-magenta-d2 !important;
+  }
+  .bg-magenta-d3 {
+    background-color: $color-magenta-d3 !important;
+  }
+  .fg-magenta-d3 {
+    color: $color-magenta-d3 !important;
+  }
+  .bg-magenta-d4 {
+    background-color: $color-magenta-d4 !important;
+  }
+  .fg-magenta-d4 {
+    color: $color-magenta-d4 !important;
+  }
+
+  // Pink
+  .bg-pink-l1 {
+    background-color: $color-pink-l1 !important;
+  }
+  .fg-pink-l1 {
+    color: $color-pink-l1 !important;
+  }
+  .bg-pink-l2 {
+    background-color: $color-pink-l2 !important;
+  }
+  .fg-pink-l2 {
+    color: $color-pink-l2 !important;
+  }
+  .bg-pink-l3 {
+    background-color: $color-pink-l3 !important;
+  }
+  .fg-pink-l3 {
+    color: $color-pink-l3 !important;
+  }
+  .bg-pink-l4 {
+    background-color: $color-pink-l4 !important;
+  }
+  .fg-pink-l4 {
+    color: $color-pink-l4 !important;
+  }
+  .bg-pink-m1 {
+    background-color: $color-pink-m1 !important;
+  }
+  .fg-pink-m1 {
+    color: $color-pink-m1 !important;
+  }
+  .bg-pink-m2 {
+    background-color: $color-pink-m2 !important;
+  }
+  .fg-pink-m2 {
+    color: $color-pink-m2 !important;
+  }
+  .bg-pink-m3 {
+    background-color: $color-pink-m3 !important;
+  }
+  .fg-pink-m3 {
+    color: $color-pink-m3 !important;
+  }
+  .bg-pink-m4 {
+    background-color: $color-pink-m4 !important;
+  }
+  .fg-pink-m4 {
+    color: $color-pink-m4 !important;
+  }
+  .bg-pink-d1 {
+    background-color: $color-pink-d1 !important;
+  }
+  .fg-pink-d1 {
+    color: $color-pink-d1 !important;
+  }
+  .bg-pink-d2 {
+    background-color: $color-pink-d2 !important;
+  }
+  .fg-pink-d2 {
+    color: $color-pink-d2 !important;
+  }
+  .bg-pink-d3 {
+    background-color: $color-pink-d3 !important;
+  }
+  .fg-pink-d3 {
+    color: $color-pink-d3 !important;
+  }
+  .bg-pink-d4 {
+    background-color: $color-pink-d4 !important;
+  }
+  .fg-pink-d4 {
+    color: $color-pink-d4 !important;
+  }
+}

@@ -1,0 +1,545 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Default Settings
+// ---------------------------------------------------------------------
+// The values in this file should never be modified unless you're
+// developing the framework itself.
+//
+// Override the values in a theme file instead, if necessary.
+// See the readme for how to include a theme file in your project.
+//
+// Index:
+//
+//   1. Core settings
+//   2. Grid size variables
+//   3. Font and typography settings
+//   4. Color variables
+//   5. Syntax highlighting variables
+//   6. Debugging settings
+//   7. Miscellaneous settings
+
+
+// 1. Core settings
+// ---------------------------------------------------------------------
+
+// Framework code directories
+$ddfw-base-dir:           "../dada-web-framework/";
+$ddfw-sprites-dir:        $ddfw-base-dir+"resources/img/";
+
+// Whether to generate CSS code optimized for optimal browser
+// compatibility (recommended), or to generate standards-compliant CSS3.
+// See the note in readme for more information.
+$ddfw-compatibility-mode: true;
+
+// 2. Grid size variables
+// ---------------------------------------------------------------------
+//
+// By default, the grid system is designed to work well
+// on standard viewport sizes with a 12 column layout.
+// The layout has 4 basic responsive sizes:
+//
+//    Name                    Viewport     Grid    Inner    Col  
+//    ---------------------------------------------------------
+//    Large desktop   (l)    >= 1200px   1170px   1140px   95px  
+//    Medium desktop  (m)    >=  996px    966px    936px   78px  
+//    Small devices   (s)    >=  764px    750px    720px   60px  
+//    Mobile          (xs)   <   764px        -        -      -  
+//
+// These are the defaults: changing the variables below will change
+// the responsive sizes. It's recommended that you leave them as they are,
+// or do some calculating to ensure clients don't get side-scrolling.
+//
+// The "medium desktop" size is the default. Regular-sized tablets
+// should show "medium desktop" in landscape mode
+// and "small desktop" in portrait mode.
+//
+// It's important to note that the entire grid system is developed
+// using the border-box model.
+
+// We define the outer width of the grid here.
+$grid-width-s:      750px;
+$grid-width-m:      966px;
+$grid-width-l:      1170px;
+
+// The viewport width determines when we switch from one layout to another.
+$viewport-width-s:  764px;
+$viewport-width-m:  996px;
+$viewport-width-l:  1200px;
+
+// The column amount is set per responsive stage.
+$col-amount-s:      12;
+$col-amount-m:      12;
+$col-amount-l:      12;
+
+// Gutters are divided in half for the left and right sides.
+$col-gutter-xs:     30px;
+$col-gutter-s:      30px;
+$col-gutter-m:      30px;
+$col-gutter-l:      30px;
+
+
+// 3. Font and typography settings
+// ---------------------------------------------------------------------
+
+// The primary font used throughout the framework.
+// A serif alternative: 'Georgia', 'Times New Roman', 'Times', serif;
+$font-primary: 'Helvetica', 'Arial', sans-serif;
+// Font used for interface elements.
+// By default, we use Helvetica Neue because of its better baseline.
+$font-interface: 'Helvetica Neue', 'Arial', sans-serif;
+// Font used for monospaced elements, such as <code>, <tt>, etc.
+$font-mono: 'Menlo', 'Consolas', 'Monaco', 'Courier New', monospace;
+
+// Path to the Font Awesome font files (.eot, .ttf, .woff, etc)
+// Note that this must be relative to the compiled CSS file's location.
+$font-awesome-dir:          './fonts';
+
+// Base font size, used as the modifier for all other font sizes.
+$font-base-size:            14px;
+$font-base-lineheight:      20px / $font-base-size;
+// Small font size, used e.g. in certain labels. Relative to the base size.
+$font-small-size:           12px;
+$font-tiny-size:            11px;
+// Monospace font size.
+$font-mono-size:            13.3px;
+// Ruby annotations size.
+$font-ruby-size:            0.5em;
+$font-ruby-lineheight:      1.2em;
+
+
+// 4. Color variables
+// ---------------------------------------------------------------------
+
+// Whether to include the public color classes, such as .fg-red-m2
+// or .bg-yellow-l3, etc. If false, nothing from colors.scss is compiled.
+$color-classes-include:     true;
+
+// Gray
+$color-white:               #ffffff;
+$color-gray-l1:             #faf7f7;
+$color-gray-l2:             #f3f0f0;
+$color-gray-l3:             #e5e2e2;
+$color-gray-l4:             #dedcdc;
+$color-gray-m1:             #c9c7c7;
+$color-gray-m2:             #b4b1b1;
+$color-gray-m3:             #999696;
+$color-gray-m4:             #7f7c7c;
+$color-gray-d1:             #666363;
+$color-gray-d2:             #555252;
+$color-gray-d3:             #454242;
+$color-gray-d4:             #313030;
+$color-black:               #050202;
+
+// Red
+$color-red-l1:              #fff6f7;
+$color-red-l2:              #ffecee;
+$color-red-l3:              #ffd8dc;
+$color-red-l4:              #ffcfd4;
+$color-red-m1:              #fc9e8c;
+$color-red-m2:              #ee5d59;
+$color-red-m3:              #df4341;
+$color-red-m4:              #b93833;
+$color-red-d1:              #811a14;
+$color-red-d2:              #6d110d;
+$color-red-d3:              #5b0b08;
+$color-red-d4:              #2e0603;
+
+// Orange
+$color-orange-l1:           #fff7f3;
+$color-orange-l2:           #ffede6;
+$color-orange-l3:           #fbdace;
+$color-orange-l4:           #f4d5c9;
+$color-orange-m1:           #f6b78b;
+$color-orange-m2:           #fd974d;
+$color-orange-m3:           #d98142;
+$color-orange-m4:           #b46a34;
+$color-orange-d1:           #7d431c;
+$color-orange-d2:           #693614;
+$color-orange-d3:           #562a0f;
+$color-orange-d4:           #2b1509;
+
+// Yellow
+$color-yellow-l1:           #fff8e7;
+$color-yellow-l2:           #fff1ce;
+$color-yellow-l3:           #f7e2b0;
+$color-yellow-l4:           #f0dcaa;
+$color-yellow-m1:           #f4c67b;
+$color-yellow-m2:           #edc537;
+$color-yellow-m3:           #d1a934;
+$color-yellow-m4:           #b38d2c;
+$color-yellow-d1:           #82601a;
+$color-yellow-d2:           #725318;
+$color-yellow-d3:           #604214;
+$color-yellow-d4:           #34200d;
+
+// Green
+$color-green-l1:            #efffee;
+$color-green-l2:            #dfffdc;
+$color-green-l3:            #cff2cc;
+$color-green-l4:            #c8ecc7;
+$color-green-m1:            #8de08f;
+$color-green-m2:            #52d356;
+$color-green-m3:            #45b44a;
+$color-green-m4:            #3a943e;
+$color-green-d1:            #00720f;
+$color-green-d2:            #005f0b;
+$color-green-d3:            #004a06;
+$color-green-d4:            #002503;
+
+// Aqua
+$color-aqua-l1:             #f0fdf7;
+$color-aqua-l2:             #e0fbee;
+$color-aqua-l3:             #c8f0e6;
+$color-aqua-l4:             #bdede3;
+$color-aqua-m1:             #73dbbf;
+$color-aqua-m2:             #29ca9a;
+$color-aqua-m3:             #22ad85;
+$color-aqua-m4:             #1d9070;
+$color-aqua-d1:             #006746;
+$color-aqua-d2:             #00563a;
+$color-aqua-d3:             #00442e;
+$color-aqua-d4:             #002217;
+
+// Cyan
+$color-cyan-l1:             #f0fbff;
+$color-cyan-l2:             #e1f7ff;
+$color-cyan-l3:             #c2efff;
+$color-cyan-l4:             #b3edff;
+$color-cyan-m1:             #5ad7ef;
+$color-cyan-m2:             #00c1de;
+$color-cyan-m3:             #00a7c0;
+$color-cyan-m4:             #008da2;
+$color-cyan-d1:             #005d7d;
+$color-cyan-d2:             #004d69;
+$color-cyan-d3:             #003e55;
+$color-cyan-d4:             #001f2a;
+
+// Bondi
+$color-bondi-l1:            #f1faff;
+$color-bondi-l2:            #e4f6ff;
+$color-bondi-l3:            #caecff;
+$color-bondi-l4:            #bde8ff;
+$color-bondi-m1:            #71cbf5;
+$color-bondi-m2:            #25adea;
+$color-bondi-m3:            #1096d6;
+$color-bondi-m4:            #0d7db4;
+$color-bondi-d1:            #004e89;
+$color-bondi-d2:            #003f73;
+$color-bondi-d3:            #00315e;
+$color-bondi-d4:            #00182f;
+
+// Blue
+$color-blue-l1:             #f1faff;
+$color-blue-l2:             #e7f6ff;
+$color-blue-l3:             #d1eaff;
+$color-blue-l4:             #c7e4ff;
+$color-blue-m1:             #88bffb;
+$color-blue-m2:             #4999f6;
+$color-blue-m3:             #1f85eb;
+$color-blue-m4:             #1a6dc6;
+$color-blue-d1:             #003f94;
+$color-blue-d2:             #00327c;
+$color-blue-d3:             #002466;
+$color-blue-d4:             #001233;
+
+// Purple
+$color-purple-l1:           #f9f9ff;
+$color-purple-l2:           #f4f2ff;
+$color-purple-l3:           #e7ddff;
+$color-purple-l4:           #e2d7ff;
+$color-purple-m1:           #c3a9fd;
+$color-purple-m2:           #a37bfa;
+$color-purple-m3:           #8d62e4;
+$color-purple-m4:           #7651c2;
+$color-purple-d1:           #522684;
+$color-purple-d2:           #431a6e;
+$color-purple-d3:           #35125a;
+$color-purple-d4:           #1a092d;
+
+// Magenta
+$color-magenta-l1:          #fff6ff;
+$color-magenta-l2:          #feeaff;
+$color-magenta-l3:          #fdd3ff;
+$color-magenta-l4:          #fdc7ff;
+$color-magenta-m1:          #eb91ef;
+$color-magenta-m2:          #d85bde;
+$color-magenta-m3:          #ba4cbf;
+$color-magenta-m4:          #9b3e9f;
+$color-magenta-d1:          #661664;
+$color-magenta-d2:          #561054;
+$color-magenta-d3:          #450a43;
+$color-magenta-d4:          #220521;
+
+// Pink
+$color-pink-l1:             #fff8fb;
+$color-pink-l2:             #ffecf4;
+$color-pink-l3:             #ffd6ec;
+$color-pink-l4:             #ffcaea;
+$color-pink-m1:             #ff91c3;
+$color-pink-m2:             #f9569c;
+$color-pink-m3:             #d74887;
+$color-pink-m4:             #b43b70;
+$color-pink-d1:             #7d0f4e;
+$color-pink-d2:             #660c3d;
+$color-pink-d3:             #4e0a2c;
+$color-pink-d4:             #240711;
+
+// Semantic colors:
+$color-text:                $color-gray-d4;
+$color-link-text:           $color-blue-m3;
+$color-link-text-hover:     $color-blue-d1;
+
+$color-success-l:           $color-green-l2;
+$color-success-m:           $color-green-m2;
+$color-success-d:           $color-green-d2;
+$color-warning-l:           $color-yellow-l2;
+$color-warning-m:           $color-yellow-m2;
+$color-warning-d:           $color-yellow-d2;
+$color-danger-l:            $color-red-l2;
+$color-danger-m:            $color-red-m2;
+$color-danger-d:            $color-red-d2;
+$color-selected-l:          $color-yellow-l2;
+$color-selected-m:          $color-yellow-m2;
+$color-selected-d:          $color-yellow-d2;
+
+// Define the standard focus glow effect.
+$form-focus-shadow-off:     0px 0px 0px rgba($color-cyan-m2, 0.0);
+$form-focus-shadow-on:      0px 0px 6px rgba($color-cyan-m2, 0.5);
+
+// Define the modal overlay shadow effect.
+$modal-shadow-offset-left:  0;
+$modal-shadow-offset-top:   6px;
+$modal-shadow-blur:         13px;
+$modal-shadow-opacity:      0.3;
+
+// Default loader image settings
+// Note that the path is relative to the generated CSS file.
+$img-loader-url:            $ddfw-sprites-dir+"loader-48x48-12.png";
+$img-loader-src-size:       48px; // source image dimensions
+$img-loader-disp-size:      16px; // display dimensions
+$img-loader-frames:         12;
+$img-loader-duration:       0.8s;
+
+
+// 5. Syntax highlighting variables
+// ---------------------------------------------------------------------
+
+$syn-prettify-include:  true;         // Whether to include Prettify support
+$syn-pygments-include:  true;         // Whether to include Pygments support
+
+$syn-plain:             $color-black; // Plain code
+$syn-string:            #080;         // String
+$syn-keyword:           #008;         // Keyword (static, const)
+$syn-comment:           #800;         // Comment
+$syn-type:              #606;         // Type name (class MyClass)
+$syn-literal:           #066;         // Literal value (42, 0.0008)
+$syn-punct:             #660;         // Punctuation
+$syn-lbrck-open:        #660;         // Lisp open bracket
+$syn-lbrck-close:       #660;         // Lisp close bracket
+$syn-markup-tag:        #008;         // Markup tag (<span>)
+$syn-markup-attr:       #606;         // Markup attribute name
+$syn-markup-val:        #080;         // Markup attribute value
+$syn-markup-dec:        #606;         // Markup declaration (<!doctype html>)
+$syn-variable:          #606;         // Variable name ($var_name)
+$syn-function:          #f00;         // Function name
+
+// When printing, colors tend to be unavailable, so instead we'll style
+// certain highlighted elements using bold, underline and italic.
+$syn-print-prettify:  (
+  kwd: (bold),
+  typ: (bold, italic),
+  tag: (bold),
+  com: (italic),
+);
+
+
+// 6. Debugging settings
+// ---------------------------------------------------------------------
+
+// Whether to include the grid debugging class.
+$grid-debug-include:        true;
+$grid-debug-color:          $color-blue-m2;
+
+
+// 7. Miscellaneous settings
+// ---------------------------------------------------------------------
+
+// Border radius width
+$border-radius-xs:          2px;
+$border-radius-s:           2.5px;
+$border-radius-m:           3px;
+$border-radius-l:           4px;
+
+// Border widths
+$border-width-thin:         1px;
+$border-width-thick:        4px;
+
+// Button padding
+$button-padding-left-xs:    5px;
+$button-padding-right-xs:   $button-padding-left-xs;
+$button-padding-top-xs:     2px;
+$button-padding-bottom-xs:  $button-padding-top-xs;
+
+$button-padding-left-s:     8px;
+$button-padding-right-s:    $button-padding-left-s;
+$button-padding-top-s:      6px;
+$button-padding-bottom-s:   6px;
+
+$button-padding-left-m:     10px;
+$button-padding-right-m:    $button-padding-left-m;
+$button-padding-top-m:      6px;
+$button-padding-bottom-m:   7px;
+
+$button-padding-left-l:     13px;
+$button-padding-right-l:    $button-padding-left-l;
+$button-padding-top-l:      8px;
+$button-padding-bottom-l:   10px;
+
+// Dropdown list padding
+$dropdown-padding-left-m:   18px;
+$dropdown-padding-right-m:  $dropdown-padding-left-m;
+$dropdown-padding-top-m:    5px;
+$dropdown-padding-bottom-m: 6px;
+
+// The sizes and padding of the icon inside a button
+$button-icon-lineheight-xs:     1.1;
+$button-icon-lineheight-s:      0.9;
+$button-icon-lineheight-m:      1.1;
+$button-icon-lineheight-l:      0.9;
+$button-icon-size-xs:           11px;
+$button-icon-size-s:            12px;
+$button-icon-size-m:            $font-base-size;
+$button-icon-size-l:            18px;
+
+$button-icon-padding-left-xs:   0;
+$button-icon-padding-left-s:    1px;
+$button-icon-padding-left-m:    2px;
+$button-icon-padding-left-l:    5px;
+$button-icon-padding-right-xs:  2px;
+$button-icon-padding-right-s:   3px;
+$button-icon-padding-right-m:   5px;
+$button-icon-padding-right-l:   9px;
+
+// Input field padding
+$input-padding-left-xs:     0.75em;
+$input-padding-right-xs:    $input-padding-left-xs;
+$input-padding-top-xs:      0.58em;
+$input-padding-bottom-xs:   0.42em;
+
+$input-padding-left-s:      0.75em;
+$input-padding-right-s:     $input-padding-left-s;
+$input-padding-top-s:       0.58em;
+$input-padding-bottom-s:    0.42em;
+
+$input-padding-left-m:      0.75em;
+$input-padding-right-m:     $input-padding-left-m;
+$input-padding-top-m:       0.58em;
+$input-padding-bottom-m:    0.42em;
+
+$input-padding-left-l:      0.75em;
+$input-padding-right-l:     $input-padding-left-l;
+$input-padding-top-l:       0.58em;
+$input-padding-bottom-l:    0.42em;
+
+
+// Box padding (block elements, such as <pre>)
+$box-padding-left-xs:       6px;
+$box-padding-right-xs:      $box-padding-left-xs;
+$box-padding-top-xs:        5px;
+$box-padding-bottom-xs:     4px;
+
+$box-padding-left-s:        4px;
+$box-padding-right-s:       $box-padding-left-s;
+$box-padding-top-s:         4px;
+$box-padding-bottom-s:      $box-padding-top-s;
+
+$box-padding-left-m:        13px;
+$box-padding-right-m:       $box-padding-left-m;
+$box-padding-top-m:         12px;
+$box-padding-bottom-m:      10px;
+
+$box-padding-left-l:        16px;
+$box-padding-right-l:       $box-padding-left-l;
+$box-padding-top-l:         14px;
+$box-padding-bottom-l:      $box-padding-top-l;
+
+// Box margin
+$box-margin-left-xs:        0;
+$box-margin-right-xs:       $box-margin-left-xs;
+$box-margin-top-xs:         1.1em;
+$box-margin-bottom-xs:      1.2em;
+
+$box-margin-left-s:         0;
+$box-margin-right-s:        $box-margin-left-s;
+$box-margin-top-s:          1.1em;
+$box-margin-bottom-s:       1.2em;
+
+$box-margin-left-m:         0;
+$box-margin-right-m:        $box-margin-left-m;
+$box-margin-top-m:          1.1em;
+$box-margin-bottom-m:       1.2em;
+
+$box-margin-left-l:         0;
+$box-margin-right-l:        $box-margin-left-l;
+$box-margin-top-l:          1.1em;
+$box-margin-bottom-l:       1.2em;
+
+// Padding of box sub items (such as .inner)
+$box-padding-sub-xs:        2px;
+$box-padding-sub-s:         3px;
+$box-padding-sub-m:         3px;
+$box-padding-sub-l:         6px;
+
+// Table padding (regular and condensed)
+$table-padding-left-r:      0.5em;
+$table-padding-right-r:     $table-padding-left-r;
+$table-padding-top-r:       0.45em;
+$table-padding-bottom-r:    0.3em;
+
+$table-padding-left-c:      0.5em;
+$table-padding-right-c:     $table-padding-left-c;
+$table-padding-top-c:       0.4em;
+$table-padding-bottom-c:    $table-padding-top-c;
+
+// Nav padding (vertical and horizontal)
+$nav-padding-v-main-left:   10px;
+$nav-padding-v-main-right:  $nav-padding-v-main-left;
+$nav-padding-v-main-top:    6px;
+$nav-padding-v-main-bottom: 3px;
+// Sub items
+$nav-padding-v-sub-left:    10px;
+$nav-padding-v-sub-right:   0;
+$nav-padding-v-sub-top:     4px;
+$nav-padding-v-sub-bottom:  2px;
+
+// Nav padding (vertical and horizontal)
+$nav-padding-h-left:        0;
+$nav-padding-h-right:       $nav-padding-h-left;
+$nav-padding-h-top:         5px;
+$nav-padding-h-bottom:      6px;
+
+// Tag padding (only one size)
+$tag-padding-left:          6px;
+$tag-padding-right:         $tag-padding-left;
+$tag-padding-top:           0.19em;
+$tag-padding-bottom:        0.08em;
+// Tag height
+$tag-height:                15px;
+// Tag icon width and height
+$tag-icon-width:            6px;
+$tag-icon-height:           17px;
+
+
+// Paragraph margin (and various other elements)
+$p-base-margin-top:         0.8em;
+$p-base-margin-bottom:      0.65em;
+
+// Empty functions to avoid an error if no theme is used at all.
+@mixin theme-main {
+}
+@mixin theme-settings {
+}

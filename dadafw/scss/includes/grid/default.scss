@@ -1,0 +1,34 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Grid System / Default
+// ---------------------------------------------------------------------
+// The default grid. Note that the comments are only accurate
+// when using the default settings.
+
+@include construct-grid((
+  // Small desktop (768px and up by default, e.g. tablets)
+  's': (
+    'viewport-width': $viewport-width-s,
+    'grid-width': $grid-width-s,
+    'col-amount': $col-amount-s,
+    'col-gutter': $col-gutter-s,
+  ),
+  // Medium desktop (992px and up by default)
+  'm': (
+    'viewport-width': $viewport-width-m,
+    'grid-width': $grid-width-m,
+    'col-amount': $col-amount-m,
+    'col-gutter': $col-gutter-m,
+  ),
+  // Large desktop (1200px and up by default)
+  'l': (
+    'viewport-width': $viewport-width-l,
+    'grid-width': $grid-width-l,
+    'col-amount': $col-amount-l,
+    'col-gutter': $col-gutter-l,
+  ),
+));

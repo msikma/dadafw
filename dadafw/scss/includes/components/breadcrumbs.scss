@@ -1,0 +1,36 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Breadcrumbs
+// ---------------------------------------------------------------------
+// Shows the current location within the page hierarchy of the website.
+// Either a <ul> or <ol> can be used, but the latter is recommended.
+
+ul.breadcrumbs,
+ol.breadcrumbs {
+  @include border-radius("m");
+  display: block;
+  list-style: none;
+  padding: $box-padding-top-m $box-padding-right-m $box-padding-bottom-m $box-padding-left-m;
+  margin: 0;
+  background: $color-gray-l2;
+  
+  > li {
+    display: inline-block;
+    
+    &.home {
+      &:before {
+        @include font-awesome-icon;
+        content: $fa-var-home;
+        margin-right: 0.2em;
+        position: static;
+      }
+    }
+    &:before {
+      content: " / ";
+    }
+  }
+}

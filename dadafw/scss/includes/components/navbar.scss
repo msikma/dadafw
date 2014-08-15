@@ -1,0 +1,80 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Navigation Lists
+// ---------------------------------------------------------------------
+// The basic navigation class. This must be used on a proper <ul> structure.
+// It reuses the table padding variables.
+//
+// Note: this CSS code is more specific than most other framework code,
+// using the > operator to target direct descendants. This is to avoid
+// messing up other uses of <ul>, such as <ul class="dropdown">.
+
+.navbar {
+  //
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+ul.nav {
+  $border-color: $color-gray-l4;
+  $border-color-hover: $color-blue-m3;
+  $link-color: $color-blue-m3;
+  $border-width: $border-width-thick;
+  padding-left: 0;
+  
+  > li {
+    list-style: none;
+    
+    > a {
+      color: $color-black;
+      display: block;
+      padding: $nav-padding-v-main-top $nav-padding-v-main-right $nav-padding-v-main-bottom $nav-padding-v-main-left;
+      position: relative;
+      left: -$border-width;
+      
+      &:hover {
+        color: $link-color;
+        text-decoration: none;
+        border-left: $border-width solid $border-color-hover;
+        padding-left: $nav-padding-v-main-left - $border-width;
+      }
+    }
+  }
+  
+  // Top level list items
+  > li {
+    padding-left: $border-width;
+    
+    > a {
+      // Make top level links bold.
+      font-weight: 700;
+    }
+    &:hover {
+      border-left: $border-width solid $border-color;
+      padding-left: 0;
+    }
+  }
+  
+  // Nested lists
+  ul.nav {
+    padding-left: 0;
+    
+    // List items at any depth except the first
+    > li {
+      > a {
+        // Sub links are smaller and use a different set of padding values.
+        color: $color-gray-d1;
+        font-size: percentage($font-small-size / $font-base-size);
+        padding: $nav-padding-v-sub-top $nav-padding-v-sub-right $nav-padding-v-sub-bottom $nav-padding-v-sub-left;
+        
+        &:hover {
+          padding-left: $nav-padding-v-sub-left - $border-width;
+        }
+      }
+    }
+  }
+}

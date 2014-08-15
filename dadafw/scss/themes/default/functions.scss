@@ -1,0 +1,102 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Default Theme Functions
+// ---------------------------------------------------------------------
+
+// For the beveled buttons, we're using a mixin that can be called
+// using arguments that provide the colors.
+@mixin beveled(
+    $gradient-from,
+    $gradient-to,
+    $inner-line-color,
+    $border-main-color,
+    $border-bottom-color,
+    $text-color,
+    $text-shadow,
+    $shadow-color:$color-black,
+    $shadow-opacity:0.25,
+    $plain:false,
+    $inner-line-top-opacity:0.5,
+    $inner-line-bottom-opacity:0.3,
+    $inner-line-top-opacity-hover:0.5,
+    $inner-line-bottom-opacity-hover:0.6,
+    $background-hover:$gradient-to,
+    $border-main-color-hover:$border-main-color,
+    $border-top-color-hover:$border-main-color,
+    $border-bottom-color-hover:$border-bottom-color,
+    $text-shadow-hover:$text-shadow,
+    $inner-line-top-opacity-active:0.5,
+    $inner-line-bottom-opacity-active:0.6,
+    $background-active:$gradient-to,
+    $border-main-color-active:$border-main-color,
+    $border-top-color-active:$border-main-color,
+    $border-bottom-color-active:$border-bottom-color,
+    $text-shadow-active:$text-shadow
+  ) {
+  @include linear-gradient($gradient-from, $gradient-to);
+  border-color: $border-main-color;
+  border-bottom-color: $border-bottom-color;
+  @include box-shadow((
+    inset 1px 0 0 $inner-line-color,
+    inset -1px 0 0 $inner-line-color,
+    inset 0 1px 0 rgba($inner-line-color, $inner-line-top-opacity),
+    inset 0 -1px 0 rgba($inner-line-color, $inner-line-bottom-opacity),
+    0 1px 1px rgba($shadow-color, $shadow-opacity),
+    $form-focus-shadow-off
+  ));
+  text-shadow: 0 -1px 0 rgba($text-shadow, 1);
+  color: $text-color;
+  
+  // If the element we're styling should not have hover/active styles,
+  // don't define them.
+  @if $plain != true {
+  	// Hover style
+    &:hover {
+      background: $background-hover;
+      border-color: $border-main-color-hover;
+      border-top-color: $border-top-color-hover;
+      border-bottom-color: $border-bottom-color-hover;
+		  text-shadow: 0 -1px 0 rgba($text-shadow-hover, 1);
+      @include box-shadow((
+        inset 1px 0 0 $inner-line-color,
+        inset -1px 0 0 $inner-line-color,
+        inset 0 1px 0 rgba($inner-line-color, $inner-line-top-opacity-hover),
+        inset 0 -1px 0 rgba($inner-line-color, $inner-line-bottom-opacity-hover),
+        0 1px 0 rgba($shadow-color, $shadow-opacity)
+      ));
+    }
+  
+    // Focus style
+    &:focus {
+      @include box-shadow((
+        inset 1px 0 0 $inner-line-color,
+        inset -1px 0 0 $inner-line-color,
+        inset 0 1px 0 rgba($inner-line-color, $inner-line-top-opacity-hover),
+        inset 0 -1px 0 rgba($inner-line-color, $inner-line-bottom-opacity-hover),
+        inset 0 0 8px rgba($inner-line-color, $inner-line-bottom-opacity-hover),
+        0 1px 0 rgba($shadow-color, $shadow-opacity),
+        $form-focus-shadow-on
+      ));
+    }
+    
+  	// Active style
+    &:active {
+      background: $background-active;
+      border-color: $border-main-color-active;
+      border-top-color: $border-top-color-active;
+      border-bottom-color: $border-bottom-color-active;
+		  text-shadow: 0 -1px 0 rgba($text-shadow-active, 1);
+      @include box-shadow((
+        inset 1px 0 0 $inner-line-color,
+        inset -1px 0 0 $inner-line-color,
+        inset 0 1px 0 rgba($inner-line-color, $inner-line-top-opacity-active),
+        inset 0 -1px 0 rgba($inner-line-color, $inner-line-bottom-opacity-active),
+        0 1px 0 rgba($shadow-color, $shadow-opacity)
+      ));
+    }
+  }
+}

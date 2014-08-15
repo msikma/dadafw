@@ -1,0 +1,63 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// General Helper Classes
+// ---------------------------------------------------------------------
+// These are minor helper classes for using basic CSS features
+// such as text alignment.
+
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-justify {
+  text-align: justify;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+// The use of clear is typically not recommended for layouting purposes.
+// The grid system largely makes it unnecessary.
+.clear {
+  clear: both;
+}
+
+// Class to hide something except on aural browsers/screen readers.
+// Just setting display: none does not work, since then it hides the item
+// on aural browsers too.
+// This set of attributes appear to have good results, but feedback
+// from users of screen readers is always appreciated.
+.aural-only {
+  height: 1px;
+  margin: -1px;
+  clip: rect(0px, 0px, 0px, 0px);
+  border: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Classes to show or hide something based on the media type.
+@media print {
+  .hide-print {
+    display: none;
+  }
+}
+@media screen {
+  .hide-screen {
+    display: none;
+  }
+}

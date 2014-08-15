@@ -1,0 +1,130 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Cross-Browser Support Functions
+// ---------------------------------------------------------------------
+// These mixins replace regular CSS values in case they have
+// inadequate browser support and need vendor prefixes.
+//
+// Most of these mixins have a usage based on the W3 standard. In some
+// cases, they're slightly more specific, such as linear-gradient().
+
+// Mixin for cross-browser box shadows
+@mixin box-shadow($shadow) {
+  @if $ddfw-compatibility-mode {
+    -webkit-box-shadow: $shadow; // iOS <= 4.2, Android <= 4.0
+  }
+  box-shadow: $shadow;
+}
+
+// CSS attribute transitions
+@mixin transition($trns) {
+  // Since Webkit requires the use of the -webkit-transform argument,
+  // we need to do a string replacement on our $trns string
+  // to make it work.
+  // todo: string replacement
+  @if $ddfw-compatibility-mode {
+    -webkit-transition: $trns; // iOS <= 6.1
+  }
+  transition: $trns;
+}
+
+// Disable click events (not standards compliant until probably CSS4)
+@mixin pointer-events($var:none) {
+  @if $ddfw-compatibility-mode {
+    // Gecko, Webkit and IE11 and up.
+    pointer-events: $var;
+  }
+}
+
+// Box model setting
+// See <http://www.paulirish.com/2012/box-sizing-border-box-ftw/> for more info.
+// It's recommended to use either content-box or border-box.
+@mixin box-sizing($value:border-box) {
+  @if $ddfw-compatibility-mode {
+       -moz-box-sizing: $value; // Firefox current
+    -webkit-box-sizing: $value; // iOS <= 4, Android <= 2.3
+  }
+  box-sizing: $value;
+}
+
+// Text justification
+@mixin text-justify($value) {
+  @if $ddfw-compatibility-mode {
+    -ms-text-justify: $value; // IE 8 Standards Mode
+    text-justify: $value;
+  }
+}
+
+// A regular gradient from top to bottom
+@mixin linear-gradient($from, $to, $deg:180deg) {
+  @if $ddfw-compatibility-mode {
+    // Safari <= 6.0
+    background-image: -webkit-linear-gradient($deg, $from, $to);
+    // IE 8 and 9
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}'";
+  }
+  background-image: linear-gradient($deg, $from, $to);
+}
+
+// Cross-browser keyframes generator
+// To use this, include the frame information in a map, for example:
+// 
+//    @include keyframes(play, (
+//      from: (background-position: 0px),
+//      to: (background-position: -$img-loader-disp-size * $img-loader-frames),
+//    ));
+//
+// The first argument is the name of the animation.
+@mixin keyframes($name, $args) {
+  @keyframes $name {
+    @include keyframes-args($args);
+  }
+  @if $ddfw-compatibility-mode {
+    // Webkit current
+    @-webkit-keyframes $name {
+      @include keyframes-args($args);
+    }
+    // Mozilla <= 3.6
+    @-moz-keyframes $name {
+      @include keyframes-args($args);
+    }
+  }
+}
+
+// Generates keyframes labels and their CSS values
+@mixin keyframes-args($args) {
+  @each $arg in $args {
+    $label: nth($arg, 1); // animation label
+    $kvs: nth($arg, 2);   // map of CSS values
+    #{$label} {
+      @each $kv in $kvs {
+        $key: nth($kv, 1);
+        $val: nth($kv, 2);
+        // Set the CSS value.
+        #{$key}: $val;
+      }
+    }
+  }
+}
+
+// Sets column-count
+@mixin column-count($n) {
+  @if $ddfw-compatibility-mode == true {
+    -moz-column-count: $n;
+    -webkit-column-count: $n;
+  }
+  column-count: $n;
+}
+
+// Sets column-gap
+@mixin column-gap($gap) {
+  @if $ddfw-compatibility-mode == true {
+    -moz-column-gap: $gap;
+    -webkit-column-gap: $gap;
+  }
+  column-count: $gap;
+}
