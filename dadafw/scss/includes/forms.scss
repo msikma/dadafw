@@ -15,8 +15,7 @@
 //   3. 
 
 // Target anything with the ARIA role "form".
-form,
-[role="form"] {
+form {
   @include general-reset(true);
   
   // Related fields should be contained within a <fieldset> element.

@@ -1,0 +1,68 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Headers
+// ---------------------------------------------------------------------
+// add description (top fixed headers)
+
+.header {
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+  }
+  
+  // document
+  .header-section {
+    background: $color-white;
+    border-bottom: 1px solid rgba($color-black, 0.11);
+    height: 40px;
+    line-height: 40px;
+    
+    form {
+      margin-top: 5px;
+      
+      input.line,
+      textarea.line,
+      textarea.multiline {
+        @include border-radius($font-base-lineheight + 0.75em);
+        height: $font-base-lineheight + 0.64em;
+      }
+      // fixme: make wrapper for search-icon so we don't have to do this
+      .search-icon {
+        &:before {
+          top: (($font-base-lineheight + 0.75em) / 2) - ($font-base-lineheight + 0.75em);
+        }
+      }
+    }
+    
+    &.inverted {
+      background-color: mix($color-gray-d4, $color-black, 80%);
+      color: $color-white;
+    }
+    &.small {
+      font-size: percentage($font-small-size / $font-base-size);
+      height: 30px;
+      line-height: 30px;
+    }
+    
+    &:last-child {
+      border-bottom-color: rgba($color-black, 0.15);
+      @include box-shadow((0 1px 0 rgba($color-black, 0.07)));
+    }
+  }
+}
+
+//fixme: make this compatible with the new grid system
+@media screen and (max-width: $viewport-width-s - 1) {
+  .header-section {
+    padding-left: 15px;
+    padding-right: 15px;
+    
+  }
+}

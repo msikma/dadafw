@@ -82,13 +82,6 @@
         @include box-inner($box-padding-top-s, $box-padding-right-s, $box-padding-bottom-s, $box-padding-left-s, $box-padding-sub-s);
       }
     }
-    &.xs {
-      @include border-radius("xs");
-      @include box-padding("xs");
-      .inner {
-        @include box-inner($box-padding-top-xs, $box-padding-right-xs, $box-padding-bottom-xs, $box-padding-left-xs, $box-padding-sub-xs);
-      }
-    }
     &.l {
       @include border-radius("l");
       @include box-padding("l");

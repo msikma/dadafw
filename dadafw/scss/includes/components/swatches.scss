@@ -4,7 +4,7 @@
 // All Rights Reserved
 
 
-// Color Helper Classes
+// Swatch Classes
 // ---------------------------------------------------------------------
 // Note that all of these helper classes use the !important keyword
 // to override settings from other classes.
@@ -17,7 +17,7 @@
 // framework CSS by turning off $color-classes-include in your settings.
 // If it's turned off, none of this file is compiled.
 
-@if $color-classes-include == true {
+@if $swatches-include == true {
   // White and black
   .bg-white {
     background-color: $color-white !important;

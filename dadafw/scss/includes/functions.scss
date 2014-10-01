@@ -34,6 +34,16 @@
   ));
 }
 
+// Removes all default bullet styling from a list.
+@mixin list-unstyled {
+  padding-left: 0;
+  margin: 0;
+  
+  > li {
+    list-style: none;
+  }
+}
+
 // This is the standard styling used for creating Font Awesome icons.
 @mixin font-awesome-icon {
   position: absolute;
@@ -143,12 +153,6 @@
   $r: 0;
   $b: 0;
   $l: 0;
-  @if ($amount == "xs") {
-    $t: $box-padding-top-xs;
-    $r: $box-padding-right-xs;
-    $b: $box-padding-bottom-xs;
-    $l: $box-padding-left-xs;
-  }
   @if ($amount == "s") {
     $t: $box-padding-top-s;
     $r: $box-padding-right-s;
@@ -242,19 +246,19 @@
 }
 
 // Variations:
-@mixin box-generic-rounded {
-  @include border-radius("m");
+@mixin box-generic-rounded($size:"m") {
+  @include border-radius($size);
 }
 @mixin box-border {
   border: 1px solid $color-gray-l4;
 }
-@mixin box-transparent {
-  @include box-padding("m");
-  @include box-generic-rounded;
+@mixin box-transparent($size:"m") {
+  @include box-padding($size);
+  @include box-generic-rounded($size);
   @include box-border;
 }
-@mixin box-opaque {
-  @include box-transparent;
+@mixin box-opaque($size:"m") {
+  @include box-transparent($size);
   background-color: $color-gray-l1;
 }
 

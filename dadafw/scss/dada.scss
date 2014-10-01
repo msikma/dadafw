@@ -10,7 +10,7 @@
 // Show copyright notice in compiler output.
 @debug 'Dada Web Framework';
 @debug 'Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>';
-@debug '-------------------------------------------------------------';
+@debug '--------------------------------------------------------------';
 @debug 'Compiling the entire framework.';
 
 @import "includes/defaults.scss";     // Default Settings
@@ -25,16 +25,15 @@
   @debug 'Not including vendor prefixes and browser hacks (CSS3 standards-compliance mode; see README note).';
 }
 // Print out which optional items we're including in the compile.
-@debug 'Grid debugging:      '+if($grid-debug-include, 'included', 'not included');
-@debug 'Color classes:       '+if($color-classes-include, 'included', 'not included');
-@debug 'Prettify support:    '+if($syn-prettify-include, 'included', 'not included');
-@debug 'Pygments support:    '+if($syn-pygments-include, 'included', 'not included');
+@debug 'Grid debugging:        '+if($grid-debug-include, 'included', 'not included');
+@debug 'Color swatch classes:  '+if($swatches-include, 'included', 'not included');
+@debug 'Prettify support:      '+if($syn-prettify-include, 'included', 'not included');
+@debug 'Pygments support:      '+if($syn-pygments-include, 'included', 'not included');
 
 @import "externals/externals.scss";   // External Projects Loader
 @import "includes/functions.scss";    // Internal Functions
 @import "includes/xbrowser.scss";     // Cross-Browser Support Functions
 @import "includes/animation.scss";    // Animation Support Functions
-@import "includes/colors.scss";       // Color Helper Classes
 @import "includes/grid.scss";         // Grid System
 @import "includes/typography.scss";   // General Styling and Typography
 @import "includes/syntax.scss";       // Syntax Highlighting

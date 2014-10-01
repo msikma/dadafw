@@ -21,6 +21,7 @@
 }
 
 // Animated loader image
+// fixme: this should be somewhere else (dependencies)
 @mixin loader($img:$img-loader-url) {
   $size: $img-loader-disp-size;
   background-image: url($img-loader-url);

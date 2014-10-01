@@ -1,0 +1,45 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
+// All Rights Reserved
+
+
+// Line Numbers
+// ---------------------------------------------------------------------
+
+pre[ddfw-filter~="line-numbers"] {
+  // When using the line-numbers class, the whitespace is extracted only
+  // from the <li> content.
+  white-space: normal;
+  
+  ol {
+    @include box-padding("m");
+    padding-left: 0;
+    list-style-type: none;
+    // Note: we're removing a bit of extra margin to account for the border.
+    margin: (-$box-padding-top-m - 1px) (-$box-padding-right-m) (-$box-padding-bottom-m - 1px) 2em;
+    border-left: 1px solid $color-gray-l4;
+    position: relative;
+    
+    > li {
+      counter-increment: dadalines;
+      padding-left: 1em;
+      white-space: pre-wrap;
+      min-height: $font-base-lineheight + 0em;
+      
+      &:before {
+        content: counter(dadalines);
+        color: $color-gray-m2;
+        display: block;
+        position: absolute;
+        left: -4em;
+        text-align: right;
+        width: 3em;
+      }
+    }
+    
+    &:first-child {
+      counter-reset: dadalines;
+    }
+  }
+}

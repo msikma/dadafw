@@ -26,8 +26,7 @@
 
 // Target .btn and elements with the "button" ARIA role.
 button,
-.btn,
-*[role="button"] {
+.btn {
   @include border-radius("m");
   @include pill("m");
   @include transition(box-shadow 0.1s);
@@ -325,8 +324,7 @@ button,
   }
   
   button,
-  .btn,
-  *[role="button"] {
+  .btn {
     margin-left: 0;
     float: left;
     left: 0;

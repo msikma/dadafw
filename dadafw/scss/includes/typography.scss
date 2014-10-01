@@ -23,7 +23,6 @@ html, body {
 
 // Monospace entities should have the mono font family.
 // Note that <tt> is obsolete and should not be used.[1]
-// The ol.code is for lined pieces of code.
 code, kbd, pre, samp, tt, var {
   font-family: $font-mono;
   // Slightly smaller font size (95% by default)
@@ -35,11 +34,12 @@ code, kbd, pre, samp, tt, var {
     font-size: 100%;
   }
 }
+// Preformatted text
 pre {
   @include box-opaque;
   @include no-edge-margins;
   
-  margin: $p-base-margin-top 0 $p-base-margin-bottom;
+  margin: $box-margin-top-m 0 $box-margin-bottom-m;
   
   // Reset the style for inline pre elements.
   &.inline {
@@ -128,45 +128,6 @@ abbr {
 html ol, html ul {
   margin: 0;
   padding: 0 0 0 2em;
-}
-code {
-  ol {
-  }
-}
-pre.line-numbers {
-  // When using the line-numbers class, the whitespace is extracted only
-  // from the <li> content.
-  white-space: normal;
-  
-  ol {
-    @include box-padding("m");
-    padding-left: 0;
-    list-style-type: none;
-    // Note: we're removing a bit of extra margin to account for the border.
-    margin: (-$box-padding-top-m - 1px) (-$box-padding-right-m) (-$box-padding-bottom-m - 1px) 2em;
-    border-left: 1px solid $color-gray-l4;
-    position: relative;
-    
-    > li {
-      counter-increment: customlistcounter;
-      padding-left: 1em;
-      white-space: pre-wrap;
-      
-      &:before {
-        content: counter(customlistcounter);
-        color: $color-gray-m2;
-        display: block;
-        position: absolute;
-        left: -4em;
-        text-align: right;
-        width: 3em;
-      }
-    }
-    
-    &:first-child {
-      counter-reset: customlistcounter;
-    }
-  }
 }
 mark {
   background-color: $color-orange-l2;
@@ -335,13 +296,8 @@ ul, ol {
   }
   
   // A variation without extra padding or list bullets. 
-  &.list-unstyled {
-    padding-left: 0;
-    margin: 0;
-    
-    > li {
-      list-style: none;
-    }
+  &.unstyled {
+    @include list-unstyled;
   }
   
   // Horizontal list with a small amount of margin. 

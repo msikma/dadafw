@@ -21,12 +21,14 @@
   <meta name="description" content="%description%" />
   <meta name="viewport" content="%viewport%" />
   <link rel="icon" type="image/png" href="%base_url%static/favicon.png" />
-  <link rel="stylesheet" href="%base_url%../build/base.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="%base_url%../build/dadafw.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="%base_url%static/docs.css" type="text/css" media="screen" />
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->%xtra_css%%xtra_js%
+  <![endif]-->%xtra_css%
+  <script src="%base_url%../dadafw/js/dada.js"></script>
+  %xtra_js%
 </head>
 <body>
 %main_content%

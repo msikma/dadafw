@@ -9,7 +9,7 @@
 // This element needs to be added
 
 // Note: this component relies on JS to function properly.
-.dropdown {
+.dropdown-menu {
   @include border-radius("m");
   @include modal-shadow;
   @include interface-font;

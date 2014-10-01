@@ -9,10 +9,13 @@
 // These are separate interface elements, each with their own set of
 // variations and options.
 
+@import 'components/swatches';
 @import 'components/navbar';
 @import 'components/dropdown';
 @import 'components/boxes';
+@import 'components/line-numbers';
 @import 'components/list-hrz';
 @import 'components/landing';
 @import 'components/tags';
 @import 'components/breadcrumbs';
+@import 'components/header';

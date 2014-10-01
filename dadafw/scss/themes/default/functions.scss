@@ -45,7 +45,7 @@
     inset -1px 0 0 $inner-line-color,
     inset 0 1px 0 rgba($inner-line-color, $inner-line-top-opacity),
     inset 0 -1px 0 rgba($inner-line-color, $inner-line-bottom-opacity),
-    0 1px 1px rgba($shadow-color, $shadow-opacity),
+    0 1px 0 rgba($shadow-color, $shadow-opacity),
     $form-focus-shadow-off
   ));
   text-shadow: 0 -1px 0 rgba($text-shadow, 1);

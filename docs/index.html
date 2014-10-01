@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<!--
+
+Dada Web Framework - Documentation
+——————————————————————————————————
+
+MIT license. (C) 2014 Michiel Sikma <michiel@sikma.org>
+See <http://github.com/msikma/dadafw/> for more information.
+
+-->
+<head>
+  <meta charset="utf-8" />
+  <title>Dada Web Framework - Documentation</title>
+  <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, width=device-width" />
+  <link rel="icon" type="image/png" href="./static/resources/images/favicon.png" />
+  <link rel="stylesheet" href="./../build/dadafw.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="./static/resources/css/docs.css" type="text/css" media="screen" />
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="./static/modules/angular/angular.min.js"></script>
+  <script src="./static/modules/angular-ui-router/angular-ui-router.js"></script>
+  <script src="./static/modules/angular/angular-route.min.js"></script>
+  <script src="./static/controllers/DocsApp.home.js"></script>
+  <script src="./static/controllers/DocsApp.js"></script>
+</head>
+<body ng-app="DocsApp">
+  <p class="aural-only"><a href="#content">Jump to content</a></p>
+  <div id="root">
+    <docs-header class="header fixed" ng-controller="HeaderCtrl"></docs-header>
+    <div class="grid main-content">
+      <article class="row">
+        <docs-sidebar class="col w-2" ng-controller="SideCtrl"></docs-sidebar>
+        <docs-content class="col w-10 manual-text" ng-controller="ContentCtrl"></docs-content>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

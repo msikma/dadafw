@@ -20,20 +20,22 @@
 //   4. Color variables
 //   5. Syntax highlighting variables
 //   6. Debugging settings
-//   7. Miscellaneous settings
+//   7. Component settings
 
 
 // 1. Core settings
 // ---------------------------------------------------------------------
 
-// Framework code directories
-$ddfw-base-dir:           "../dada-web-framework/";
-$ddfw-sprites-dir:        $ddfw-base-dir+"resources/img/";
+// Framework base directories
+$ddfw-base-dir:             '../dadafw/';
+$ddfw-resources-dir:        $ddfw-base-dir+'resources/';
+$ddfw-fonts-dir:            $ddfw-resources-dir+'fonts/';
+$ddfw-sprites-dir:          $ddfw-resources-dir+'img/';
 
 // Whether to generate CSS code optimized for optimal browser
 // compatibility (recommended), or to generate standards-compliant CSS3.
 // See the note in readme for more information.
-$ddfw-compatibility-mode: true;
+$ddfw-compatibility-mode:   true;
 
 // 2. Grid size variables
 // ---------------------------------------------------------------------
@@ -61,25 +63,25 @@ $ddfw-compatibility-mode: true;
 // using the border-box model.
 
 // We define the outer width of the grid here.
-$grid-width-s:      750px;
-$grid-width-m:      966px;
-$grid-width-l:      1170px;
-
-// The viewport width determines when we switch from one layout to another.
-$viewport-width-s:  764px;
-$viewport-width-m:  996px;
-$viewport-width-l:  1200px;
+$grid-width-s:              750px;
+$grid-width-m:              966px;
+$grid-width-l:              1170px;
 
 // The column amount is set per responsive stage.
-$col-amount-s:      12;
-$col-amount-m:      12;
-$col-amount-l:      12;
+$col-amount-s:              12;
+$col-amount-m:              12;
+$col-amount-l:              12;
 
 // Gutters are divided in half for the left and right sides.
-$col-gutter-xs:     30px;
-$col-gutter-s:      30px;
-$col-gutter-m:      30px;
-$col-gutter-l:      30px;
+$col-gutter-xs:             30px;
+$col-gutter-s:              30px;
+$col-gutter-m:              30px;
+$col-gutter-l:              30px;
+
+// The viewport width determines when we switch from one layout to another.
+$viewport-width-s:          $grid-width-s + ($col-gutter-s / 2);
+$viewport-width-m:          $grid-width-m + ($col-gutter-m);
+$viewport-width-l:          $grid-width-l + ($col-gutter-l);
 
 
 // 3. Font and typography settings
@@ -116,7 +118,7 @@ $font-ruby-lineheight:      1.2em;
 
 // Whether to include the public color classes, such as .fg-red-m2
 // or .bg-yellow-l3, etc. If false, nothing from colors.scss is compiled.
-$color-classes-include:     true;
+$swatches-include:          true;
 
 // Gray
 $color-white:               #ffffff;
@@ -288,11 +290,12 @@ $color-pink-d2:             #660c3d;
 $color-pink-d3:             #4e0a2c;
 $color-pink-d4:             #240711;
 
-// Semantic colors:
+// Semantic colors
 $color-text:                $color-gray-d4;
 $color-link-text:           $color-blue-m3;
 $color-link-text-hover:     $color-blue-d1;
 
+// Semantic colors
 $color-success-l:           $color-green-l2;
 $color-success-m:           $color-green-m2;
 $color-success-d:           $color-green-d2;
@@ -318,7 +321,7 @@ $modal-shadow-opacity:      0.3;
 
 // Default loader image settings
 // Note that the path is relative to the generated CSS file.
-$img-loader-url:            $ddfw-sprites-dir+"loader-48x48-12.png";
+$img-loader-url:            $ddfw-sprites-dir+"loader-48x48-12f.png";
 $img-loader-src-size:       48px; // source image dimensions
 $img-loader-disp-size:      16px; // display dimensions
 $img-loader-frames:         12;
@@ -328,24 +331,41 @@ $img-loader-duration:       0.8s;
 // 5. Syntax highlighting variables
 // ---------------------------------------------------------------------
 
-$syn-prettify-include:  true;         // Whether to include Prettify support
-$syn-pygments-include:  true;         // Whether to include Pygments support
+// Whether to include Prettify support
+$syn-prettify-include:      true;
+// Whether to include Pygments support
+$syn-pygments-include:      true;
 
-$syn-plain:             $color-black; // Plain code
-$syn-string:            #080;         // String
-$syn-keyword:           #008;         // Keyword (static, const)
-$syn-comment:           #800;         // Comment
-$syn-type:              #606;         // Type name (class MyClass)
-$syn-literal:           #066;         // Literal value (42, 0.0008)
-$syn-punct:             #660;         // Punctuation
-$syn-lbrck-open:        #660;         // Lisp open bracket
-$syn-lbrck-close:       #660;         // Lisp close bracket
-$syn-markup-tag:        #008;         // Markup tag (<span>)
-$syn-markup-attr:       #606;         // Markup attribute name
-$syn-markup-val:        #080;         // Markup attribute value
-$syn-markup-dec:        #606;         // Markup declaration (<!doctype html>)
-$syn-variable:          #606;         // Variable name ($var_name)
-$syn-function:          #f00;         // Function name
+// Plain code
+$syn-plain:                 $color-black;
+// String
+$syn-string:                #080;
+// Keyword (static, const)
+$syn-keyword:               #008;
+// Comment
+$syn-comment:               #800;
+// Type name (class MyClass)
+$syn-type:                  #606;
+// Literal value (42, 0.0008)
+$syn-literal:               #066;
+// Punctuation
+$syn-punct:                 #660;
+// Lisp open bracket
+$syn-lbrck-open:            #660;
+// Lisp close bracket
+$syn-lbrck-close:           #660;
+// Markup tag (<span>)
+$syn-markup-tag:            #008;
+// Markup attribute name
+$syn-markup-attr:           #606;
+// Markup attribute value
+$syn-markup-val:            #080;
+// Markup declaration (<!doctype html>)
+$syn-markup-dec:            #606;
+// Variable name ($var_name)
+$syn-variable:              #606;
+// Function name
+$syn-function:              #f00;
 
 // When printing, colors tend to be unavailable, so instead we'll style
 // certain highlighted elements using bold, underline and italic.
@@ -362,11 +382,14 @@ $syn-print-prettify:  (
 
 // Whether to include the grid debugging class.
 $grid-debug-include:        true;
+// Color used for the grid debugging display.
 $grid-debug-color:          $color-blue-m2;
 
 
-// 7. Miscellaneous settings
+// 7. Component settings
 // ---------------------------------------------------------------------
+// Most components have three sizes: s, m, l. Some components, such as
+// buttons, have an additional xs size.
 
 // Border radius width
 $border-radius-xs:          2px;
@@ -400,29 +423,39 @@ $button-padding-top-l:      8px;
 $button-padding-bottom-l:   10px;
 
 // Dropdown list padding
+$dropdown-padding-left-s:   12px;
+$dropdown-padding-right-s:  $dropdown-padding-left-s;
+$dropdown-padding-top-s:    3px;
+$dropdown-padding-bottom-s: 4px;
+
 $dropdown-padding-left-m:   18px;
 $dropdown-padding-right-m:  $dropdown-padding-left-m;
 $dropdown-padding-top-m:    5px;
 $dropdown-padding-bottom-m: 6px;
 
-// The sizes and padding of the icon inside a button
-$button-icon-lineheight-xs:     1.1;
-$button-icon-lineheight-s:      0.9;
-$button-icon-lineheight-m:      1.1;
-$button-icon-lineheight-l:      0.9;
-$button-icon-size-xs:           11px;
-$button-icon-size-s:            12px;
-$button-icon-size-m:            $font-base-size;
-$button-icon-size-l:            18px;
+$dropdown-padding-left-l:   22px;
+$dropdown-padding-right-l:  $dropdown-padding-left-l;
+$dropdown-padding-top-l:    7px;
+$dropdown-padding-bottom-l: 8px;
 
-$button-icon-padding-left-xs:   0;
-$button-icon-padding-left-s:    1px;
-$button-icon-padding-left-m:    2px;
-$button-icon-padding-left-l:    5px;
-$button-icon-padding-right-xs:  2px;
-$button-icon-padding-right-s:   3px;
-$button-icon-padding-right-m:   5px;
-$button-icon-padding-right-l:   9px;
+// The sizes and padding of the icon inside a button
+$button-icon-lineheight-xs: 1.1;
+$button-icon-lineheight-s:  0.9;
+$button-icon-lineheight-m:  1.1;
+$button-icon-lineheight-l:  0.9;
+$button-icon-size-xs:       11px;
+$button-icon-size-s:        12px;
+$button-icon-size-m:        $font-base-size;
+$button-icon-size-l:        18px;
+
+$button-icon-padding-left-xs: 0;
+$button-icon-padding-left-s: 1px;
+$button-icon-padding-left-m: 2px;
+$button-icon-padding-left-l: 5px;
+$button-icon-padding-right-xs: 2px;
+$button-icon-padding-right-s: 3px;
+$button-icon-padding-right-m: 5px;
+$button-icon-padding-right-l: 9px;
 
 // Input field padding
 $input-padding-left-xs:     0.75em;
@@ -447,11 +480,6 @@ $input-padding-bottom-l:    0.42em;
 
 
 // Box padding (block elements, such as <pre>)
-$box-padding-left-xs:       6px;
-$box-padding-right-xs:      $box-padding-left-xs;
-$box-padding-top-xs:        5px;
-$box-padding-bottom-xs:     4px;
-
 $box-padding-left-s:        4px;
 $box-padding-right-s:       $box-padding-left-s;
 $box-padding-top-s:         4px;
@@ -468,11 +496,6 @@ $box-padding-top-l:         14px;
 $box-padding-bottom-l:      $box-padding-top-l;
 
 // Box margin
-$box-margin-left-xs:        0;
-$box-margin-right-xs:       $box-margin-left-xs;
-$box-margin-top-xs:         1.1em;
-$box-margin-bottom-xs:      1.2em;
-
 $box-margin-left-s:         0;
 $box-margin-right-s:        $box-margin-left-s;
 $box-margin-top-s:          1.1em;
@@ -480,16 +503,15 @@ $box-margin-bottom-s:       1.2em;
 
 $box-margin-left-m:         0;
 $box-margin-right-m:        $box-margin-left-m;
-$box-margin-top-m:          1.1em;
-$box-margin-bottom-m:       1.2em;
+$box-margin-top-m:          0.9em;
+$box-margin-bottom-m:       1.1em;
 
 $box-margin-left-l:         0;
 $box-margin-right-l:        $box-margin-left-l;
-$box-margin-top-l:          1.1em;
-$box-margin-bottom-l:       1.2em;
+$box-margin-top-l:          0.9em;
+$box-margin-bottom-l:       1.1em;
 
 // Padding of box sub items (such as .inner)
-$box-padding-sub-xs:        2px;
 $box-padding-sub-s:         3px;
 $box-padding-sub-m:         3px;
 $box-padding-sub-l:         6px;
@@ -510,6 +532,7 @@ $nav-padding-v-main-left:   10px;
 $nav-padding-v-main-right:  $nav-padding-v-main-left;
 $nav-padding-v-main-top:    6px;
 $nav-padding-v-main-bottom: 3px;
+
 // Sub items
 $nav-padding-v-sub-left:    10px;
 $nav-padding-v-sub-right:   0;

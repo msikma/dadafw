@@ -1,0 +1,69 @@
+// Dada Web Framework
+// ---------------------------------------------------------------------
+// Copyright (C) 2013-2014, Michiel Sikma <mike@letsdeliver.com>
+// All Rights Reserved
+
+// This is the SCSS for the framework's usage tutorial and reference page.
+// It contains a number of extra styles used to show how the framework is used.
+
+@import "../../dadafw/scss/includes/defaults.scss";
+@import "../../dadafw/scss/includes/xbrowser.scss";
+@import "../../dadafw/scss/includes/functions.scss";
+
+// Color guide CSS
+$swatches-border: rgba($color-black, 0.2);
+
+.swatches {
+  .row {
+    margin: 0;
+    
+    .col {
+      text-align: center;
+      padding-top: $p-base-margin-top / 2;
+      padding-bottom: $p-base-margin-bottom / 2;
+      padding-left: 0;
+      padding-right: 0;
+      border-top: 1px solid $swatches-border;
+      border-left: 1px solid $swatches-border;
+      font-size: $font-tiny-size;
+    
+      &:last-child {
+        border-right: 1px solid $swatches-border;
+      }
+    
+      // Make the darker colors more legible by making the color white.
+      &[class*=-m2],
+      &[class*=-m3],
+      &[class*=-m4],
+      &[class*=-d],
+      &[class*=-black], {
+        color: white;
+      }
+    }
+    
+    // Round the top and bottom (white, black) columns
+    &:first-child .col {
+      @include border-radius("m", ("tl", "tr"));
+    }
+    &:last-child .col {
+      @include border-radius("m", ("bl", "br"));
+    }
+  }
+}
+
+// Main content should account for the top header.
+.main-content {
+  margin-top: 80px;
+  padding-top: 20px;
+}
+
+// The main container for the manual page contents.
+.manual-text {
+  padding-bottom: 80px;
+}
+
+// The second column in the nested rows example.
+.docs-bigger-col {
+  padding-top: ($p-base-margin-top * 2) !important;
+  padding-bottom: ($p-base-margin-bottom * 2) !important;
+}

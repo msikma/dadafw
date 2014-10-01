@@ -23,11 +23,11 @@ consistent baseline.
 Development
 -----------
 
-*Currently, the framework is still under heavy development. It's already
+***Currently, the framework is still under heavy development. It's already
 possible to start using it, but a lot of planned features have not been
 developed yet, and there's not much documentation. This is going to change,
 so follow the project or request some features if you're interested
-in watching things unfold.*
+in watching things unfold.***
 
 Code Style
 ----------
@@ -48,28 +48,29 @@ Block comments should not be used except for the main copyright notice.
 Keep comments (and code, where possible) within 76 characters.
 
 Example:
+```css
+@mixin box-sizing-example {
+	 -moz-box-sizing: border-box; // Firefox current
+  -webkit-box-sizing: border-box; // iOS <= 4, Android <= 2.3
+		  box-sizing: border-box; // Everything else
+}
 
-	@mixin box-sizing-example {
-		 -moz-box-sizing: border-box; // Firefox current
-	  -webkit-box-sizing: border-box; // iOS <= 4, Android <= 2.3
-			  box-sizing: border-box; // Everything else
-	}
+code, samp,
+.my-element#id,
+.another-element#id {
+  @include box-sizing-example;
 
-	code, samp,
-	.my-element#id,
-	.another-element#id {
-	  @include box-sizing-example;
-  
-	  // Use our monospace font for code-related elements.
-	  font-family: $font-mono;
-	  font-weight: 300;
-	  border: 2px solid red;
-	  border-top: none;
-  
-	  &:before, &:after {
-		content: 'hello world';
-	  }
-	}
+  // Use our monospace font for code-related elements.
+  font-family: $font-mono;
+  font-weight: 300;
+  border: 2px solid red;
+  border-top: none;
+
+  &:before, &:after {
+	content: 'hello world';
+  }
+}
+```
 
 On another note, vendor-prefixed attributes should always be built using a
 cross-browser compatible mixin in the includes/xbrowser.scss file. Vendor
@@ -84,12 +85,12 @@ install one.
 
 To compile to a single CSS file named 'output.css', use the following:
 
-	sass --style compressed dada-web-framework/css/dada.scss:build/output.css
+	sass --style compressed dadafw/css/dada.scss:build/output.css
 
 Developers might want to tell Sass to watch for changes and recompile
 as needed:
 
-	sass --watch dada-web-framework/css/dada.scss:build/output.css
+	sass --watch dadafw/css/dada.scss:build/output.css
 
 Only the `dada.scss` file needs to be compiled.
 

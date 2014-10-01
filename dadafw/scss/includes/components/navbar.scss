@@ -14,12 +14,41 @@
 // messing up other uses of <ul>, such as <ul class="dropdown">.
 
 .navbar {
-  //
-  position: absolute;
-  left: 0;
-  right: 0;
+  ul.nav {
+    @include list-unstyled;
+    
+    li {
+      float: left;
+      
+      .logo {
+        img {
+          width: auto;
+          height: 18px;
+          vertical-align: middle;
+          margin-right: 20px;
+        }
+      }
+      
+      .item {
+        display: inline-block;
+        padding: 0 15px;
+        color: $color-gray-m2;
+        text-decoration: none;
+        
+        &:hover {
+          color: white;
+        }
+      }
+      &.active {
+        .item {
+          background: $color-black;
+        }
+      }
+    }
+  }
 }
-ul.nav {
+
+/*ul.nav {
   $border-color: $color-gray-l4;
   $border-color-hover: $color-blue-m3;
   $link-color: $color-blue-m3;
@@ -78,3 +107,4 @@ ul.nav {
     }
   }
 }
+*/
