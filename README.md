@@ -30,7 +30,7 @@ developed yet, and there's not much documentation. This is going to change,
 so follow the project or request some features if you're interested
 in watching things unfold.
 
-There's some information on [https://github.com/msikma/dadafw/wiki](our Github wiki)
+There's some information on [our Github wiki](https://github.com/msikma/dadafw/wiki)
 on how to get started if you want to contribute code.
 
 Compiling
