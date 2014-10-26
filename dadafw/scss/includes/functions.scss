@@ -298,9 +298,8 @@
 // Important: this mixin doesn't include @media print, so you should
 // do that yourself wherever you're calling the code.
 @mixin syntax-print-styles($print-styles) {
-  @each $type in $print-styles {
-    $name: nth($type, 1);
-    $styles: nth($type, 2);
+  @each $name in map-keys($print-styles) {
+    $styles: map-get($print-styles, $name);
     @each $style in $styles {
       @if $style == bold {
         .#{$name} {

@@ -218,7 +218,6 @@ form {
       .btn,
       *[role="button"] {
         @include border-radius("m", ("tl", "bl"));
-      
         // Give the buttons the same height as the input items.
         height: $font-base-lineheight + 1em;
       

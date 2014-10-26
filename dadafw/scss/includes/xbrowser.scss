@@ -96,15 +96,13 @@
 }
 
 // Generates keyframes labels and their CSS values
+// todo: rework this to proper (@each $a, $b in $map) syntax.
 @mixin keyframes-args($args) {
-  @each $arg in $args {
-    $label: nth($arg, 1); // animation label
-    $kvs: nth($arg, 2);   // map of CSS values
-    #{$label} {
-      @each $kv in $kvs {
-        $key: nth($kv, 1);
-        $val: nth($kv, 2);
-        // Set the CSS value.
+  @each $arg in map-keys($args) {
+    $kvs: map-get($args, $arg);
+    #{$arg} {
+      @each $key in map-keys($kvs) {
+        $val: map-get($kvs, $key);
         #{$key}: $val;
       }
     }

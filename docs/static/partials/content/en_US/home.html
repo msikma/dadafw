@@ -29,13 +29,8 @@
 <p>add some more text here</p>
 <!-- [1.5 Browser support] -->
 <h2>Browser support</h2>
-<p>Dada Framework is fully supported out of the box by all major browsers, except IE8—despite Microsoft's claims to the contrary, the world's most popular browser still garbage. Thankfully, you can easily fix most problems by adding <a href="https://github.com/aFarkas/html5shiv">html5shiv</a> and <a href="https://github.com/scottjehl/Respond">Respond.js</a> to your header code.</p>
-<pre>&lt;!-- Enable responsiveness for IE8 and below --&gt;
-&lt;!--[if lt IE 9]&gt;
-&lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;
-&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;
-&lt;![endif]--&gt;</pre>
-<p>These tags should be added after any <code>&lt;style&gt;</code> tags. Despite this addition, IE8 will still have no CSS3 effects such as box shadows and rounded corners.</p>
+<p>Dada Framework is fully supported out of the box by all major browsers. We test with Webkit (Safari, Chrome), Gecko (Firefox), IE9–11, and mobile browsers (Android, Chrome Mobile, iOS Safari). All stable releases are tested thoroughly—the non-stable releases are not.</p>
+<p>If you must support IE8 and below, please note that we don't test on these browsers. See AngularJS's <a href="https://docs.angularjs.org/guide/ie">IE compatibility guide</a> for information on what to do to get things up and running. You'll also need <em>html5shiv</em> and <em>Respond.js</em> for HTML5 and responsiveness support.</p>
 <!-- [1.6 Mobile/responsiveness support] -->
 <h2>Mobile/responsiveness support</h2>
 <p>We support responsiveness by default. There are four stages of responsiveness, with the smallest being specially designed for mobile phone screen sizes. You can make sections appear for specific sizes only and modify specific column widths where desired. Generally, though, even if you scaffold your grid only for the default or largest size, it should work decently enough on smaller devices.</p>

@@ -24,7 +24,7 @@
     {
         return {
             restrict: 'E',
-            templateUrl: 'static/partials/content/main.html',
+            templateUrl: 'static/partials/content/en_US/home.html',
         };
     });
     /*
@@ -46,6 +46,7 @@
     app.controller('SideCtrl', [function($scope)
     {
         var self = this;
+	    console.log("A");
     }]);
     app.controller('ContentCtrl', [function($scope)
     {

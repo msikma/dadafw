@@ -34,7 +34,6 @@
 
 // Loader image keyframes
 @include keyframes(loader, (
-  from: (background-position: 0px),
-  to: (background-position: -$img-loader-disp-size * $img-loader-frames),
+  from: (background-position: 0px,),
+  to: (background-position: -$img-loader-disp-size * $img-loader-frames,)
 ));
-

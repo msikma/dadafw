@@ -1,0 +1,648 @@
+<!-- [3. Typography] -->
+<div class="page-header">
+  <h1>Typography</h1>
+  <p>All visible typography elements in HTML are styled in a consistent manner.</p>
+</div>
+<!-- [3.1 Headings] -->
+<h2>Headings</h2>
+<p>The sizes of the headings range from the very large <code>&lt;h1&gt;</code> to the small <code>&lt;h6&gt;</code> which has the same size as regular text. Heading 1 has a slightly lighter weight than regular text, and 4 through 6 are bolded.</p>
+<div class="box example with-label single">
+  <p class="label">Example</p>
+  <div class="result">
+    <h1 data-ddfw="non-semantic">Heading 1</h1>
+    <p>Paragraph start.</p>
+    <h2 data-ddfw="non-semantic">Heading 2</h2>
+    <p>Paragraph start.</p>
+    <h3 data-ddfw="non-semantic">Heading 3</h3>
+    <p>Paragraph start.</p>
+    <h4 data-ddfw="non-semantic">Heading 4</h4>
+    <p>Paragraph start.</p>
+    <h5 data-ddfw="non-semantic">Heading 5</h5>
+    <p>Paragraph start.</p>
+    <h6 data-ddfw="non-semantic">Heading 6</h6>
+    <p>Paragraph start.</p>
+  </div>
+</div>
+<p>A primary header that starts a new section can be wrapped in <code><mark>&lt;div class="page-header"&gt;</mark></code> to set it apart a bit more. Following that header, a number of section summary paragraphs can be added.</p>
+<div class="box example with-label">
+  <p class="label">Example</p>
+  <div class="result">
+    <div class="page-header">
+      <h1>Example with <code>h1</code> element</h1>
+      <p>Etiam adipiscing diam non massa posuere consequat. Praesent vel auctor augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+    </div>
+  </div>
+  <pre class="code">&lt;div class="page-header"&gt;
+&lt;h1&gt;Example with &lt;code&gt;h1&lt;/code&gt; element&lt;/h1&gt;
+&lt;p&gt;Etiam adipiscing diam non massa posuere consequat. Praesent vel auctor augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.&lt;/p&gt;
+&lt;/div&gt;</pre>
+</div>
+<!-- [3.2 Body copy] -->
+<h2>Body copy</h3>
+<p>The best example of how body copy looks when using the framework is this page itself, which is built using the default settings. The font used for the main copy is <em>Helvetica</em>, monospaced text uses <em>Menlo</em>, and buttons use <em>Helvetica Neue</em> due to its more consistent baseline. The default size is 14px, with a line height of 20px.</p>
+<p>Regular text-level elements are all provided for. For example, <strong>strong</strong> and <em>emphasized</em> text, or <small>small</small>, <sub>subscript</sub> or <sup>superscript</sup> text—and many more.</p>
+<p>For a full list of visual elements and an overview of their usage, see our <a href="#sect_text-level_usage_summary">element usage table</a>.</p>
+<!-- [3.3 Lists] -->
+<h2>Lists</h2>
+<p>Lists are kept as close to regular HTML lists as possible. A single list item's bullet can be removed by adding the <code><mark>no-bullet</mark></code> class to the <code>&lt;li&gt;</code>. For a completely flat list, add the <code><mark>unstyled</mark></code> class to the <code>&lt;ul&gt;</code>.</p>
+<div class="box example with-label single">
+  <p class="label">Example</p>
+  <div class="result">
+    <div class="row">
+      <div class="col w-4">
+        <ul>
+          <li>List item lv 1</li>
+          <li>List item lv 1
+            <ul>
+              <li>List item lv 2</li>
+              <li>List item lv 2</li>
+            </ul>
+          </li>
+          <li>List item lv 1
+            <ul>
+              <li>List item lv 2</li>
+              <li>List item lv 2
+                <ul>
+                  <li>List item lv 3</li>
+                  <li>List item lv 3</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>List item lv 1</li>
+          <li class="no-bullet">List item without bullet</li>
+        </ul>
+      </div>
+      <div class="col w-4">
+        <ol>
+          <li>List item lv 1</li>
+          <li>List item lv 1
+            <ol>
+              <li>List item lv 2</li>
+              <li>List item lv 2</li>
+            </ol>
+          </li>
+          <li>List item lv 1
+            <ol>
+              <li>List item lv 2</li>
+              <li>List item lv 2
+                <ol>
+                  <li>List item lv 3</li>
+                  <li>List item lv 3</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>List item lv 1</li>
+          <li class="no-bullet">List item without bullet</li>
+        </ol>
+      </div>
+      <div class="col w-4">
+        <dl>
+          <dt>Definition term</dt>
+          <dd>Definition description</dd>
+        </dl>
+        <dl>
+          <dt>Definition term</dt>
+          <dt>Definition term</dt>
+          <dd>Definition description</dd>
+        </dl>
+        <dl>
+          <dt>Definition term</dt>
+          <dd>Definition description</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+<p>To display a list horizontally, the <code><mark>list-hrz</mark></code> class can be used. These can't be nested.</p>
+<div class="box example with-label single">
+  <p class="label">Example</p>
+  <div class="result">
+    <ul class="list-hrz">
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+    </ul>
+  </div>
+</div>
+<p>By adding the <code><mark>justified</mark></code> class, a list is justified across the container's full width. Keep in mind that if the elements exceed the container size, wrapping will occur.</p>
+<div class="box example with-label single">
+  <p class="label">Example</p>
+  <div class="result">
+    <ul class="list-hrz justified">
+      <li>Add</li>
+      <li>as</li>
+      <li>many</li>
+      <li>as</li>
+      <li>you</li>
+      <li>like.</li>
+    </ul>
+  </div>
+</div>
+<!-- [3.4 Quotations] -->
+<h2>Quotations</h2>
+<p>For minor, inline quotations, the <code><mark>&lt;q&gt;</mark></code> element can be used inside of a running text. For larger quotations, a <code><mark>&lt;blockquote&gt;</mark></code> can be used.</p>
+<div class="box example with-label">
+  <p class="label">Example</p>
+  <div class="result">
+    <blockquote>
+      <p>It's always worth checking the source of a quote to ensure it has not been altered or fabricated.</p>
+      <small>Barack Obama (1876) <cite>"The Complete Guide to Final Fantasy Lore", pp. 20–28</cite></small>
+    </blockquote>
+  </div>
+  <pre class="code">&lt;blockquote&gt;
+&lt;p&gt;It's always worth checking the source of a quote to ensure it has not been altered or fabricated.&lt;/p&gt;
+&lt;small&gt;Barack Obama (1876) &lt;cite&gt;"The Complete Guide to Final Fantasy Lore", pp. 20–28&lt;/cite&gt;&lt;/small&gt;
+&lt;/blockquote&gt;</pre>
+</div>
+<p>For longer quotations, it's possible to use multiple <code>&lt;p&gt;</code> elements inside of the <code>blockquote</code>.</p>
+<!-- [3.5 Ruby annotations] -->
+<h2>Ruby annotations</h2>
+<p>Support for <code>&lt;ruby&gt;</code> annotations is built-in. Currently, the only major rendering engine that does not support the Ruby module is Gecko (Firefox). All other rendering engines do not need the CSS code used to make it work on Gecko, but they should not be bothered by it either. Only basic elements of the Ruby module are implemented, since complex support cannot be added through CSS modifications alone.</p>
+<aside class="box bordered info icon">
+  <p>You don't necessarily need to wrap an <code>&lt;rb&gt;</code> element around the character that's being explained. The first example uses the element, and the other ones don't. We do recommend always using a <code>&lt;p&gt;</code> element.</p>
+</aside>
+<aside class="box bordered warning icon">
+  <p>Make sure to check browser support before using Ruby module features. A number of things are still not supported yet, such as the <code>rbspan</code> attribute.</p>
+</aside>
+<!-- Example 1 -->
+<p>A standard usage of Ruby is, for example, to give the reading of Japanese characters.</p>
+<div class="box example with-label single">
+  <p class="label">Example 2: Word Reading</p>
+  <div class="result">
+    <p>
+      <ruby>
+        <rb>明日</rb><rp>（</rp><rt>あした</rt><rp>）</rp>
+      </ruby>
+    </p>
+  </div>
+</div>
+<!-- Example 2 -->
+<div class="box example with-label single">
+  <p class="label">Example 2: Per-Character Reading</p>
+  <div class="result">
+    <p>
+      <ruby>漢<rp>（</rp><rt>かん</rt><rp>）</rp></ruby><ruby>字<rp>（</rp><rt>じ</rt><rp>）</rp></ruby>
+    </p>
+  </div>
+</div>
+<!-- Example 3 -->
+<p>You can also group characters and their readings in separate <code>&lt;rbc&gt;</code> containers.</p>
+<div class="box example with-label single">
+  <p class="label">Example 3: Per-Character Reading (Separately Grouped)</p>
+  <div class="result">
+    <p>
+      <!-- Example taken from <http://reference.sitepoint.com/html/rt/rbspan> -->
+      <ruby>
+        <rbc>
+          <rb>斎</rb>
+          <rb>藤</rb>
+          <rb>信</rb>
+          <rb>男</rb>
+        </rbc>
+        <rtc>
+          <rt>さい</rt>
+          <rt>とう</rt>
+          <rt>のぶ</rt>
+          <rt>お</rt>
+        </rtc>
+      </ruby>
+    </p>
+  </div>
+</div>
+<!-- Example 4 -->
+<p>Here's another example, using Ruby annotations to give word readings in a running text. As you can see in the page source, the <code>&lt;ruby&gt;</code> element needs to be inline—otherwise, superfluous spaces are added.</p>
+<div class="box example with-label single">
+  <p class="label">Example 4: Running text (Japanese)</p>
+  <div class="result">
+    <p>きのうの豪雨で山の水源地は<ruby>氾濫<rp>（</rp><rt>はんらん</rt><rp>）</rp></ruby>し、濁流<ruby>滔々<rp>（</rp><rt>とうとう</rt><rp>）</rp></ruby>と下流に 集り、猛勢一挙に橋を破壊し、どうどうと響きをあげる激流が、<ruby>木葉微塵<rp>（</rp><rt>こっぱみじん</rt><rp>）</rp></ruby>に<ruby>橋桁<rp>（</rp><rt>はしげた</rt><rp>）</rp></ruby>を跳ね飛ばしていた。</p>
+  </div>
+</div>
+<!-- Example 5 -->
+<div class="box example with-label single">
+  <p class="label">Example 5: Running text (Pinyin)</p>
+  <div class="result">
+    <p>The <b>Grass Mud Horse</b>—<ruby>草泥馬<rp>(</rp><rt>Cǎo Ní Mǎ</rt><rp>)</rp></ruby>—is … characterised as “lively, intelligent and tenacious”. However, their existence is said to be threatened by the "river crabs"—<ruby>河蟹<rp> (</rp><rt>héxiè</rt><rp>) </rp></ruby>—which are invading their habitat.</p>
+  </div>
+</div>
+<!-- Example 6 -->
+<p>It's possible to nest <code>&lt;ruby&gt;</code> elements.</p>
+<div class="box example with-label single">
+  <p class="label">Example 6: Nested Ruby elements</p>
+  <div class="result">
+    <p><ruby><ruby>攻<rp>（</rp><rt>こう</rt><rp>）</rp></ruby><ruby>殻<rp>（</rp><rt>かく</rt><rp>）</rp></ruby><ruby>機<rp>（</rp><rt>き</rt><rp>）</rp></ruby><ruby>動<rp>（</rp><rt>どう</rt><rp>）</rp></ruby><ruby>隊<rp>（</rp><rt>たい</rt><rp>）</rp></ruby><rp>（</rp><rt>Kōkakukidōtai</rt><rp>）</rp></ruby></p>
+  </div>
+</div>
+<p>Support will be improved as the module stabilizes.</p>
+<!-- [3.6 Programming code] -->
+<h2>Programming code</h2>
+<p>The proper tags for the use of inline programming code are as follows:</p>
+<dl>
+  <dt><code>&lt;code&gt;</code></dt>
+  <dd>Inline wrapper for programming code</dd>
+  <dt><code>&lt;pre&gt;</code></dt>
+  <dd>Block element for preformatted text</dd>
+  <dt><code>&lt;samp&gt;</code></dt>
+  <dd>For the output or log from a computer program</dd>
+  <dt><code>&lt;kbd&gt;</code></dt>
+  <dd>For user input (e.g. a key the user should press)</dd>
+  <dt><code>&lt;var&gt;</code></dt>
+  <dd>For variables</dd>
+</dl>
+<p>The <code>&lt;tt&gt;</code> tag, while supported by the framework, is not a part of the HTML5 spec, so its usage is discouraged.</p>
+<p>For brief, inline pieces of code, the <code>&lt;code&gt;</code> element should be used. For larger sections of programming code, a <code>&lt;pre&gt;</code> alone suffices.</p>
+<pre>&#x3C;pre&#x3E;Put your code here.&#x3C;/pre&#x3E;</pre>
+<p>If line numbers are needed, two things must be done the <code><mark>line-numbers</mark></code> class needs to be added to the <code>&lt;pre&gt;</code> tag, and the tag must be <a href="#">decorated</a>. This can be done with the following HTML:</p>
+<pre>&#x3C;pre ddfw-filter=&#x22;line-numbers&#x22; id=&#x22;a_code_sample&#x22;&#x3E;
+Your code
+goes here
+&#x3C;/pre&#x3E;
+&#x3C;script&#x3E;DadaFW.decorate(&#x22;a_code_sample&#x22;);&#x3C;/script&#x3E;</pre>
+<p>This has the following result:</p>
+<pre ddfw-filter="line-numbers" id="ex1">
+Your code
+goes here
+</pre>
+<script>DadaFW.decorate("ex1");</script>
+<!-- [3.6.2 Syntax highlighting] -->
+<h3>Syntax highlighting</h3>
+<p>The framework supports the use of <a href="https://github.com/isagalaev/highlight.js">highlight.js</a> for client-side syntax highlighting.</p>
+<p>To enable syntax highlighting, add the value <code>syntax-hl</code> to the <code>ddfw-filter</code> attribute and then decorate it. In this example, we're also showing line numbers.</p>
+<pre ddfw-filter="line-numbers syntax-hl" id="ex2">
+&#x3C;pre ddfw-filter=&#x22;line-numbers syntax-hl&#x22; id=&#x22;ex2&#x22;&#x3E;
+function get_geometry(geo_size, world)
+{
+geometry = new THREE.PlaneGeometry(geo_size, geo_size, world.width - 1, world.depth - 1);
+geometry.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
+geometry.dynamic = true;
+return geometry;
+}
+&#x3C;/pre&#x3E;</pre>
+<script>DadaFW.decorate("ex2");</script>
+<!-- [3.7 Tables] -->
+<h2>Tables</h2>
+<p>In order to apply standard CSS rules to a <code>&lt;table&gt;</code> element, the <code><mark>table</mark></code> class must be added—this prevents our rules from conflicting with other things tables are commonly used for. Any kind of table structure can be used.</p>
+<p>The following basic classes can be added:</p>
+<ul>
+  <li><code>alt-cols</code> – gives every even column in the body section a darker color</li>
+  <li><code>alt-rows</code> – gives every even row in the body section a darker color</li>
+  <li><code>bordered</code> – adds a thin border around the entire table (and rounds the corners)</li>
+  <li><code>col-borders</code> – adds vertical borders inside the table</li>
+  <li><code>colgroup-borders</code> – adds vertical borders to <code>&lt;colgroup&gt;</code> elements (incompatible with <code>rounded</code>)</li>
+  <li><code>hover</code> – makes all cells in the body section change color upon hover</li>
+  <li><code>rounded</code> – rounds the corners of a table</li>
+</ul>
+<p>We've included example code in case you've forgotten what <code>&lt;table&gt;</code> markup looks like.</p>
+<div class="box example with-label">
+  <p class="label">Example</p>
+  <div class="result">
+    <table class="table alt-rows bordered">
+      <caption>Basic table example</caption>
+      <tr>
+        <th>Header</th>
+        <th>Header</th>
+      </tr>
+      <tr>
+        <td>Data</th>
+        <td>Data</th>
+      </tr>
+      <tr>
+        <td>Data</th>
+        <td>Data</th>
+      </tr>
+      <tr>
+        <td>Data</th>
+        <td>Data</th>
+      </tr>
+    </table>
+  </div>
+  <pre class="code">&lt;table class="table striped bordered"&gt;
+&lt;caption&gt;Basic table example&lt;/caption&gt;
+&lt;tr&gt;
+&lt;th&gt;Header&lt;/th&gt;
+&lt;th&gt;Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data&lt;/th&gt;
+&lt;td&gt;Data&lt;/th&gt;
+&lt;/tr&gt;
+...
+&lt;/table&gt;</pre>
+</div>
+<p>To get borders inside of the table you can use the <code>col-borders</code> class.</p>
+<p>If more specifivity is needed, you can use <code>&lt;column-group&gt;</code> elements to further divide your data into separate column groups (and if used together with the <code>col-borders</code> class, the group borders will be thicker than other inner borders).</p>
+<p>The following more complex example (which also demonstrates the use of <a href="#nolink">vector icons</a>) uses the <code>colgroup-borders</code> class to highlight the groups. Unfortunately, we can't display rounded corners when using column group borders due to limitations in CSS.</p>
+<div class="box example with-label single">
+  <p class="label">Example with grouped columns</p>
+  <div class="result">
+    <table class="table bordered colgroup-borders">
+      <caption>Code-page support in Microsoft Windows</caption>
+      <colgroup></colgroup>
+      <colgroup></colgroup>
+      <colgroup span="2"></colgroup>
+      <colgroup span="3"></colgroup>
+      <thead valign="top">
+        <tr>
+          <th>Code-Page <br />ID</th>
+          <th>Name</th>
+          <th>ACP</th>
+          <th>OEMCP</th>
+          <th>Windows <br />NT 3.1</th>
+          <th>Windows <br />NT 3.51</th>
+          <th>Windows <br />95</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1200</td>
+          <td>Unicode (BMP of ISO/IEC-10646)</td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-asterisk"></i></td>
+        </tr>
+        <tr>
+          <td>1250</td>
+          <td>Windows 3.1 Eastern European</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1251</td>
+          <td>Windows 3.1 Cyrillic</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1252</td>
+          <td>Windows 3.1 US (ANSI)</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1253</td>
+          <td>Windows 3.1 Greek</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1254</td>
+          <td>Windows 3.1 Turkish</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1255</td>
+          <td>Hebrew</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1256</td>
+          <td>Arabic</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1257</td>
+          <td>Baltic</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>1361</td>
+          <td>Korean (Johab)</td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-asterisk"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>437</td>
+          <td>MS-DOS United States</td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>708</td>
+          <td>Arabic (ASMO 708)</td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>709</td>
+          <td>Arabic (ASMO 449+, BCON V4)</td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>710</td>
+          <td>Arabic (Transparent Arabic)</td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+        <tr>
+          <td>720</td>
+          <td>Arabic (Transparent ASMO)</td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-check"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><small>Source: <a href="http://msdn.microsoft.com/en-us/library/cc194884.aspx">Appendix E: Code Page Support in Microsoft Windows</a>, Microsoft Developer Network (msdn.microsoft.com)</small></p>
+  </div>
+</div>
+<!-- [3.8 Text-level usage summary] -->
+<h2>Text-level usage summary</h2>
+<p>Use this as a reference guide for inline semantic text elements. This entire table and its examples have been taken from the W3C page <a href="http://www.w3.org/TR/html5/text-level-semantics.html#usage-summary">about text-level semantics</a> (modified slightly).</p>
+<table class="table bordered">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>a</code></td>
+      <td>Hyperlinks</td>
+      <td>Visit my <a href="drinks.html">drinks</a> page.</td>
+    </tr>
+    <tr>
+      <td><code>em</code></td>
+      <td>Stress emphasis</td>
+      <td>I must say I <em>adore</em> lemonade.</td>
+    </tr>
+    <tr>
+      <td><code>strong</code></td>
+      <td>Importance</td>
+      <td>This tea is <strong>very hot</strong>.</td>
+    </tr>
+    <tr>
+      <td><code>small</code></td>
+      <td>Side comments</td>
+      <td>These grapes are made into wine. <small>Alcohol is addictive.</small></td>
+    </tr>
+    <tr>
+      <td><code>s</code></td>
+      <td>Inaccurate text</td>
+      <td>Price: <s>&#163;4.50</s> &#163;2.00!</td>
+    </tr>
+    <tr>
+      <td><code>cite</code></td>
+      <td>Titles of works</td>
+      <td>The case <cite>Hugo v. Danielle</cite> is relevant here.</td>
+    </tr>
+    <tr>
+      <td><code>q</code></td>
+      <td>Quotations</td>
+      <td>The judge said <q>You can drink water from the fish tank</q> but advised against it.</td>
+    </tr>
+    <tr>
+      <td><code>dfn</code></td>
+      <td>Defining instance</td>
+      <td>The term <dfn>organic food</dfn> refers to food produced without synthetic chemicals.</td>
+    </tr>
+    <tr>
+      <td><code>abbr</code></td>
+      <td>Abbreviations</td>
+      <td>Organic food in Ireland is certified by the <abbr title="Irish Organic Farmers and Growers Association">IOFGA</abbr>.</td>
+    </tr>
+    <tr>
+      <td><code>data</code></td>
+      <td>Machine-readable equivalent</td>
+      <td>Available starting today! <data value="UPC:022014640201">North Coast Organic Apple Cider</data></td>
+    </tr>
+    <tr>
+      <td><code>time</code></td>
+      <td>Machine-readable equivalent of date- or time-related data</td>
+      <td>Available starting on <time datetime="2011-11-12">November 12th</time>!</td>
+    </tr>
+    <tr>
+      <td><code>code</code></td>
+      <td>Computer code</td>
+      <td>The <code>fruitdb</code> program can be used for tracking fruit production.</td>
+    </tr>
+    <tr>
+      <td><code>var</code></td>
+      <td>Variables</td>
+      <td>If there are <var>n</var> fruit in the bowl, at least <var>n</var>&#247;2 will be ripe.</td>
+    </tr>
+    <tr>
+      <td><code>samp</code></td>
+      <td>Computer output</td>
+      <td>The computer said <samp>Unknown error -3</samp>.</td>
+    </tr>
+    <tr>
+      <td><code>kbd</code></td>
+      <td>User input</td>
+      <td>Hit <kbd>F1</kbd> to continue.</td>
+    </tr>
+    <tr>
+      <td><code>sub</code></td>
+      <td>Subscripts</td>
+      <td>Water is H<sub>2</sub>O.</td>
+    </tr>
+    <tr>
+      <td><code>sup</code></td>
+      <td>Superscripts</td>
+      <td>The Hydrogen in heavy water is usually <sup>2</sup>H.</td>
+    </tr>
+    <tr>
+      <td><code>i</code></td>
+      <td>Alternative voice</td>
+      <td>Lemonade consists primarily of <i>Citrus limon</i>.</td>
+    </tr>
+    <tr>
+      <td><code>b</code></td>
+      <td>Keywords</td>
+      <td>Take a <b>lemon</b> and squeeze it with a <b>juicer</b>.</td>
+    </tr>
+    <tr>
+      <td><code>u</code></td>
+      <td>Annotations</td>
+      <td>The mixture of apple juice and <u class="spelling">eldeflower</u> juice is very pleasant.</td>
+    </tr>
+    <tr>
+      <td><code>mark</code></td>
+      <td>Highlight</td>
+      <td>Elderflower cordial, with one <mark>part</mark> cordial to ten <mark>part</mark>s water, stands a<mark>part</mark> from the rest.</td>
+    </tr>
+    <tr>
+      <td><code>ruby</code>, <code>rb</code>, <code>rp</code>, <code>rt</code>, <code>rtc</code></td>
+      <td>Ruby annotations</td>
+      <td><ruby>OJ<rp> (</rp><rt>Orange Juice<rp>)</rp></ruby></td>
+    </tr>
+    <tr>
+      <td><code>bdi</code></td>
+      <td>Text directionality isolation</td>
+      <td>The recommended restaurant is <bdi lang="">My Juice Café (At The Beach)</bdi>.</td>
+    </tr>
+    <tr>
+      <td><code>bdo</code></td>
+      <td>Text directionality formatting</td>
+      <td>The proposal is to write English, but in reverse order. "Juice" would become "<bdo dir="rtl">Juice</bdo>".</td>
+    </tr>
+    <tr>
+      <td><code>span</code></td>
+      <td>Other</td>
+      <td>In French we call it <span lang="fr">sirop de sureau</span>.</td>
+    </tr>
+    <tr>
+      <td><code>br</code></td>
+      <td>Line break</td>
+      <td>Simply Orange Juice Company<br />Apopka, FL 32703<br />U.S.A.</td>
+    </tr>
+    <tr>
+      <td><code>wbr</code></td>
+      <td>Line breaking opportunity</td>
+      <td>www.simply<wbr />orange<wbr />juice.com</td>
+    </tr>
+  </tbody>
+</table>
+<p><small>Source: <a href="http://www.w3.org/TR/html5/text-level-semantics.html#usage-summary">4.5 Text-level semantics (4.5.31 Usage summary)</a>, HTML5 Working Draft (w3.org). By the W3C HTML Working Group. Retrieved Jun 23, 2014.</small></p>

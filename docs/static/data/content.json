@@ -1,0 +1,24 @@
+{
+  "canonical": "dada-documentation",
+  "title": "Dada Framework Documentation",
+  "chapters": [
+	{
+	  "canonical": "overview",
+	  "title": "Overview",
+	  "items": [
+		{
+		  "canonical": "home",
+		  "content": "home.html"
+		},
+		{
+		  "canonical": "grid",
+		  "content": "grid.html"
+		},
+		{
+		  "canonical": "typography",
+		  "content": "typography.html"
+		}
+	  ]
+	}
+  ]
+}
