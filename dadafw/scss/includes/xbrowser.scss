@@ -3,14 +3,15 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Cross-Browser Support Functions
-// ---------------------------------------------------------------------
-// These mixins replace regular CSS values in case they have
-// inadequate browser support and need vendor prefixes.
-//
-// Most of these mixins have a usage based on the W3 standard. In some
-// cases, they're slightly more specific, such as linear-gradient().
+/**
+ * Cross-Browser Support Functions
+ *
+ * These mixins replace regular CSS values in case they have
+ * inadequate browser support and need vendor prefixes.
+ *
+ * Most of these mixins have a usage based on the W3 standard. In some
+ * cases, they're slightly more specific, such as linear-gradient().
+ */
 
 // Mixin for cross-browser box shadows
 @mixin box-shadow($shadow) {

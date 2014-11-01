@@ -3,12 +3,13 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Boxes
-// ---------------------------------------------------------------------
-// Boxes generally consist of a header and inner section.
-// They're very flexible, have a large degree of customization
-// possibilities and many different built-in variations.
+/**
+ * Boxes
+ *
+ * Boxes generally consist of a header and inner section.
+ * They're very flexible, have a large degree of customization
+ * possibilities and many different built-in variations.
+ */
 
 .box {
   @include no-edge-margins;

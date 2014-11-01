@@ -1,20 +1,20 @@
 module.exports = function(grunt) {
 
-var dirBase         = 'dadafw/',    // ├─ dadafw/
-    dirDocs         = 'docs/',      // ├─ docs/
-    dirBuild        = 'build/',     // ├─ build/
-    dirBuildCSS     = 'css/',       // ├─── css/
-    dirBuildJS      = 'js/',        // ├─── js/
-    dirBuildFonts   = 'fonts/',     // ├─── fonts/
+var dirBase     = 'dadafw/',        // ├─ dadafw/
+    dirDocs     = 'docs/',          // ├─ docs/
+    dirBuild    = 'build/',         // ├─ build/
+    dirBuildCSS   = 'css/',         // ├─── css/
+    dirBuildJS    = 'js/',          // ├─── js/
+    dirBuildFonts = 'fonts/',       // ├─── fonts/
     dirBuildSprites = 'sprites/';   // ├─── sprites/
 
+// Write project info to console.
 grunt.log.write(
-    'Dada Framework\n'+
-    '(C) 2013-2014, Michiel Sikma <info@michielsikma.com>, MIT license\n'
+  'Dada Framework\n'+
+  '(C) 2013-2014, Michiel Sikma <info@michielsikma.com>, MIT license\n'
 );
 
-
-// List of the CSS files we'll generate.
+// Only one SCSS file needs to be compiled.
 var filesSCSS = {};
 filesSCSS[dirBuild+dirBuildCSS+"dadafw.css"] = dirBase+"scss/dadafw.scss";
 
@@ -23,31 +23,31 @@ filesSCSS[dirBuild+dirBuildCSS+"dadafw.css"] = dirBase+"scss/dadafw.scss";
  */
 function compile()
 {
-    grunt.log.write('Compiling the complete framework.\n');
-    grunt.task.run('sass');
+  grunt.log.write('Compiling the complete framework.\n');
+  grunt.task.run('sass');
 }
 
 grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    sass: {
-        options: {
-            sourceMap: false,
-            outputStyle: 'compressed'
-        },
-        dist: {
-            files: filesSCSS
-        }
+  pkg: grunt.file.readJSON('package.json'),
+  sass: {
+    options: {
+      sourceMap: false,
+      outputStyle: 'compressed'
     },
-    watch: {
-        css: {
-            files: dirBase+'scss/**/*.scss',
-            tasks: ['sass'],
-            options: {
-                sourceMap: true,
-                outputStyle: 'nested'
-            }
-        }
+    dist: {
+      files: filesSCSS
     }
+  },
+  watch: {
+    css: {
+      files: dirBase+'scss/**/*.scss',
+      tasks: ['sass'],
+      options: {
+        sourceMap: true,
+        outputStyle: 'nested'
+      }
+    }
+  }
 });
 grunt.registerTask('compile', 'Compiles the complete framework', compile);
 

@@ -3,26 +3,32 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
+/**
+ * Animation Support Functions
+ *
+ * These functions are designed to make it easier to use animation
+ * and transition functionality inside the framework.
+ */
 
-// Animation Support Functions
-// ---------------------------------------------------------------------
-// These functions are designed to make it easier to use animation
-// and transition functionality inside the framework.
-
-// Basic transition presets
-@mixin fade($seconds:2s) {
+/**
+ * Sets an item's opacity transition time.
+ *
+ * @param {string} $seconds - Amount of seconds the transition takes
+ */
+@mixin fade($seconds: 2s) {
   @include transition(opacity $seconds);
-}
-@mixin fade-in {
-  opacity: 1.0;
-}
-@mixin fade-out {
-  opacity: 0.0;
 }
 
 // Animated loader image
 // fixme: this should be somewhere else (dependencies)
-@mixin loader($img:$img-loader-url) {
+/**
+ * Displays an animated loader image.
+ * Todo: replace (supplement?) with JS generated images
+ * Todo: this should be somewhere else
+ *
+ * @param {string} $img - Loader image URL
+ */
+@mixin loader($img: $img-loader-url) {
   $size: $img-loader-disp-size;
   background-image: url($img-loader-url);
   background-size: cover;
@@ -32,7 +38,10 @@
   -webkit-animation: loader $img-loader-duration steps($img-loader-frames) infinite;
 }
 
-// Loader image keyframes
+/**
+ * Loader image keyframes.
+ * Todo: should this be docblocked?
+ */
 @include keyframes(loader, (
   from: (background-position: 0px,),
   to: (background-position: -$img-loader-disp-size * $img-loader-frames,)

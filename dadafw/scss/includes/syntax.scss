@@ -3,15 +3,16 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Syntax Highlighting
-// ---------------------------------------------------------------------
-// This file's contents are meant to permit the use of two different
-// code syntax highlighting solutions: Pygments, a server-side solution,
-// and Prettify, a client-side solution.
-//
-// Note: line numbers from Prettify are not supported, as line numbers are
-// already available in the framework itself.
+/**
+ * Syntax Highlighting
+ * 
+ * This file's contents are meant to permit the use of two different
+ * code syntax highlighting solutions: Pygments, a server-side solution,
+ * and Prettify, a client-side solution.
+ *
+ * Note: line numbers from Prettify are not supported, as line numbers are
+ * already available in the framework itself.
+ */
 
 // Prettify support is included by default but can be turned off.
 @if $syn-prettify-include == true {

@@ -3,9 +3,10 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Theme-Defined Settings
-// ---------------------------------------------------------------------
-// Allows a theme to override the default settings, if defined.
+/**
+ * Theme-Defined Settings
+ * 
+ * Allows a theme to override the default settings, if defined.
+ */
 
 @include theme-settings();

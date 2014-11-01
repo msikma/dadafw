@@ -3,19 +3,20 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Swatch Classes
-// ---------------------------------------------------------------------
-// Note that all of these helper classes use the !important keyword
-// to override settings from other classes.
-//
-// This is because in the majority of cases, whatever element
-// you're targeting will already have a color attribute with
-// greater priority, defeating the purpose of these classes.
-//
-// These classes can be optionally removed from the compiled
-// framework CSS by turning off $color-classes-include in your settings.
-// If it's turned off, none of this file is compiled.
+/**
+ * Swatch Classes
+ *
+ * Note that all of these helper classes use the !important keyword
+ * to override settings from other classes.
+ *
+ * This is because in the majority of cases, whatever element
+ * you're targeting will already have a color attribute with
+ * greater priority, defeating the purpose of these classes.
+ *
+ * These classes can be optionally removed from the compiled
+ * framework CSS by turning off $color-classes-include in your settings.
+ * If it's turned off, none of this file is compiled.
+ */
 
 @if $swatches-include == true {
   // White and black

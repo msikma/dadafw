@@ -3,25 +3,26 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Dada Web Framework - Default Theme
-// ---------------------------------------------------------------------
-// This default theme includes code that changes the styling
-// of the buttons to have a subtle bevel effect.
-//
-// We've kept this code inside a theme so that it can serve as
-// an example of how you can use themes to modify the framework,
-// and also to keep the main code more basic so that it's easier
-// to write your own themes.
-//
-// A basic overview of themes: first, after the framework has set up
-// the default settings, the @theme-settings() mixin is called so that
-// these default variables can be overridden.
-// Secondly, after all the main framework code has finished running,
-// the @theme-main() mixin is called. This contains the main theme code.
-//
-// Due to SCSS limitations, you can't use extra @import statements
-// inside of the @theme-main() mixin, but you can use them outside of it.
+/**
+ * Dada Web Framework - Default Theme
+ *
+ * This default theme includes code that changes the styling
+ * of the buttons to have a subtle bevel effect.
+ *
+ * We've kept this code inside a theme so that it can serve as
+ * an example of how you can use themes to modify the framework,
+ * and also to keep the main code more basic so that it's easier
+ * to write your own themes.
+ *
+ * A basic overview of themes: first, after the framework has set up
+ * the default settings, the @theme-settings() mixin is called so that
+ * these default variables can be overridden.
+ * Secondly, after all the main framework code has finished running,
+ * the @theme-main() mixin is called. This contains the main theme code.
+ *
+ * Due to SCSS limitations, you can't use extra @import statements
+ * inside of the @theme-main() mixin, but you can use them outside of it.
+ */
 
 // Overrides for the default settings
 @import "settings.scss";

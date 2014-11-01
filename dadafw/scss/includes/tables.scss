@@ -3,12 +3,13 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Table Styling
-// ---------------------------------------------------------------------
-// General styling rules for use with tables are included in this file.
-// Some of the code might seem ugly or unintuitive, but this is likely
-// because tables are used in strongly divergent and inconsistent ways.
+/**
+ * Table Styling
+ * 
+ * General styling rules for use with tables are included in this file.
+ * Some of the code might seem ugly or unintuitive, but this is likely
+ * because tables are used in strongly divergent and inconsistent ways.
+ */
 
 $color-table-border: $color-gray-l4;
 

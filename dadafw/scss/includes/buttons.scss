@@ -3,26 +3,27 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Button Styling
-// ---------------------------------------------------------------------
-// Buttons have a large number of variations and different usage
-// situations, which has made this code relatively large.
-// On top of that, the default theme specifies a number of modifications
-// to the general styling.
-//
-// Generally, buttons have four sizes: xs, s, m (default) and l.
-//
-// Buttons are slightly shorter than input fields; in order to nicely
-// display those two next to each other, we've included extra styling
-// that makes buttons slightly larger in that context (also available
-// using the .line class).
-//
-// There are a number of basic button variations aside from that,
-// named: primary, overlay, link, success, info, warning, error.
-//
-// Aside from these variations and sizes, a number of other situations
-// are accounted for; see the documentation for a complete overview.
+/**
+ * Button Styling
+ *
+ * Buttons have a large number of variations and different usage
+ * situations, which has made this code relatively large.
+ * On top of that, the default theme specifies a number of modifications
+ * to the general styling.
+ *
+ * Generally, buttons have four sizes: xs, s, m (default) and l.
+ *
+ * Buttons are slightly shorter than input fields; in order to nicely
+ * display those two next to each other, we've included extra styling
+ * that makes buttons slightly larger in that context (also available
+ * using the .line class).
+ *
+ * There are a number of basic button variations aside from that,
+ * named: primary, overlay, link, success, info, warning, error.
+ *
+ * Aside from these variations and sizes, a number of other situations
+ * are accounted for; see the documentation for a complete overview.
+ */
 
 // Target .btn and elements with the "button" ARIA role.
 button,

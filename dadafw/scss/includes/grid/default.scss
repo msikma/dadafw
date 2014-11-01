@@ -3,11 +3,12 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Grid System / Default
-// ---------------------------------------------------------------------
-// The default grid. Note that the comments are only accurate
-// when using the default settings.
+/**
+ * Grid System / Default
+ *
+ * The default grid. Note that the comments are only accurate
+ * when using the default settings.
+ */
 
 @include construct-grid((
   // Small desktop (768px and up by default, e.g. tablets)

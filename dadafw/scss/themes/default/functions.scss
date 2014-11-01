@@ -3,12 +3,16 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
+/**
+ * Default Theme Functions
+ */
 
-// Default Theme Functions
-// ---------------------------------------------------------------------
-
-// For the beveled buttons, we're using a mixin that can be called
-// using arguments that provide the colors.
+/**
+ * Beveled button mixin
+ *
+ * For the beveled buttons, we're using a mixin that can be called
+ * using arguments that provide the colors.
+ */
 @mixin beveled(
     $gradient-from,
     $gradient-to,

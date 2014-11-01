@@ -3,10 +3,11 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Grid System / Functions
-// ---------------------------------------------------------------------
-// The functions that construct the grid.
+/**
+ * Grid System / Functions
+ *
+ * The functions that construct the grid.
+ */
 
 @mixin construct-grid($grid) {
   // Retrieve the smallest responsive stage of the grid.

@@ -3,15 +3,16 @@
 // Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>
 // All Rights Reserved
 
-
-// Navigation Lists
-// ---------------------------------------------------------------------
-// The basic navigation class. This must be used on a proper <ul> structure.
-// It reuses the table padding variables.
-//
-// Note: this CSS code is more specific than most other framework code,
-// using the > operator to target direct descendants. This is to avoid
-// messing up other uses of <ul>, such as <ul class="dropdown">.
+/**
+ * Navigation Lists
+ *
+ * The basic navigation class. This must be used on a proper <ul> structure.
+ * It reuses the table padding variables.
+ *
+ * Note: this CSS code is more specific than most other framework code,
+ * using the > operator to target direct descendants. This is to avoid
+ * messing up other uses of <ul>, such as <ul class="dropdown">.
+ */
 
 .navbar {
   ul.nav {
