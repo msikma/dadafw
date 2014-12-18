@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "A general-purpose SCSS framework, AngularJS-compatible",
   "author": "Michiel Sikma <michiel@sikma.org>",
-	"contributors": [
-		"Pascal Scheepers <pascal@privax.com>"
-	],
+  "contributors": [
+    "Pascal Scheepers <pascal@privax.com>"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/msikma/dadafw"
