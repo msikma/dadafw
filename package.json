@@ -1,33 +1,33 @@
 {
-	"name"            : "dadafw",
-	"version"         : "0.0.1",
-	"description"     : "A general-purpose SCSS framework, AngularJS-compatible",
-	"author"          : "Michiel Sikma <michiel@sikma.org>",
-	"contributors"    : [
+  "name": "dadafw",
+  "version": "0.0.1",
+  "description": "A general-purpose SCSS framework, AngularJS-compatible",
+  "author": "Michiel Sikma <michiel@sikma.org>",
+	"contributors": [
 		"Pascal Scheepers <pascal@privax.com>"
 	],
-	"repository"      : {
-		"type" : "git",
-		"url"  : "https://github.com/msikma/dadafw"
-	},
-	"bugs"            : {
-		"url" : "https://github.com/msikma/dadafw/issues"
-	},
-	"keywords"        : [
-		"SCSS",
-		"SASS",
-		"CSS",
-		"AngularJS",
-		"Framework",
-		"Grid system"
-	],
-	"dependencies"    : { },
-	"license"         : "MIT",
-	"devDependencies" : {
-		"grunt"                : "^0.4.5",
-		"grunt-contrib-watch"  : "~0.6.0",
-		"grunt-remove-logging" : "^0.2.0",
-		"grunt-sass"           : "~0.16.0",
-		"grunt-sassdoc"        : "^1.0.4"
-	}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msikma/dadafw"
+  },
+  "bugs": {
+    "url": "https://github.com/msikma/dadafw/issues"
+  },
+  "keywords": [
+    "SCSS",
+    "SASS",
+    "CSS",
+    "AngularJS",
+    "Framework",
+    "Grid system"
+  ],
+  "dependencies": {},
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "~0.6.0",
+    "grunt-remove-logging": "^0.2.0",
+    "grunt-sass": "~0.16.0",
+    "grunt-sassdoc": "^1.0.4"
+  }
 }

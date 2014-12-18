@@ -32,6 +32,7 @@
 
 @import "externals/externals.scss";   // External Projects Loader
 @import "includes/functions.scss";    // Internal Functions
+@import "includes/mixins.scss";       // Internal Mixins
 @import "includes/xbrowser.scss";     // Cross-Browser Support Functions
 @import "includes/animation.scss";    // Animation Support Functions
 @import "includes/grid.scss";         // Grid System
