@@ -9,9 +9,8 @@
 
 @debug 'Dada Web Framework (MIT) <https://github.com/msikma/dadafw>';
 
-@import "includes/functions.scss";    // Internal Functions
+// Set defaults, then override with theme settings.
 @import "includes/defaults.scss";     // Default Settings
-@import "settings.scss";              // User-Defined Settings
 @import "includes/theme-ante.scss";   // Theme-Defined Settings
 
 // Check whether we're generating code for browser compatibility (recommended).
@@ -27,6 +26,7 @@
 @debug 'Prettify support:      '+if($syn-prettify-include, 'included', 'not included');
 @debug 'Pygments support:      '+if($syn-pygments-include, 'included', 'not included');
 
+@import "includes/functions.scss";    // Internal Functions
 @import "externals/externals.scss";   // External Projects Loader
 @import "includes/mixins.scss";       // Internal Mixins
 @import "includes/xbrowser.scss";     // Cross-Browser Support Functions

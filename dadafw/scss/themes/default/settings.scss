@@ -11,6 +11,135 @@
   // Add settings overrides here. You can also add custom settings
   // used only in your theme code here.
   // e.g. $col-gutter-m: 15px; // changes gutter to 15px instead of 30px
-  
-  // Since this is the default theme, there are no setting overrides.
+
+  $font-primary: 'Helvetica', 'Arial', sans-serif;
+
+  // Button padding
+  $button-padding-left-xs:    5px;
+  $button-padding-right-xs:   $button-padding-left-xs;
+  $button-padding-top-xs:     2px;
+  $button-padding-bottom-xs:  $button-padding-top-xs;
+
+  $button-padding-left-s:     8px;
+  $button-padding-right-s:    $button-padding-left-s;
+  $button-padding-top-s:      6px;
+  $button-padding-bottom-s:   6px;
+
+  $button-padding-left-m:     10px;
+  $button-padding-right-m:    $button-padding-left-m;
+  $button-padding-top-m:      6px;
+  $button-padding-bottom-m:   7px;
+
+  $button-padding-left-l:     13px;
+  $button-padding-right-l:    $button-padding-left-l;
+  $button-padding-top-l:      8px;
+  $button-padding-bottom-l:   10px;
+
+  // Dropdown list padding
+  $dropdown-padding-left-s:   12px;
+  $dropdown-padding-right-s:  $dropdown-padding-left-s;
+  $dropdown-padding-top-s:    3px;
+  $dropdown-padding-bottom-s: 4px;
+
+  $dropdown-padding-left-m:   18px;
+  $dropdown-padding-right-m:  $dropdown-padding-left-m;
+  $dropdown-padding-top-m:    5px;
+  $dropdown-padding-bottom-m: 6px;
+
+  $dropdown-padding-left-l:   22px;
+  $dropdown-padding-right-l:  $dropdown-padding-left-l;
+  $dropdown-padding-top-l:    7px;
+  $dropdown-padding-bottom-l: 8px;
+
+  // Input field padding
+  $input-padding-left-xs:     0.75em;
+  $input-padding-right-xs:    $input-padding-left-xs;
+  $input-padding-top-xs:      0.58em;
+  $input-padding-bottom-xs:   0.42em;
+
+  $input-padding-left-s:      0.75em;
+  $input-padding-right-s:     $input-padding-left-s;
+  $input-padding-top-s:       0.58em;
+  $input-padding-bottom-s:    0.42em;
+
+  $input-padding-left-m:      0.75em;
+  $input-padding-right-m:     $input-padding-left-m;
+  $input-padding-top-m:       0.58em;
+  $input-padding-bottom-m:    0.42em;
+
+  $input-padding-left-l:      0.75em;
+  $input-padding-right-l:     $input-padding-left-l;
+  $input-padding-top-l:       0.58em;
+  $input-padding-bottom-l:    0.42em;
+
+  // Box padding (block elements, such as <pre>)
+  $box-padding-left-s:        4px;
+  $box-padding-right-s:       $box-padding-left-s;
+  $box-padding-top-s:         4px;
+  $box-padding-bottom-s:      $box-padding-top-s;
+
+  $box-padding-left-m:        13px;
+  $box-padding-right-m:       $box-padding-left-m;
+  $box-padding-top-m:         12px;
+  $box-padding-bottom-m:      10px;
+
+  $box-padding-left-l:        16px;
+  $box-padding-right-l:       $box-padding-left-l;
+  $box-padding-top-l:         14px;
+  $box-padding-bottom-l:      $box-padding-top-l;
+
+  // Box margin
+  $box-margin-left-s:         0;
+  $box-margin-right-s:        $box-margin-left-s;
+  $box-margin-top-s:          1.1em;
+  $box-margin-bottom-s:       1.2em;
+
+  $box-margin-left-m:         0;
+  $box-margin-right-m:        $box-margin-left-m;
+  $box-margin-top-m:          0.9em;
+  $box-margin-bottom-m:       1.1em;
+
+  $box-margin-left-l:         0;
+  $box-margin-right-l:        $box-margin-left-l;
+  $box-margin-top-l:          0.9em;
+  $box-margin-bottom-l:       1.1em;
+
+  // Table padding (regular and condensed)
+  $table-padding-left-r:      0.5em;
+  $table-padding-right-r:     $table-padding-left-r;
+  $table-padding-top-r:       0.45em;
+  $table-padding-bottom-r:    0.3em;
+
+  $table-padding-left-c:      0.5em;
+  $table-padding-right-c:     $table-padding-left-c;
+  $table-padding-top-c:       0.4em;
+  $table-padding-bottom-c:    $table-padding-top-c;
+
+  // Nav padding (vertical and horizontal)
+  $nav-padding-v-main-left:   10px;
+  $nav-padding-v-main-right:  $nav-padding-v-main-left;
+  $nav-padding-v-main-top:    6px;
+  $nav-padding-v-main-bottom: 3px;
+
+  // Nav padding (vertical and horizontal)
+  $nav-padding-h-left:        0;
+  $nav-padding-h-right:       $nav-padding-h-left;
+  $nav-padding-h-top:         5px;
+  $nav-padding-h-bottom:      6px;
+
+  // Sub items
+  $nav-padding-v-sub-left:    10px;
+  $nav-padding-v-sub-right:   0;
+  $nav-padding-v-sub-top:     4px;
+  $nav-padding-v-sub-bottom:  2px;
+
+  // Tag padding (only one size)
+  $tag-padding-left:          6px;
+  $tag-padding-right:         $tag-padding-left;
+  $tag-padding-top:           0.19em;
+  $tag-padding-bottom:        0.08em;
+
+  // Paragraph margin (and various other elements)
+  $p-base-margin-top:         0.8em;
+  $p-base-margin-bottom:      $p-base-margin-top;
 }

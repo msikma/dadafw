@@ -10,4 +10,6 @@
  * finished running.
  */
 
-@include theme-main();
+@if mixin-exists('theme-main') {
+  @include theme-main();
+}

@@ -9,4 +9,6 @@
  * Allows a theme to override the default settings, if defined.
  */
 
-@include theme-settings();
+@if mixin-exists('theme-settings') {
+  @include theme-settings();
+}
