@@ -7,12 +7,9 @@
  * Contains code from the normalize.css v2 and HTML5 Boilerplate projects (both MIT license) and the Font Awesome project (SIL OFL 1.1 and MIT license).
  */
 
-// Show copyright notice in compiler output.
-@debug 'Dada Web Framework';
-@debug 'Copyright (C) 2013-2014, Michiel Sikma <info@michielsikma.com>';
-@debug '--------------------------------------------------------------';
-@debug 'Compiling the entire framework.';
+@debug 'Dada Web Framework (MIT) <https://github.com/msikma/dadafw>';
 
+@import "includes/functions.scss";    // Internal Functions
 @import "includes/defaults.scss";     // Default Settings
 @import "settings.scss";              // User-Defined Settings
 @import "includes/theme-ante.scss";   // Theme-Defined Settings
@@ -31,7 +28,6 @@
 @debug 'Pygments support:      '+if($syn-pygments-include, 'included', 'not included');
 
 @import "externals/externals.scss";   // External Projects Loader
-@import "includes/functions.scss";    // Internal Functions
 @import "includes/mixins.scss";       // Internal Mixins
 @import "includes/xbrowser.scss";     // Cross-Browser Support Functions
 @import "includes/animation.scss";    // Animation Support Functions
@@ -41,7 +37,7 @@
 @import "includes/ruby.scss";         // Ruby Annotations
 @import "includes/tables.scss";       // Table Styling
 @import "includes/buttons.scss";      // Button Styling
-@import "includes/components.scss";   // Components and User Interface Elements
+@import "includes/components.scss";   // Components and UI Elements
 @import "includes/forms.scss";        // Forms and Input Elements
 @import "includes/helpers.scss";      // General Helper Classes
 @import "includes/theme-post.scss";   // Theme Overrides Hook

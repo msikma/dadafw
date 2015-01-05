@@ -10,7 +10,7 @@
 /**
  * Returns the first item of a list.
  * @param {list} - list object
- * @returns {*}  - first item of a list
+ * @returns {*} - first item of a list
  */
 @function first($list) {
   @return nth($list, 1);
@@ -19,7 +19,7 @@
 /**
  * Returns the last item of a list.
  * @param {list} - list object
- * @returns {*}  - last item of the list
+ * @returns {*} - last item of the list
  */
 @function last($list) {
   @return nth($list, length($list));
