@@ -4,6 +4,7 @@ Dada Framework
 Dada Framework is being developed as a comprehensive general-purpose
 SCSS framework that integrates with AngularJS.
 
+
 Philosophy
 ----------
 
@@ -21,6 +22,7 @@ components have a consistent, neutral style that can be easily extended.
 Helvetica is used as the main font, complemented by Helvetica Neue for
 interface elements due to its more consistent baseline.
 
+
 Development
 -----------
 
@@ -32,6 +34,7 @@ in watching things unfold.
 
 There's some information on [our Github wiki](https://github.com/msikma/dadafw/wiki)
 on how to get started if you want to contribute code.
+
 
 Compiling
 ---------
@@ -50,6 +53,7 @@ automatically recompiles the SCSS.
 
 **Note: instructions on how to develop the JS are coming later.**
 
+
 Browser Support
 ---------------
 
@@ -67,6 +71,7 @@ vendor-prefixed code by setting the `$ddfw-compatibility-mode` variable to
 
 We include vendor prefixes and browser hacks to a degree deemed reasonable to
 support modern, widely used browsers.
+
 
 License
 -------
