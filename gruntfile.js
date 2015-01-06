@@ -4,7 +4,6 @@ var dirBase     = 'dadafw/',        // ├─ dadafw/
     dirDocs     = 'docs/',          // ├─ docs/
     dirBuild    = 'build/',         // ├─ build/
     dirBuildCSS   = 'css/',         // ├─── css/
-    dirBuildJS    = 'js/',          // ├─── js/
     dirBuildFonts = 'fonts/',       // ├─── fonts/
     dirBuildSprites = 'sprites/';   // ├─── sprites/
 
