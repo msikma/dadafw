@@ -480,6 +480,11 @@ $input-padding-top-l:       0.58em !default;
 $input-padding-bottom-l:    $input-padding-top-l !default;
 
 // Box padding (block elements, such as <pre>)
+$box-padding-left-xs:        4px !default;
+$box-padding-right-xs:       $box-padding-left-xs !default;
+$box-padding-top-xs:         4px !default;
+$box-padding-bottom-xs:      $box-padding-top-xs !default;
+
 $box-padding-left-s:        4px !default;
 $box-padding-right-s:       $box-padding-left-s !default;
 $box-padding-top-s:         4px !default;
@@ -496,6 +501,11 @@ $box-padding-top-l:         14px !default;
 $box-padding-bottom-l:      $box-padding-top-l !default;
 
 // Box margin
+$box-margin-left-xs:         0 !default;
+$box-margin-right-xs:        $box-margin-left-xs !default;
+$box-margin-top-xs:          1.1em !default;
+$box-margin-bottom-xs:       $box-margin-top-xs !default;
+
 $box-margin-left-s:         0 !default;
 $box-margin-right-s:        $box-margin-left-s !default;
 $box-margin-top-s:          1.1em !default;

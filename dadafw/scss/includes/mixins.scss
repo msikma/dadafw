@@ -152,6 +152,12 @@
   $r: 0;
   $b: 0;
   $l: 0;
+  @if ($amount == "xs") {
+    $t: $box-padding-top-xs;
+    $r: $box-padding-right-xs;
+    $b: $box-padding-bottom-xs;
+    $l: $box-padding-left-xs;
+  }
   @if ($amount == "s") {
     $t: $box-padding-top-s;
     $r: $box-padding-right-s;
