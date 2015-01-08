@@ -70,31 +70,6 @@
   background-image: linear-gradient($deg, $from, $to);
 }
 
-// Cross-browser keyframes generator
-// To use this, include the frame information in a map, for example:
-// 
-//    @include keyframes(play, (
-//      from: (background-position: 0px),
-//      to: (background-position: -$img-loader-disp-size * $img-loader-frames),
-//    ));
-//
-// The first argument is the name of the animation.
-@mixin keyframes($name, $args) {
-  @keyframes $name {
-    @include keyframes-args($args);
-  }
-  @if $ddfw-compatibility-mode {
-    // Webkit current
-    @-webkit-keyframes $name {
-      @include keyframes-args($args);
-    }
-    // Mozilla <= 3.6
-    @-moz-keyframes $name {
-      @include keyframes-args($args);
-    }
-  }
-}
-
 // Generates keyframes labels and their CSS values
 // todo: rework this to proper (@each $a, $b in $map) syntax.
 @mixin keyframes-args($args) {
@@ -105,6 +80,31 @@
         $val: map-get($kvs, $key);
         #{$key}: $val;
       }
+    }
+  }
+}
+
+// Cross-browser keyframes generator
+// To use this, include the frame information in a map, for example:
+//
+//    @include keyframes(play, (
+//      from: (background-position: 0px),
+//      to: (background-position: -$img-loader-disp-size * $img-loader-frames),
+//    ));
+//
+// The first argument is the name of the animation.
+@mixin keyframes($name, $args) {
+  @keyframes #{$name} {
+    @include keyframes-args($args);
+  }
+  @if $ddfw-compatibility-mode {
+    // Webkit current
+    @-webkit-keyframes #{$name} {
+      @include keyframes-args($args);
+    }
+    // Mozilla <= 3.6
+    @-moz-keyframes #{$name} {
+      @include keyframes-args($args);
     }
   }
 }
