@@ -31,7 +31,7 @@ button,
   @include pill("m");
   @include transition(box-shadow 0.1s);
   @include box-shadow($form-focus-shadow-off);
-  @include interface-font;
+  @include interface-font();
   
   // Buttons are inline-blocks by default, blocks if specified.
   position: relative;
@@ -249,7 +249,7 @@ button,
     
     &:before {
       content: $fa-var-caret-down;
-      @include font-awesome-icon;
+      @include font-awesome-icon();
       font-size: $button-icon-size-m;
       // Position it in the center right of the button.
       top: ($button-padding-top-m + $button-padding-bottom-m + $font-base-size) / 2;
@@ -306,7 +306,7 @@ button,
   // seem to be able to do anything about that. I tried.
   // The Bootstrap people can't fix it either, though, so I don't mind.
   &.disabled, &[disabled], fieldset[disabled] & {
-    @include pointer-events;
+    @include pointer-events();
     opacity: 0.60;
   }
 }

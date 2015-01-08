@@ -25,7 +25,7 @@
 
       &.home, &.index {
         &:before {
-          @include font-awesome-icon;
+          @include font-awesome-icon();
           content: $fa-var-home;
           margin-right: 0.2em;
           position: static;

@@ -16,7 +16,7 @@
 @if $component-navbar == true {
   .navbar {
     ul.nav {
-      @include list-unstyled;
+      @include list-unstyled();
 
       li {
         float: left;

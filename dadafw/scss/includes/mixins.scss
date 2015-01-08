@@ -260,7 +260,7 @@
 @mixin box-transparent($size:"m") {
   @include box-padding($size);
   @include box-generic-rounded($size);
-  @include box-border;
+  @include box-border();
 }
 @mixin box-opaque($size:"m") {
   @include box-transparent($size);

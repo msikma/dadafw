@@ -12,7 +12,7 @@
 
 @if $component-boxes == true {
   .box {
-    @include no-edge-margins;
+    @include no-edge-margins();
     @include box-margin("m");
     position: relative;
 
@@ -100,8 +100,8 @@
       padding-left: 4em;
 
       &:before {
-        @include font-awesome-icon;
-        @include shiny-icon;
+        @include font-awesome-icon();
+        @include shiny-icon();
         color: $color;
         content: $content;
         position: absolute;

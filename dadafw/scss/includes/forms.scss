@@ -14,11 +14,11 @@ form {
   
   // Related fields should be contained within a <fieldset> element.
   fieldset {
-    @include general-reset;
+    @include general-reset();
     
     margin: 1em 0;
     
-    @include no-edge-margins;
+    @include no-edge-margins();
     
     // Normally, labels get the same amount of margin as the
     // <fieldset> element does. But not when it's the first label
@@ -60,7 +60,7 @@ form {
   textarea.line,
   textarea.multiline {
     @include transition(box-shadow 0.2s);
-    @include general-reset;
+    @include general-reset();
     @include pill("m");
     @include border-radius("m");
     @include box-shadow((
@@ -96,7 +96,7 @@ form {
       // styling needed to display an icon, so we've simply copied their
       // styles from the _core.scss file to our own mixin.
       content: $fa-var-search;
-      @include font-awesome-icon;
+      @include font-awesome-icon();
       font-size: $font-base-size;
       // Position it in the middle of the input element.
       top: (($font-base-lineheight + 1em) / 2) - ($font-base-lineheight + 1em);

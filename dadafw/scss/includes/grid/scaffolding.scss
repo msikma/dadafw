@@ -39,7 +39,7 @@ body {
 // Basic grid layout
 
 .grid, .row, .col {
-  @include displayfix;
+  @include displayfix();
 }
 .grid {
   margin: auto;

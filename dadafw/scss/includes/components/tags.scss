@@ -50,7 +50,7 @@
       .remove {
         @include border-radius(1px);
         @include transition((color 0.08s, background 0.08s, border 0.08s));
-        @include font-awesome-icon;
+        @include font-awesome-icon();
         @include box-sizing(content-box);
         @include border-radius("s", ("tr", "br"));
         // Add a border, and move the button around to overlap with the

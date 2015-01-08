@@ -36,8 +36,8 @@ code, kbd, pre, samp, tt, var {
 }
 // Preformatted text
 pre {
-  @include box-opaque;
-  @include no-edge-margins;
+  @include box-opaque();
+  @include no-edge-margins();
   
   margin: $box-margin-top-m 0 $box-margin-bottom-m;
   
@@ -61,7 +61,7 @@ hr {
 p, address {
   margin: $p-base-margin-top 0 $p-base-margin-bottom;
   
-  @include no-edge-margins;
+  @include no-edge-margins();
 }
 a {
   color: $color-link-text;
@@ -162,7 +162,7 @@ blockquote {
   
   p {
     margin: 0.5em 0 0.4em;
-    @include no-edge-margins;
+    @include no-edge-margins();
   }
   
   // The source is indicated by a <small>, with a <cite> for the author. 
@@ -297,7 +297,7 @@ ul, ol {
   
   // A variation without extra padding or list bullets. 
   &.unstyled {
-    @include list-unstyled;
+    @include list-unstyled();
   }
   
   // Horizontal list with a small amount of margin. 

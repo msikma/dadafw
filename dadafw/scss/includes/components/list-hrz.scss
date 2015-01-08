@@ -8,7 +8,7 @@
 
 @if $component-list-hrz == true {
   .list-hrz {
-    @include displayfix;
+    @include displayfix();
     $list-margin: 3em;
     margin-left: -$list-margin;
 

@@ -10,8 +10,8 @@
 @if $component-dropdown == true {
   .dropdown-menu {
     @include border-radius("m");
-    @include modal-shadow;
-    @include interface-font;
+    @include modal-shadow();
+    @include interface-font();
 
     display: block;
     position: absolute;
@@ -52,7 +52,7 @@
       // Header items exist but aren't documented in the example.
       // Should be restyled a bit, probably aren't needed to begin with.
       &.header {
-        @include separator-item;
+        @include separator-item();
         font-weight: bold;
         padding-top: $dropdown-padding-top-m;
         margin-bottom: $avg-padding;
@@ -61,7 +61,7 @@
 
       }
       &.separator {
-        @include separator-item;
+        @include separator-item();
         padding-top: $avg-padding;
         margin-bottom: $avg-padding;
       }
