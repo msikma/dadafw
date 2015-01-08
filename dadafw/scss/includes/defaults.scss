@@ -117,9 +117,7 @@ $font-ruby-lineheight:      1.2em !default;
 // 4. Color variables
 // ---------------------------------------------------------------------
 
-// Whether to include the public color classes, such as .fg-red-m2
-// or .bg-yellow-l3, etc. If false, nothing from colors.scss is compiled.
-$swatches-include:          true !default;
+// Note: see $component-swatches in Component Settings.
 
 // Gray
 $color-white:               #ffffff !default;
@@ -135,6 +133,7 @@ $color-gray-d1:             #666363 !default;
 $color-gray-d2:             #555252 !default;
 $color-gray-d3:             #454242 !default;
 $color-gray-d4:             #313030 !default;
+$color-gray-d5:             #0e0b0b !default;
 $color-black:               #050202 !default;
 
 // Red
@@ -391,6 +390,17 @@ $grid-debug-color:          $color-blue-m2 !default;
 // ---------------------------------------------------------------------
 // Most components have three sizes: s, m, l. Some components, such as
 // buttons, have an additional xs size.
+
+$component-boxes:           true !default;
+$component-breadcrumbs:     true !default;
+$component-dropdown:        true !default;
+$component-header:          true !default;
+$component-landing:         true !default;
+$component-line-numbers:    true !default;
+$component-list-hrz:        true !default;
+$component-navbar:          true !default;
+$component-swatches:        true !default;
+$component-tags:            true !default;
 
 // Border radius width
 $border-radius-xs:          2px !default;

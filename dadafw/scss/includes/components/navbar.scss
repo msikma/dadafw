@@ -13,35 +13,37 @@
  * messing up other uses of <ul>, such as <ul class="dropdown">.
  */
 
-.navbar {
-  ul.nav {
-    @include list-unstyled;
-    
-    li {
-      float: left;
-      
-      .logo {
-        img {
-          width: auto;
-          height: 18px;
-          vertical-align: middle;
-          margin-right: 20px;
+@if $component-navbar == true {
+  .navbar {
+    ul.nav {
+      @include list-unstyled;
+
+      li {
+        float: left;
+
+        .logo {
+          img {
+            width: auto;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 20px;
+          }
         }
-      }
-      
-      .item {
-        display: inline-block;
-        padding: 0 15px;
-        color: $color-gray-m2;
-        text-decoration: none;
-        
-        &:hover {
-          color: white;
-        }
-      }
-      &.active {
+
         .item {
-          background: $color-black;
+          display: inline-block;
+          padding: 0 15px;
+          color: $color-gray-m2;
+          text-decoration: none;
+
+          &:hover {
+            color: white;
+          }
+        }
+        &.active {
+          .item {
+            background: $color-black;
+          }
         }
       }
     }

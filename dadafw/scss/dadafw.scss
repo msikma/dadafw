@@ -14,17 +14,9 @@
 @import "includes/theme-ante.scss";   // Theme-Defined Settings
 
 // Check whether we're generating code for browser compatibility (recommended).
-@if $ddfw-compatibility-mode == true {
-  @debug 'Including vendor prefixes and browser hacks (compatibility mode).';
-}
-@else {
+@if $ddfw-compatibility-mode == false {
   @debug 'Not including vendor prefixes and browser hacks (CSS3 standards-compliance mode; see README note).';
 }
-// Print out which optional items we're including in the compile.
-@debug 'Grid debugging:        '+if($grid-debug-include, 'included', 'not included');
-@debug 'Color swatch classes:  '+if($swatches-include, 'included', 'not included');
-@debug 'Prettify support:      '+if($syn-prettify-include, 'included', 'not included');
-@debug 'Pygments support:      '+if($syn-pygments-include, 'included', 'not included');
 
 @import "includes/functions.scss";    // Internal Functions
 @import "externals/externals.scss";   // External Projects Loader

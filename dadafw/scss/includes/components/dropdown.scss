@@ -7,62 +7,64 @@
  */
 
 // Note: this component relies on JS to function properly.
-.dropdown-menu {
-  @include border-radius("m");
-  @include modal-shadow;
-  @include interface-font;
-  
-  display: block;
-  position: absolute;
-  // Remove some of the margin from the button.
-  margin-top: -4px;
-  border: 1px solid $color-gray-m1;
-  background: $color-white;
-  padding: 0;
-  list-style: none;
-  text-align: left;
-  z-index: 50;
-  
-  $avg-padding: round(($dropdown-padding-top-m + $dropdown-padding-bottom-m) / 2);
-  padding-bottom: $avg-padding;
-  padding-top: $avg-padding;
-  
-  li > a,
-  li.header,
-  li.disabled,
-  li.separator {
-    padding: $dropdown-padding-top-m $dropdown-padding-right-m $dropdown-padding-bottom-m $dropdown-padding-left-m;
+@if $component-dropdown == true {
+  .dropdown-menu {
+    @include border-radius("m");
+    @include modal-shadow;
+    @include interface-font;
+
     display: block;
-    color: $color-black;
-  }
-  li {
-    
-    > a {
-      &:hover {
-        background-color: $color-gray-l2;
+    position: absolute;
+    // Remove some of the margin from the button.
+    margin-top: -4px;
+    border: 1px solid $color-gray-m1;
+    background: $color-white;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    z-index: 50;
+
+    $avg-padding: round(($dropdown-padding-top-m + $dropdown-padding-bottom-m) / 2);
+    padding-bottom: $avg-padding;
+    padding-top: $avg-padding;
+
+    li > a,
+    li.header,
+    li.disabled,
+    li.separator {
+      padding: $dropdown-padding-top-m $dropdown-padding-right-m $dropdown-padding-bottom-m $dropdown-padding-left-m;
+      display: block;
+      color: $color-black;
+    }
+    li {
+
+      > a {
+        &:hover {
+          background-color: $color-gray-l2;
+        }
       }
-    }
-    
-    @mixin separator-item {
-      padding-bottom: 0;
-      margin-top: 0;
-      border-bottom: 1px solid $color-gray-l4;
-    }
-    // Header items exist but aren't documented in the example.
-    // Should be restyled a bit, probably aren't needed to begin with.
-    &.header {
-      @include separator-item;
-      font-weight: bold;
-      padding-top: $dropdown-padding-top-m;
-      margin-bottom: $avg-padding;
-    }
-    &.disabled {
-      
-    }
-    &.separator {
-      @include separator-item;
-      padding-top: $avg-padding;
-      margin-bottom: $avg-padding;
+
+      @mixin separator-item {
+        padding-bottom: 0;
+        margin-top: 0;
+        border-bottom: 1px solid $color-gray-l4;
+      }
+      // Header items exist but aren't documented in the example.
+      // Should be restyled a bit, probably aren't needed to begin with.
+      &.header {
+        @include separator-item;
+        font-weight: bold;
+        padding-top: $dropdown-padding-top-m;
+        margin-bottom: $avg-padding;
+      }
+      &.disabled {
+
+      }
+      &.separator {
+        @include separator-item;
+        padding-top: $avg-padding;
+        margin-bottom: $avg-padding;
+      }
     }
   }
 }

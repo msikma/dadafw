@@ -4,63 +4,96 @@
 
 /**
  * Headers
+ *
+ * Used for introducing standardized headers into the page.
+ * It should be noted that only one .header element should be used.
+ * Everything inside of it should be inside of a .header-section.
  */
 
-.header {
-  &.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 500;
-  }
-  
-  // document
-  .header-section {
-    background: $color-white;
-    border-bottom: 1px solid rgba($color-black, 0.11);
-    height: 40px;
-    line-height: 40px;
-    
-    form {
-      margin-top: 5px;
-      
-      input.line,
-      textarea.line,
-      textarea.multiline {
-        @include border-radius($font-base-lineheight + 0.75em);
-        height: $font-base-lineheight + 0.64em;
+@if $component-header == true {
+  .header {
+    // Since we're fixing the location of the header to the absolute top,
+    // there should only ever be one .header element.
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+    }
+
+    // Each "layer" of the header is wrapped inside of a .header-section.
+    .header-section {
+      background: $color-white;
+      border-bottom: 1px solid rgba($color-black, 0.11);
+      height: 40px;
+      line-height: 40px;
+
+      form {
+        margin-top: 5px;
+
+        input.line,
+        textarea.line,
+        textarea.multiline {
+          @include border-radius($font-base-lineheight + 0.75em);
+          height: $font-base-lineheight + 0.64em;
+        }
+        // fixme: make wrapper for search-icon so we don't have to do this
+        .search-icon {
+          &:before {
+            top: (($font-base-lineheight + 0.75em) / 2) - ($font-base-lineheight + 0.75em);
+          }
+        }
       }
-      // fixme: make wrapper for search-icon so we don't have to do this
-      .search-icon {
-        &:before {
-          top: (($font-base-lineheight + 0.75em) / 2) - ($font-base-lineheight + 0.75em);
+
+      // Adds a dark-colored style to the header.
+      &.inverted {
+        background-color: $color-gray-d5;
+        color: $color-white;
+      }
+
+      // Reduces the size of the header.
+      &.small {
+        font-size: percentage($font-small-size / $font-base-size);
+        height: 30px;
+        line-height: 30px;
+      }
+
+      // Resizes the section based on its contents.
+      &.flexible {
+        height: auto;
+      }
+
+      // Add a shadow to the bottom element.
+      &:last-child {
+        border-bottom-color: rgba($color-black, 0.15);
+        @include box-shadow((0 1px 0 rgba($color-black, 0.07)));
+      }
+
+      // Apply some fixes to the breadcrumbs.
+      @if $component-breadcrumbs == true {
+        ul.breadcrumbs,
+        ol.breadcrumbs {
+          padding: 0;
+          line-height: 40px;
+          background: transparent;
+        }
+        &.small {
+          ul.breadcrumbs,
+          ol.breadcrumbs {
+            line-height: 30px;
+          }
         }
       }
     }
-    
-    &.inverted {
-      background-color: mix($color-gray-d4, $color-black, 80%);
-      color: $color-white;
-    }
-    &.small {
-      font-size: percentage($font-small-size / $font-base-size);
-      height: 30px;
-      line-height: 30px;
-    }
-    
-    &:last-child {
-      border-bottom-color: rgba($color-black, 0.15);
-      @include box-shadow((0 1px 0 rgba($color-black, 0.07)));
-    }
   }
-}
 
-//fixme: make this compatible with the new grid system
-@media screen and (max-width: $viewport-width-s - 1) {
-  .header-section {
-    padding-left: 15px;
-    padding-right: 15px;
-    
+  //fixme: make this compatible with the new grid system
+  @media screen and (max-width: $viewport-width-s - 1) {
+    .header-section {
+      padding-left: 15px;
+      padding-right: 15px;
+
+    }
   }
 }

@@ -17,7 +17,7 @@
  * If it's turned off, none of this file is compiled.
  */
 
-@if $swatches-include == true {
+@if $component-swatches == true {
   // White and black
   .bg-white {
     background-color: $color-white !important;
