@@ -18,6 +18,10 @@
     ul.nav {
       @include list-unstyled();
 
+      ul {
+        @include list-unstyled();
+      }
+
       li {
         float: left;
 

@@ -10,7 +10,7 @@ var dirBase     = 'dadafw/',        // ├─ dadafw/
 // Write project info to console.
 grunt.log.write(
   'Dada Framework\n'+
-  '(C) 2013-2014, Michiel Sikma <info@michielsikma.com>, MIT license\n'
+  '(C) 2013-2015, Michiel Sikma <info@michielsikma.com>, MIT license\n'
 );
 
 // Only one SCSS file needs to be compiled.
