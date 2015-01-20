@@ -9,6 +9,44 @@
  * They're very flexible, have a large degree of customization
  * possibilities and many different built-in variations.
  */
+// Mixin for the inner class when used inside of certain types of boxes.
+@mixin box-inner($padding-top,
+$padding-right,
+$padding-bottom,
+$padding-left,
+$thickness,
+$border-width: 1px) {
+  $offset-top: $padding-top - $thickness;
+  $offset-right: $padding-right - $thickness;
+  $offset-bottom: $padding-bottom - $thickness;
+  $offset-left: $padding-left - $thickness;
+  margin: (-$offset-top) (-$offset-right) (-$offset-bottom) (-$offset-left);
+  padding: ($offset-top - $border-width) ($offset-right - $border-width) ($offset-bottom - $border-width) ($offset-left - $border-width);
+}
+
+// Three semantic box styles exist: info, warning, error.
+@mixin semantic-box($bg-color, $border-color) {
+  background: $bg-color;
+  border: none;
+  border-left: $border-width-thick solid $border-color;
+}
+@mixin semantic-box-icon($content, $color) {
+  padding-left: 4em;
+
+  &:before {
+    @include font-awesome-icon();
+    @include shiny-icon();
+    color: $color;
+    content: $content;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 2em;
+    margin-top: -0.5em;
+    width: 2.2em;
+    text-align: center;
+  }
+}
 
 @if $component-boxes == true {
   .box {
@@ -28,21 +66,6 @@
       @include border-radius(0);
       @include box-padding("m");
       outline: 1px solid rgba($color-black, 0.2);
-    }
-
-    // Mixin for the inner class when used inside of certain types of boxes.
-    @mixin box-inner($padding-top,
-    $padding-right,
-    $padding-bottom,
-    $padding-left,
-    $thickness,
-    $border-width: 1px) {
-      $offset-top: $padding-top - $thickness;
-      $offset-right: $padding-right - $thickness;
-      $offset-bottom: $padding-bottom - $thickness;
-      $offset-left: $padding-left - $thickness;
-      margin: (-$offset-top) (-$offset-right) (-$offset-bottom) (-$offset-left);
-      padding: ($offset-top - $border-width) ($offset-right - $border-width) ($offset-bottom - $border-width) ($offset-left - $border-width);
     }
 
     &.bg {
@@ -90,29 +113,6 @@
       }
     }
 
-    // Three semantic box styles exist: info, warning, error.
-    @mixin semantic-box($bg-color, $border-color) {
-      background: $bg-color;
-      border: none;
-      border-left: $border-width-thick solid $border-color;
-    }
-    @mixin semantic-box-icon($content, $color) {
-      padding-left: 4em;
-
-      &:before {
-        @include font-awesome-icon();
-        @include shiny-icon();
-        color: $color;
-        content: $content;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        font-size: 2em;
-        margin-top: -0.5em;
-        width: 2.2em;
-        text-align: center;
-      }
-    }
     &.info {
       @include semantic-box($color-cyan-l2, $color-cyan-m2);
 

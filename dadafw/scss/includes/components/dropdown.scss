@@ -5,6 +5,11 @@
 /**
  * Dropdown Menus
  */
+@mixin separator-item {
+  padding-bottom: 0;
+  margin-top: 0;
+  border-bottom: 1px solid $color-gray-l4;
+}
 
 // Note: this component relies on JS to function properly.
 @if $component-dropdown == true {
@@ -43,12 +48,7 @@
           background-color: $color-gray-l2;
         }
       }
-
-      @mixin separator-item {
-        padding-bottom: 0;
-        margin-top: 0;
-        border-bottom: 1px solid $color-gray-l4;
-      }
+      
       // Header items exist but aren't documented in the example.
       // Should be restyled a bit, probably aren't needed to begin with.
       &.header {
