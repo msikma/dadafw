@@ -1,0 +1,67 @@
+// Dada Web Framework <https://github.com/msikma/dadafw>
+// Copyright (C) 2013-2015, Michiel Sikma <michiel@sikma.org> and contributors
+// MIT licensed
+
+/**
+ * Grid System / Scaffolding
+ *
+ * These are the basic scaffolding settings needed for the grid system
+ * to work.
+ */
+
+// Implement the border-box format site-wide.
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// All columns are done using percentages.
+// Since 0.33333% * 3 = 0.99999%, this causes small gaps to appear when the
+// grid container is centered and the width of the viewport is an odd number.
+// We can fix this in modern Chrome and Firefox by setting the element
+// in which the container resides to a width of 99.9999%. The safest
+// element to use for this is the <html> element itself.
+
+html {
+  width: 99.9999%;
+}
+
+// We first define the SCSS code for the mobile version. Once a
+// grid has been defined, the mobile settings will be overridden.
+
+body {
+  // On mobile sizes, the body has a gutter on the both sides.
+  padding-left: $col-gutter-xs / 2;
+  padding-right: $col-gutter-xs / 2;
+}
+
+// Basic grid layout
+
+.grid, .row, .col {
+  @include displayfix();
+}
+.grid {
+  margin: auto;
+  
+  // Makes it possible to stretch out a grid to the full container size.
+  &.full-width {
+    width: 100%;
+  }
+}
+.row {
+  margin: 0;
+}
+.col {
+  margin-left: 0;
+  display: block;
+  position: relative;
+  // Prevent collapse when it's empty.
+  min-height: 1px;
+}
+
+// Things that are to be hidden on mobile are set to display: none; by default.
+// This is overridden with the minimum viewport size of the grid.
+.xs-hidden {
+  display: none;
+}

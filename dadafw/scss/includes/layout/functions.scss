@@ -51,7 +51,6 @@
 }
 
 // Sets the full grid width.
-
 @mixin grid-layout($stage, $viewport-width, $grid-width, $col-gutter)
 {
   $col-half-gutter: $col-gutter / 2;

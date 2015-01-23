@@ -2,14 +2,11 @@ Dada Framework
 ==============
 
 Dada Framework is being developed as a comprehensive general-purpose
-SCSS framework that integrates with AngularJS.
+SCSS framework.
 
 
 Philosophy
 ----------
-
-We started developing Dada Framework as a system to fully integrate with
-AngularJS and leverage its unique capabilities.
 
 The core of the framework is a flexible, semantic grid system that can be
 used to quickly scaffold basic layouts. It's fully responsive (mobile-first)
@@ -19,8 +16,10 @@ form as well for building web apps.
 
 We've tried to ensure that all basic HTML tags, typography elements and
 components have a consistent, neutral style that can be easily extended.
-Helvetica is used as the main font, complemented by Helvetica Neue for
-interface elements due to its more consistent baseline.
+
+The system is designed to be modular, meaning you can easily implement
+optional add-ons by including extra dependencies in your `packages.json`
+file.
 
 
 Development
@@ -50,8 +49,6 @@ downloaded and installed through npm:
 After that, you can use the Gruntfile to get to work. Normally, you'd want
 to develop using the `grunt watch` task, which watches for changes and then
 automatically recompiles the SCSS.
-
-**Note: instructions on how to develop the JS are coming later.**
 
 
 Browser Support
