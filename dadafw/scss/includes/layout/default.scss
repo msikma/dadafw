@@ -17,6 +17,7 @@
       'grid-width': $grid-width-s,
       'col-amount': $col-amount-s,
       'col-gutter': $col-gutter-s,
+      'is-mobile': true,
     ),
     // Medium desktop (992px and up by default)
     'm': (
@@ -24,6 +25,7 @@
       'grid-width': $grid-width-m,
       'col-amount': $col-amount-m,
       'col-gutter': $col-gutter-m,
+      'is-mobile': false,
     ),
     // Large desktop (1200px and up by default)
     'l': (
@@ -31,6 +33,7 @@
       'grid-width': $grid-width-l,
       'col-amount': $col-amount-l,
       'col-gutter': $col-gutter-l,
+      'is-mobile': false,
     ),
   ));
 }

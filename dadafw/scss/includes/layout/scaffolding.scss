@@ -50,18 +50,53 @@ body {
   }
 }
 .row {
+  @include flexbox();
+  @include flex-flow(row wrap);
   margin: 0;
+
+  // Note: on sizes above mobile, wrapping will be prevented.
+  // This is set up in the grid construction mixin.
 }
 .col {
+  @include flex(0 0 auto);
+  @include flex-direction(column);
+  @include flex-basis(100%);
   margin-left: 0;
   display: block;
   position: relative;
+  // Permit overflow of contents.
+  min-width: 0;
   // Prevent collapse when it's empty.
   min-height: 1px;
+
+  // Cross-platform classes for setting the self alignment.
+  &.align-start {
+    @include align-self(flex-start);
+  }
+
+  &.align-center {
+    @include align-self(center);
+  }
+
+  &.align-baseline {
+    @include align-self(baseline);
+  }
+
+  &.align-end {
+    @include align-self(flex-end);
+  }
+
+  &.align-auto {
+    @include align-self(auto);
+  }
+
+  &.align-stretch {
+    @include align-self(stretch);
+  }
 }
 
 // Things that are to be hidden on mobile are set to display: none; by default.
-// This is overridden with the minimum viewport size of the grid.
+// This is overridden within the minimum viewport size of the grid.
 .xs-hidden {
   display: none;
 }

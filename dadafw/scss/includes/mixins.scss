@@ -43,16 +43,6 @@
   }
 }
 
-// This is the standard styling used for creating Font Awesome icons.
-@mixin font-awesome-icon {
-  position: absolute;
-  display: inline-block;
-  font-family: FontAwesome, $font-interface;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  @include font-smoothing("grayscale");
-}
 @mixin font-smoothing($value:"grayscale") {
   // Sets the font rendering method.
   @if $ddfw-compatibility-mode == true {
@@ -65,6 +55,17 @@
       -moz-osx-font-smoothing: auto;
     }
   }
+}
+
+// This is the standard styling used for creating Font Awesome icons.
+@mixin font-awesome-icon() {
+  position: absolute;
+  display: inline-block;
+  font-family: FontAwesome, $font-interface;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  @include font-smoothing("grayscale");
 }
 
 // Adds fancy styling for icons.

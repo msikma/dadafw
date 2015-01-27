@@ -28,7 +28,12 @@
   float: right;
 }
 
-// The use of clear is typically not recommended for layouting purposes.
+// Helper class to prevent wrapping.
+.no-wrap {
+  white-space: nowrap;
+}
+
+// The use of clear is typically not recommended for layout creation purposes.
 // The grid system largely makes it unnecessary.
 .clear {
   clear: both;

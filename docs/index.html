@@ -79,7 +79,7 @@ See <http://github.com/msikma/dadafw/> for more information.
   <div class="grid main-content">
     <article class="row">
       <div class="col w-2 sidebar">
-        <p>This is where the menu will go. This is all temporary content. The decorators are set to be rewritten for easy use with Angular. Font Awesome is set to be replaced with a better vector font.</p>
+        <p>This is where the menu will go. This is all temporary content.</p>
         <div class="navbar">
           <ul class="sidebar-menu nav" id="docs_main_menu">
           <li><a href="#ch_overview">Overview</a>
@@ -161,11 +161,11 @@ See <http://github.com/msikma/dadafw/> for more information.
         <p>add some more text here</p>
         <!-- [1.5 Browser support] -->
         <h2>Browser support</h2>
-        <p>Dada Framework is fully supported out of the box by all major browsers. We test with Webkit (Safari, Chrome), Gecko (Firefox), IE9–11, and mobile browsers (Android, Chrome Mobile, iOS Safari). All stable releases are tested thoroughly—the non-stable releases are not.</p>
-        <p>If you must support IE8 and below, please note that we don't test on these browsers. See AngularJS's <a href="https://docs.angularjs.org/guide/ie">IE compatibility guide</a> for information on what to do to get things up and running. You'll also need <em>html5shiv</em> and <em>Respond.js</em> for HTML5 and responsiveness support.</p>
+        <p>Dada Framework is built to support the latest versions of all major browsers. The CSS is designed to work with Webkit (Chrome, Safari), Firefox, IE10–11, and mobile browsers (Android, Chrome Mobile, iOS Safari).</p>
+        <p>IE9 and below are unfortunately not supported. (It might be possible for a later version to support IE8 and IE9 if someone is willing to help build a flexbox polyfill.)</p>
         <!-- [1.6 Mobile/responsiveness support] -->
         <h2>Mobile/responsiveness support</h2>
-        <p>We support responsiveness by default. There are four stages of responsiveness, with the smallest being specially designed for mobile phone screen sizes. You can make sections appear for specific sizes only and modify specific column widths where desired. Generally, though, even if you scaffold your grid only for the default or largest size, it should work decently enough on smaller devices.</p>
+        <p>Responsiveness is a default feature of the framework. There are four stages of responsiveness, with the smallest being specially designed for mobile phone screen sizes. You can make sections appear for specific sizes only and modify specific column widths where desired. Generally, though, even if you scaffold your grid only for the default or largest size, it should work decently enough on smaller devices.</p>
         <p>For properly enabling touch zooming on mobile devices, the following element should be added.</p>
         <pre><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, user-scalable=yes, initial-scale=1"</span> <span class="nt">/&gt;</span></pre>
         <p>If you're developing a web-based application or site that should not zoom at all, you can disable it entirely.</p>
@@ -239,7 +239,33 @@ See <http://github.com/msikma/dadafw/> for more information.
           </div>
         </div>
         <p>We've added some extra padding so you can see the grid more clearly. In practice, nested columns don't have any extra padding.</p>
-        <!-- [2.2 Text columns] -->
+        <!-- [2.2 Alignment] -->
+        <h2>Column alignment</h2>
+        <p>By default, columns are set to stretch across the full height of the row. This makes it possible to easily scaffold layouts that would normally require complex CSS (such as vertically centering a column).</p>
+        <div class="grid-debug">
+          <div class="row">
+            <div class="col w-4 align-center">
+              <p>Column with <code class="no-wrap">align-center</code>.</p>
+            </div>
+            <div class="col w-4">
+              <p>Standard column.</p>
+            </div>
+            <div class="col w-4">
+              <p>Column with a lot of content.</p>
+              <p class="align-left">Integer eget faucibus lorem. Proin fermentum ex a nisl sodales pharetra. Pellentesque leo felis, faucibus sit amet vehicula quis, aliquam id ipsum.</p>
+            </div>
+          </div>
+        </div>
+        <p>The following alignment classes are available:</p>
+        <ul>
+          <li><code>align-start</code></li>
+          <li><code>align-center</code></li>
+          <li><code>align-end</code></li>
+          <li><code>align-baseline</code></li>
+          <li><code>align-auto</code></li>
+          <li><code>align-stretch</code></li>
+        </ul>
+        <!-- [2.3 Text columns] -->
         <h2>Text columns</h2>
         <p>Aside from the standard grid, it's also possible to span the contents of a container (such as a long running text) across multiple columns. This is done using the CSS <code>column-count</code> attribute. This allows you to put text from a single container in multiple columns.</p>
         <p>The columns can be set using CSS classes <code>colspan-1</code> through <code>colspan-12</code> on the column element.</p>
@@ -261,8 +287,7 @@ See <http://github.com/msikma/dadafw/> for more information.
             </div>
           </div>
         </div>
-        <p>Note that this <em>isn't supported</em> in Internet Explorer 9 and below.</p>
-        <!-- [2.3 Semantic elements] -->
+        <!-- [2.4 Semantic elements] -->
         <h2>Semantic elements</h2>
         <p>Usage of semantic HTML5 elements is recommended, but optional. The grid system is agnostic to which element is used for scaffolding. A quick overview of the basic layouting elements:</p>
         <dl>
