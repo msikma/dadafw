@@ -21,7 +21,11 @@
     "Framework",
     "Grid system"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.2.0",
+    "h5bp-print-styles": "^4.3.1",
+    "normalize.scss": "^0.1.0"
+  },
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
