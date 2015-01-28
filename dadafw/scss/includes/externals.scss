@@ -9,16 +9,16 @@
 
 // Font Awesome - icon system and glyphs
 // <http://fortawesome.github.io/Font-Awesome/>
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
 
 // Normalize.scss - browser normalization (similar to a CSS reset)
 // <https://www.npmjs.com/package/normalize.scss>
-@import "node_modules/normalize.scss/normalize";
+@import "../../../node_modules/normalize.scss/normalize";
 
 // HTML5 Boilerplate (subset) - default print styles
 // <https://github.com/msikma/h5bp-print-styles>
-@import "node_modules/h5bp-print-styles/print";
+@import "../../../node_modules/h5bp-print-styles/print";
 
 // sass-flex-mixin - mixins for making cross-browser flexbox layouts
 // <https://github.com/mastastealth/sass-flex-mixin>
-@import "node_modules/sass-flex-mixin/flex";
+@import "../../../node_modules/sass-flex-mixin/flex";
