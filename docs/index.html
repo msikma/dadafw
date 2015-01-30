@@ -133,61 +133,38 @@ See <http://github.com/msikma/dadafw/> for more information.
         <!-- [1. Overview] -->
         <div class="page-header">
           <h1 id="ch_overview">Overview</h1>
-          <p>Here's a brief overview of the things you can do with Dada. All of these are written from what we consider a best-practices perspective—we'll try to explain along the way why we made certain design choices and how you can improve on your development practices.</p>
+          <p>Here's a brief overview of the things you can do with Dada. The framework is written from the perspective that styling should be modular and easy to integrate with the rest of the toolchain—most of it is plain SCSS, and everything that requires Javascript to work is branched off to a separate <code>npm</code> package.</p>
         </div>
         <!-- [1.1 Design philosophy] -->
         <h2 id="ch_design_philosophy">Design philosophy</h2>
-        <p>Dada Framework is being developed as a comprehensive and complete HTML5-capable CSS framework for all types of websites. It's specifically designed to benefit websites with a lot of semantic information and has responsiveness built in.</p>
-        <p>The core of the framework is a 12-column grid system that can be used to quickly scaffold basic layouts. It's fully responsive and allows you to set specific column structures per responsive target layout, and can be used in liquid (percentage-based container width) form as well for building web apps.</p>
-        <p>We've tried to ensure that all basic HTML tags, typography elements and components have a consistent style. Helvetica is used as the main font, with Helvetica Neue for interface elements due to its more consistent baseline.</p>
+        <p>Dada Framework is being developed as a modular SCSS framework for building websites and apps. It's designed to have a unified style across all supported browsers for all basic HTML features and to make it easy to scaffold layouts.</p>
+        <p>The core of the framework is a 12-column Flexbox-based grid system that can be used to quickly scaffold basic layouts. It's cross-platform and allows you to set specific column structures per responsive target layout.</p>
+        <p>Modularity is an essential aspect of modern web development practices, so we've split the functionality of the system up into multiple <code>npm</code> packages. Anything that requires Javascript to work is also contained in its own package. Since plain Javascript is difficult to integrate into modern web development frameworks such as <a href="http://facebook.github.io/react/">ReactJS</a> or <a href="https://angularjs.org/">AngularJS</a>, there are several packages available depending on your needs.</p>
         <!-- [1.2 The border-box formatting model] -->
-        <h2>The <code>border-box</code> formatting model</h2>
-        <p>One of the basic things the framework does is set the <code>box-sizing: border-box</code> CSS to the entire document. The <code>border-box</code> formatting model changes the basic width and height calculations of HTML elements such that the <code>width</code> and <code>height</code> values determine their size, and additional padding and borders exist inside of those value rather than outside. This makes it significantly easier to quickly develop layouts and cuts down on the amount of required markup.</p>
-        <p>Since the framework's grid system is built using this model as well, it's easily possible to make quick modifications to the grid or the gutter without requiring a recompilation of the framework or additional markup.</p>
-        <!-- [1.3 Usage of HTML5 elements] -->
-        <h2>Usage of HTML5 elements</h2>
-        <p>We recommend the use of an HTML5 doctype with a <code>lang</code> attribute. All modern browsers support HTML5, although not all of its features are necessarily supported yet. All things considered, however, there's no reason not to use the HTML5 doctype anymore.</p>
-        <pre><span class="cp">&lt;!doctype html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-...
-<span class="nt">&lt;/html&gt;</span></pre>
-        <p>However, if you're supporting a legacy website or application, you can still use the older HTML4 or XHTML doctypes—the framework is agnostic to it. All of the framework's examples are written using XHTML syntax, so they can safely be copypasted into either flavor of markup.</p>
-        <p>If you're using a language that reads from right to left, such as Arabic, you'll need to include <code>dir="rtl"</code> to the HTML tag.</p>
-        <!-- [1.4 Basic <head> settings] -->
-        <h2>Basic <code>&lt;head&gt;</code> settings</h2>
-        <p>At the very least, you should include the following elements in your <code>&lt;head&gt;</code> element:</p>
-        <pre><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;title&gt;</span> ... <span class="nt">&lt;/title&gt;</span></pre>
-        <p>add some more text here</p>
-        <!-- [1.5 Browser support] -->
+        <h3>The <code>border-box</code> formatting model</h3>
+        <p>One of the basic things the framework does is set the <code>box-sizing: border-box</code> CSS to the entire document. The <code>border-box</code> formatting model changes the basic width and height calculations of HTML elements such that the <code>width</code> and <code>height</code> values determine their size, and additional padding and borders exist <em>inside</em> of those value rather than outside. This makes it significantly easier to quickly develop layouts and cuts down on the amount of required markup.</p>
+        <h3>Flexbox layout scaffolding</h3>
+        <p>The framework's grid system is built using the Flexbox model, which makes it easy to do things that otherwise require either Javascript or a lot of HTML markup. There's a good primer on the workings of this system on the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">Mozilla Developer Network</a>. Since browser implementations vary, the classes used in the framework include all necessary vendor prefixes.</p>
+        <!-- [1.3 Browser support] -->
         <h2>Browser support</h2>
         <p>Dada Framework is built to support the latest versions of all major browsers. The CSS is designed to work with Webkit (Chrome, Safari), Firefox, IE10–11, and mobile browsers (Android, Chrome Mobile, iOS Safari).</p>
         <p>IE9 and below are unfortunately not supported. (It might be possible for a later version to support IE8 and IE9 if someone is willing to help build a flexbox polyfill.)</p>
-        <!-- [1.6 Mobile/responsiveness support] -->
-        <h2>Mobile/responsiveness support</h2>
-        <p>Responsiveness is a default feature of the framework. There are four stages of responsiveness, with the smallest being specially designed for mobile phone screen sizes. You can make sections appear for specific sizes only and modify specific column widths where desired. Generally, though, even if you scaffold your grid only for the default or largest size, it should work decently enough on smaller devices.</p>
-        <p>For properly enabling touch zooming on mobile devices, the following element should be added.</p>
-        <pre><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, user-scalable=yes, initial-scale=1"</span> <span class="nt">/&gt;</span></pre>
-        <p>If you're developing a web-based application or site that should not zoom at all, you can disable it entirely.</p>
-        <pre><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"</span> <span class="nt">/&gt;</span></pre>
         <!-- [2. Grid system] -->
         <div class="page-header">
           <h1>Grid system</h1>
-          <p>Dada contains a fluid 12-column grid system, designed for four responsive sizes, that works in accordance with the
-            <code>border-box</code> formatting model. It's fully customisable, even through the use of simple CSS, and collapses to full rows for small mobile viewports. The grid can be easily set up, with custom modifications for each responsive size, entirely through the use of predefined class names.
-          </p>
+          <p>Dada contains a fluid 12-column grid system, designed for four responsive sizes, that works in accordance with the <code>border-box</code> formatting model. It's fully customisable and collapses to full rows for mobile viewports. The grid can be easily scaffolded, with custom modifications for each responsive size, entirely through the use of predefined class names.</p>
         </div>
         <!-- [2.1 Basic grid scaffolding] -->
         <h2>Basic grid scaffolding</h2>
         <p>To set up a basic grid, the following code can be used:</p>
         <div class="box example with-label single">
           <p class="label">Example</p>
-          <pre class="code"><code>&lt;div class="grid"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col w-6"&gt;Column of width 6&lt;/div&gt;
-    &lt;div class="col w-6"&gt;Column of width 6&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+          <pre class="code"><code>&#x3C;div class=&#x22;grid&#x22;&#x3E;
+  &#x3C;div class=&#x22;row&#x22;&#x3E;
+    &#x3C;div class=&#x22;col w-6&#x22;&#x3E;Column of width 6&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;col w-6&#x22;&#x3E;Column of width 6&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
         </div>
         <p>To fill one row, the column width needs to add up to 12. Columns are interspersed by gaps of 30px (15px on either side), and the entire grid itself has a gutter on both sides as well.</p>
         <div class="grid-debug">
@@ -239,8 +216,8 @@ See <http://github.com/msikma/dadafw/> for more information.
           </div>
         </div>
         <p>We've added some extra padding so you can see the grid more clearly. In practice, nested columns don't have any extra padding.</p>
-        <!-- [2.2 Alignment] -->
-        <h2>Column alignment</h2>
+        <!-- [2.2 Alignment and justification] -->
+        <h2>Alignment and justification</h2>
         <p>By default, columns are set to stretch across the full height of the row. This makes it possible to easily scaffold layouts that would normally require complex CSS (such as vertically centering a column).</p>
         <div class="grid-debug">
           <div class="row">
@@ -256,15 +233,137 @@ See <http://github.com/msikma/dadafw/> for more information.
             </div>
           </div>
         </div>
-        <p>The following alignment classes are available:</p>
-        <ul>
-          <li><code>align-start</code></li>
-          <li><code>align-center</code></li>
-          <li><code>align-end</code></li>
-          <li><code>align-baseline</code></li>
-          <li><code>align-auto</code></li>
-          <li><code>align-stretch</code></li>
-        </ul>
+        <p>You can either set the alignment class on a column, or on the row (which will make it the default for all columns).</p>
+        <p>When there's empty space inside a row, there are a number of options for filling up the remaining space.</p>
+        <div class="grid-debug">
+          <div class="row justify-start">
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+            <div class="col w-4">
+              <p>Row with <code>justify-start</code>.</p>
+            </div>
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-debug">
+          <div class="row justify-center">
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+            <div class="col w-4">
+              <p>Row with <code>justify-center</code>.</p>
+            </div>
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-debug">
+          <div class="row justify-end">
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+            <div class="col w-4">
+              <p>Row with <code>justify-end</code>.</p>
+            </div>
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-debug">
+          <div class="row justify-between">
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+            <div class="col w-4">
+              <p>Row with <code>justify-between</code>.</p>
+            </div>
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-debug">
+          <div class="row justify-equal">
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+            <div class="col w-4">
+              <p>Row with <code>justify-equal</code>.</p>
+            </div>
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-debug">
+          <div class="row justify-around">
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+            <div class="col w-4">
+              <p>Row with <code>justify-around</code>.</p>
+            </div>
+            <div class="col w-2">
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <p>The following alignment and justification classes are available:</p>
+        <div class="row">
+          <div class="col w-4">
+            <ul>
+              <li><code>align-stretch</code> (default)</li>
+              <li><code>align-start</code></li>
+              <li><code>align-center</code></li>
+              <li><code>align-end</code></li>
+              <li><code>align-baseline</code></li>
+              <li><code>align-auto</code></li>
+            </ul>
+          </div>
+          <div class="col w-4">
+            <ul>
+              <li><code>justify-start</code> (default)</li>
+              <li><code>justify-center</code></li>
+              <li><code>justify-end</code></li>
+              <li><code>justify-between</code></li>
+              <li><code>justify-equal</code></li>
+              <li><code>justify-around</code></li>
+            </ul>
+          </div>
+        </div>
+        <p>The <code>justify-equal</code> value is not part of the Flexbox spec and is achieved via a hack, but it seems to work well enough.</p>
+        <!-- [2.3 Relative width columns] -->
+        <h2>Relative width columns</h2>
+        <p>By default, grid columns are designed to take up subdivisions of 12. But sometimes, you want to be a bit more flexible than that—what if you want your grid to take up exactly 5 columns? We've made some classes (<code>relw-1</code> through <code>relw-12</code>) designed to do just this, called <em>relative width columns</em>.</p>
+        <div class="grid-debug">
+          <div class="row">
+            <div class="col relw-5">5</div>
+            <div class="col relw-5">5</div>
+            <div class="col relw-5">5</div>
+            <div class="col relw-5">5</div>
+            <div class="col relw-5">5</div>
+          </div>
+          <div class="row">
+            <div class="col relw-7">7</div>
+            <div class="col relw-7">7</div>
+            <div class="col relw-7">7</div>
+            <div class="col relw-7">7</div>
+            <div class="col relw-7">7</div>
+            <div class="col relw-7">7</div>
+            <div class="col relw-7">7</div>
+          </div>
+          <div class="row">
+            <div class="col relw-3">3</div>
+            <div class="col relw-3">3</div>
+            <div class="col relw-3">3</div>
+          </div>
+        </div>
+        <p>It's simple: when using <code>relw-5</code>, you can have exactly 5 columns in a row.</p>
         <!-- [2.3 Text columns] -->
         <h2>Text columns</h2>
         <p>Aside from the standard grid, it's also possible to span the contents of a container (such as a long running text) across multiple columns. This is done using the CSS <code>column-count</code> attribute. This allows you to put text from a single container in multiple columns.</p>
@@ -287,59 +386,10 @@ See <http://github.com/msikma/dadafw/> for more information.
             </div>
           </div>
         </div>
-        <!-- [2.4 Semantic elements] -->
-        <h2>Semantic elements</h2>
-        <p>Usage of semantic HTML5 elements is recommended, but optional. The grid system is agnostic to which element is used for scaffolding. A quick overview of the basic layouting elements:</p>
-        <dl>
-          <dt><code>&lt;header&gt;</code></dt>
-          <dd>For headers for both the main layout and in smaller page elements (such as the header sections of multiple blog posts on one page)</dd>
-          <dt><code>&lt;nav&gt;</code></dt>
-          <dd>For navigation lists</dd>
-          <dt><code>&lt;article&gt;</code></dt>
-          <dd>For wrapping the main page content (after the header and before the footer), containing both the
-            <code>&lt;section&gt;</code> and
-            <code>&lt;aside&gt;</code> elements, and for smaller page elements such as an individual blog post or a single tweet
-          </dd>
-          <dt><code>&lt;section&gt;</code></dt>
-          <dd>For sectioning off specific parts of a page or an article</dd>
-          <dt><code>&lt;aside&gt;</code></dt>
-          <dd>For either a layout sidebar, or a sidebar in an article—text that is relevant but doesn't fit within the regular flow of the article's text</dd>
-          <dt><code>&lt;footer&gt;</code></dt>
-          <dd>For footers for both the main layout and in smaller page elements (such as the post time and author information at the bottom of a single blog post)</dd>
-        </dl>
-        <p>A sample layout is shown below.</p>
-        <div class="box example with-label single fixed-height">
-          <p class="label">Example</p>
-          <pre class="code">&#x3C;div class=&#x22;grid&#x22;&#x3E;
-  &#x3C;header class=&#x22;row&#x22;&#x3E;
-    &#x3C;div class=&#x22;col w-8&#x22;&#x3E;
-      &#x3C;p&#x3E;Header content&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;div class=&#x22;col w-4&#x22;&#x3E;
-      &#x3C;p&#x3E;Login form&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-  &#x3C;/header&#x3E;
-  &#x3C;nav class=&#x22;row&#x22;&#x3E;
-    &#x3C;div class=&#x22;col w-12&#x22;&#x3E;
-      &#x3C;p&#x3E;Navigation lists&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-  &#x3C;/nav&#x3E;
-  &#x3C;article class=&#x22;row&#x22;&#x3E;
-    &#x3C;section class=&#x22;col w-8&#x22;&#x3E;
-      &#x3C;p&#x3E;Main page content&#x3C;/p&#x3E;
-    &#x3C;/section&#x3E;
-    &#x3C;aside class=&#x22;col w-4&#x22;&#x3E;
-      &#x3C;p&#x3E;Aside content&#x3C;/p&#x3E;
-    &#x3C;/aside&#x3E;
-  &#x3C;/article&#x3E;
-  &#x3C;footer class=&#x22;row&#x22;&#x3E;
-    &#x3C;div class=&#x22;col w-12&#x22;&#x3E;
-      &#x3C;p&#x3E;Footer content&#x3C;/p&#x3E;
-    &#x3C;/div&#x3E;
-  &#x3C;/footer&#x3E;
-&#x3C;/div&#x3E;</pre>
-        </div>
-        <p>All of the elements mentioned above can simply be replaced by <code>&lt;div&gt;</code> elements in case you're targeting HTML4 or XHTML.</p>
+        <!-- [2.4 Responsive overrides] -->
+        <h2>Responsive overrides</h2>
+        <p>For each type of grid scaffolding, it's possible to add overrides per responsive size. So if your column has the class <code>w-4</code>, you can override it for the large responsive size by adding <code>w-l-6</code>, whereupon it will be 6 columns wide if the user's viewport is within the threshold.</p>
+        <p>For text columns, the class is <code>colspan-s-4</code>, and for relative width columns it's <code>relw-s-4</code> (change <code>s</code> for <code>m</code> or <code>l</code>, and 4 for any number).</p>
         <!-- [3. Typography] -->
         <div class="page-header">
           <h1>Typography</h1>

@@ -58,13 +58,11 @@ Dada Framework is tested with Webkit (Safari, Chrome), Gecko (Firefox),
 IE9–11, and mobile browsers (Android, Chrome Mobile, iOS Safari). All stable
 releases are tested thoroughly—the non-stable releases are not.
 
-### CSS3 Standards-Compliance
+### Vendor prefixes
 
-By default, the framework generates code that includes vendor prefixes,
-resulting in CSS code that is not standards-compliant. This is necessary,
-however, for proper functioning of the framework. It's possible to remove all
-vendor-prefixed code by setting the `$ddfw-compatibility-mode` variable to
-`false` in the settings file, but that breaks the framework.
+The framework generates code that includes vendor prefixes, resulting in CSS
+code that is not strictly standards-compliant. This is necessary, however, for
+proper functioning of the framework.
 
 We include vendor prefixes and browser hacks to a degree deemed reasonable to
 support modern, widely used browsers.
