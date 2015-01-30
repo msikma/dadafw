@@ -1,61 +1,68 @@
 module.exports = function(grunt)
 {
+  var dirBase = 'dadafw/',
+      dirBuild = 'build/';
 
-  var dirBase = 'dadafw/',        // ├─ dadafw/
-    dirDocs = 'docs/',          // ├─ docs/
-    dirBuild = 'build/',         // ├─ build/
-    dirBuildCSS = 'css/',         // ├─── css/
-    dirBuildFonts = 'fonts/',       // ├─── fonts/
-    dirBuildSprites = 'sprites/';   // ├─── sprites/
-
-// Write project info to console.
   grunt.log.write(
     'Dada Framework\n' +
     '(C) 2013-2015, Michiel Sikma <info@michielsikma.com>, MIT license\n'
   );
 
-// Only one SCSS file needs to be compiled.
-  var filesSCSS = {};
-  filesSCSS[dirBuild + dirBuildCSS + "dadafw.css"] = dirBase + "scss/dadafw.scss";
+  // List of compile jobs and their target files.
+  var files = {
+    dadafw: {},
+    gridOnly: {}
+  };
+  files.dadafw[dirBuild + 'dadafw.css'] = dirBase + 'dadafw.scss';
+  files.gridOnly[dirBuild + 'grid-only.css'] = dirBase + 'grid-only.scss';
 
-  /**
-   * Compiles the complete framework.
-   */
-  function compile()
-  {
-    grunt.log.write('Compiling the complete framework.\n');
-    grunt.task.run('sass');
-  }
+  // Standard options for the Sass task. We generate a source map
+  // when using the watch job.
+  var optionsRelease = {
+    sourceMap: false,
+    outputStyle: 'compressed'
+  };
+  var optionsDev = {
+    sourceMap: true,
+    outputStyle: 'nested'
+  };
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
-      options: {
-        sourceMap: false,
-        outputStyle: 'compressed'
+      options: optionsRelease,
+      'grid-only-release': {
+        files: files.gridOnly
       },
-      dist: {
-        files: filesSCSS
+      'grid-only-dev': {
+        files: files.gridOnly,
+        options: optionsDev
       },
-      dev: {
-        files: filesSCSS,
-        options: {
-          sourceMap: true,
-          outputStyle: 'nested'
-        }
+      'dadafw-release': {
+        files: files.dadafw
+      },
+      'dadafw-dev': {
+        files: files.dadafw,
+        options: optionsDev
       }
     },
     watch: {
-      css: {
-        files: dirBase + 'scss/**/*.scss',
-        tasks: ['sass:dev']
+      'dadafw': {
+        files: dirBase + '**/*.scss',
+        tasks: ['sass:dadafw-dev']
+      },
+      'grid-only': {
+        files: dirBase + '**/*.scss',
+        tasks: ['sass:grid-only-dev']
       }
     }
   });
-  grunt.registerTask('compile', 'Compiles the complete framework', compile);
+  grunt.registerTask('compile', 'Compiles the complete framework', function() {
+    grunt.log.write('Compiling the complete framework.\n');
+    grunt.task.run('sass:dadafw-release');
+  });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.registerTask('default', ['compile']);
-
 };

@@ -1,0 +1,45 @@
+// Dada Web Framework <https://github.com/msikma/dadafw>
+// Copyright (C) 2013-2015, Michiel Sikma <michiel@sikma.org> and contributors
+// MIT licensed
+
+/**
+ * Internal Functions
+ */
+
+/**
+ * Returns the first item of a list.
+ * @param {list} - list object
+ * @returns {*} - first item of a list
+ */
+@function first($list) {
+  @return nth($list, 1);
+}
+
+/**
+ * Returns the last item of a list.
+ * @param {list} - list object
+ * @returns {*} - last item of the list
+ */
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+/**
+ * Returns a width query containing at least (min-width: n),
+ * and additionally (max-width: n) if a max width is passed.
+ * @param {value} - minimal width
+ * @param {value} - maximal width
+ * @returns {string} - media query string
+ */
+@function get-width-query($min, $max) {
+  $width-query: '';
+  $min-query: '(min-width: ' + $min + ')';
+  $max-query: ' and (max-width: ' + $max + ')';
+  @if $max {
+    $width-query: $min-query + $max-query;
+  }
+  @else {
+    $width-query: $min-query;
+  }
+  @return $width-query;
+}

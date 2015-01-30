@@ -1,0 +1,370 @@
+// Dada Web Framework <https://github.com/msikma/dadafw>
+// Copyright (C) 2013-2015, Michiel Sikma <michiel@sikma.org> and contributors
+// MIT licensed
+
+/**
+ * Button Styling
+ *
+ * Buttons have a large number of variations and different usage
+ * situations, which has made this code relatively large.
+ * On top of that, the default theme specifies a number of modifications
+ * to the general styling.
+ *
+ * Generally, buttons have four sizes: xs, s, m (default) and l.
+ *
+ * Buttons are slightly shorter than input fields; in order to nicely
+ * display those two next to each other, we've included extra styling
+ * that makes buttons slightly larger in that context (also available
+ * using the .line class).
+ *
+ * There are a number of basic button variations aside from that,
+ * named: primary, overlay, link, success, info, warning, error.
+ *
+ * Aside from these variations and sizes, a number of other situations
+ * are accounted for; see the documentation for a complete overview.
+ */
+
+// Target .btn and elements with the "button" ARIA role.
+button,
+.btn {
+  @include border-radius('m');
+  @include pill('m');
+  @include transition(box-shadow 0.1s);
+  @include box-shadow($form-focus-shadow-off);
+  @include interface-font();
+  
+  // Buttons are inline-blocks by default, blocks if specified.
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid $color-gray-m1;
+  background-color: $color-gray-l1;
+  color: $color-text;
+  margin-bottom: 6px;
+  
+  // Some (older?) browsers don't have cursor:pointer by default
+  // for <button> elements. (Note: cursor:hand is unnecessary since IE5.5).
+  cursor: pointer;
+  background-image: none;
+  font-size: 1em;
+  
+  // As usual, percentages are comparitive to the default baseline (14px).
+  &.l {
+    // Large variant
+    @include pill('l');
+    @include border-radius('l');
+    font-size: percentage(18px / $font-base-size);
+  }
+  &.s {
+    // Small variant
+    @include pill('s');
+    @include border-radius('s');
+    font-size: percentage(12px / $font-base-size);
+  }
+  &.xs {
+    // Extra small variant
+    @include pill('xs');
+    @include border-radius('xs');
+  }
+  
+  // Various styles:
+  &.transparent {
+    background: transparent;
+  }
+  &.link {
+    // Made to have the same size, but without background or border.
+    background: transparent;
+    border-color: transparent;
+    color: $color-link-text;
+    
+    &:hover {
+      color: $color-link-text-hover;
+      background: transparent;
+      border-color: transparent;
+    }
+  }
+  &.overlay {
+    // Transparent black, to appear over e.g. image backgrounds
+    $overlay-color: rgba($color-black, 0.35);
+    $overlay-color-hover: rgba($overlay-color, 0.5);
+    background: $overlay-color;
+    border-color: transparent;
+    color: $color-white;
+    
+    &:hover {
+      color: $color-white;
+      background: $overlay-color-hover;
+      border-color: transparent;
+    }
+  }
+  &.block {
+    // For buttons that need to take up all available space.
+    display: block;
+    width: 100%;
+  }
+  &.block + &.block {
+    // For block buttons following a block button.
+    margin-top: 0.5em;
+  }
+  
+  // Occasionally, you'll want a button to appear next to an input field.
+  // The <button> element is slightly smaller than a standard input field,
+  // so our preferred way of fixing that is by making the <button> slightly
+  // bigger.
+  &.line {
+    height: $font-base-lineheight + 1em;
+  }
+    
+  &:focus {
+    // Keyboard navigation focus
+    outline: 0;
+    @include transition(box-shadow 0.1s);
+    @include box-shadow($form-focus-shadow-on);
+    border-color: $color-cyan-m2 !important;
+  }
+  &:focus, &:hover {
+    border-color: $color-gray-m2;
+    background-color: $color-gray-l3;
+    text-decoration: none;
+  }
+  &:active, &.active {
+  }
+  
+  // Style differentiation for multiple different types of buttons.
+  
+  // Primary variation
+  &.primary {
+    border-color: $color-blue-m4;
+    background-color: $color-blue-m2;
+    color: white;
+    
+    &:focus {
+      border-color: $color-blue-m3 !important;
+      background-color: $color-blue-m2;
+    }
+    &:focus, &:hover {
+      border-color: $color-blue-d1;
+      background-color: $color-blue-m3;
+    }
+  }
+  
+  // Success variation
+  &.success {
+    border-color: $color-green-m4;
+    background-color: $color-green-m2;
+    color: white;
+    
+    &:focus {
+      border-color: $color-green-m3 !important;
+      background-color: $color-blue-m2;
+    }
+    &:focus, &:hover {
+      border-color: $color-green-d1;
+      background-color: $color-green-m3;
+    }
+  }
+  
+  // Info variation
+  &.info {
+    border-color: $color-cyan-m4;
+    background-color: $color-cyan-m2;
+    color: white;
+    
+    &:focus {
+      border-color: $color-cyan-m3 !important;
+      background-color: $color-cyan-m2;
+    }
+    &:focus, &:hover {
+      border-color: $color-cyan-d1;
+      background-color: $color-cyan-m3;
+    }
+  }
+  
+  // Warning variation
+  // todo: change color to slightly more orange-like yellow
+  &.warning {
+    border-color: $color-yellow-m4;
+    background-color: $color-yellow-m2;
+    color: white;
+    
+    &:focus {
+      border-color: $color-yellow-m3 !important;
+      background-color: $color-yellow-m2;
+    }
+    &:focus, &:hover {
+      border-color: $color-yellow-d1;
+      background-color: $color-yellow-m3;
+    }
+  }
+  
+  // Error variation
+  &.error {
+    border-color: $color-red-m4;
+    background-color: $color-red-m2;
+    color: white;
+    
+    &:focus {
+      border-color: $color-red-m3 !important;
+      background-color: $color-red-m2;
+    }
+    &:focus, &:hover {
+      border-color: $color-red-d1;
+      background-color: $color-red-m3;
+    }
+  }
+  
+  // Buttons that can display a loading animation. When not loading,
+  // they'll still have some extra padding where the image normally is.
+  &.can-load {
+    padding-right: 32px;
+    position: relative;
+    
+    // Create the container for our loading image.
+    &:before {
+      // Include the loader code.
+      // It's not visible until the .is-loading class is added.
+      @include loader();
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin: -8px 0 0;
+      opacity: 0;
+      
+      @include transition(opacity 0.25s ease-in-out);
+    }
+    &.is-loading {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  
+  // Buttons that have a dropdown menu should have the .has-dropdown
+  // class so that we can display the caret.
+  &.has-dropdown {
+    padding-right: $button-icon-padding-left-m + $button-icon-padding-right-m + $font-base-size;
+    
+    &:before {
+      content: $fa-var-caret-down;
+      @include fa-icon();
+      font-size: $button-icon-size-m;
+      // Position it in the center right of the button.
+      top: ($button-padding-top-m + $button-padding-bottom-m + $font-base-size) / 2;
+      right: $button-icon-padding-right-m;
+      line-height: $button-icon-lineheight-m;
+      margin-top: -($font-base-size / 2);
+      width: $font-base-size;
+      height: $font-base-size;
+      color: $color-black;
+      z-index: 10;
+    }
+    
+    // Fix the positioning for other size variants.
+    &.l {
+      padding-right: $button-icon-padding-left-l + $button-icon-padding-right-l + $font-base-size;
+      
+      &:before {
+        font-size: $button-icon-size-l;
+        line-height: $button-icon-lineheight-l;
+        top: ($button-padding-top-l + $button-padding-bottom-l + $font-base-size) / 2;
+        right: $button-icon-padding-right-l;
+      }
+    }
+    &.s {
+      padding-right: $button-icon-padding-left-s + $button-icon-padding-right-s + $font-base-size;
+      
+      &:before {
+        font-size: $button-icon-size-s;
+        line-height: $button-icon-lineheight-s;
+        top: ($button-padding-top-s + $button-padding-bottom-s + $font-base-size) / 2;
+        right: $button-icon-padding-right-s;
+      }
+    }
+    &.xs {
+      padding-right: $button-icon-padding-left-xs + $button-icon-padding-right-xs + $font-base-size;
+      
+      &:before {
+        font-size: $button-icon-size-xs;
+        line-height: $button-icon-lineheight-xs;
+        top: ($button-padding-top-xs + $button-padding-bottom-xs + $font-base-size) / 2;
+        right: $button-icon-padding-right-xs;
+      }
+    }
+  }
+  
+  // Fix line-height modifications through the use of text styling
+  // elements inside of the button.
+  code {
+    line-height: 0;
+  }
+  
+  // In case either the button or its fieldset is disabled.
+  // IE9 adds an ugly text-shadow to a button when it's disabled. We can't
+  // seem to be able to do anything about that. I tried.
+  // The Bootstrap people can't fix it either, though, so I don't mind.
+  &.disabled, &[disabled], fieldset[disabled] & {
+    @include pointer-events();
+    opacity: 0.60;
+  }
+}
+  
+// Buttons can be grouped together in a set.
+// They stick together and lose their internal margin if so.
+// todo: rewrite
+.btn-group {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle; //check
+  
+  & + .btn-group {
+    margin-left: 2px;
+  }
+  
+  button,
+  .btn {
+    margin-left: 0;
+    float: left;
+    left: 0;
+    position: relative;
+    display: block;
+    margin-bottom: 0;
+    
+    // Remove the left border on all buttons except the first item.
+    &:nth-child(n+2) {
+      border-left: none;
+    }
+    
+    // Make sure the border radius only applies to the outer buttons.
+    @include border-radius(0);
+    &:first-child {
+      @include border-radius('m', ('tl', 'bl'));
+    }
+    &:last-child {
+      @include border-radius('m', ('tr', 'br'));
+    }
+    
+    &:focus, &:hover {
+      // Make the border visible on hover.
+      z-index: 5;
+    }
+    
+    // Same as above, but explicitly for every size.
+    $sizes: ('xs', 's', 'm', 'l');
+    $i: 0;
+    @while $i < length($sizes) {
+      $size: nth($sizes, $i + 1);
+      $i: $i + 1;
+      &.#{$size} {
+        &:first-child {
+          @include border-radius($size, ('tl', 'bl'));
+        }
+        &:last-child {
+          @include border-radius($size, ('tr', 'br'));
+        }
+      }
+    }
+  }
+}

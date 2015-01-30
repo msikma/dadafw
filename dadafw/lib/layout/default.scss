@@ -1,0 +1,14 @@
+// Dada Web Framework <https://github.com/msikma/dadafw>
+// Copyright (C) 2013-2015, Michiel Sikma <michiel@sikma.org> and contributors
+// MIT licensed
+
+/**
+ * Grid System / Default
+ *
+ * The default grid. Note that the comments are only accurate
+ * when using the default settings.
+ */
+
+@if $use-default-grid == true {
+  @include construct-grid($default-grid);
+}
