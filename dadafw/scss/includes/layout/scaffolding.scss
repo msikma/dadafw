@@ -64,7 +64,7 @@ body {
   &.justify-center {
     @include justify-content(center);
   }
-  &.justify-between, &.justify-between, {
+  &.justify-between, &.justify-equal {
     @include justify-content(space-between);
   }
   &.justify-around {
