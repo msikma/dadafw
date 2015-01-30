@@ -38,7 +38,7 @@ code, kbd, pre, samp, tt, var {
 pre {
   @include box-opaque();
   @include no-edge-margins();
-  
+
   margin: $box-margin-top-m 0 $box-margin-bottom-m;
   
   // Reset the style for inline pre elements.

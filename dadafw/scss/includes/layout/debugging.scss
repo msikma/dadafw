@@ -38,6 +38,8 @@
 {
   @media screen and (max-width: $viewport-max-width) {
     .grid-debug {
+      margin-bottom: -1px;
+
       $col-base-shadows: (
         inset 1px 1px 0 rgba($grid-debug-color, 1.0),
         inset -1px 1px 0 rgba($grid-debug-color, 1.0)

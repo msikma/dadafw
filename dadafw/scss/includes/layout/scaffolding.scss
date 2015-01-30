@@ -38,9 +38,6 @@ body {
 
 // Basic grid layout
 
-.grid, .row, .col {
-  @include displayfix();
-}
 .grid {
   margin: auto;
   
@@ -56,11 +53,31 @@ body {
 
   // Note: on sizes above mobile, wrapping will be prevented.
   // This is set up in the grid construction mixin.
+
+  // Cross-platform classes for setting the row justify-content value.
+  &.justify-start {
+    @include justify-content(flex-start);
+  }
+  &.justify-end {
+    @include justify-content(flex-end);
+  }
+  &.justify-center {
+    @include justify-content(center);
+  }
+  &.justify-between, &.justify-between, {
+    @include justify-content(space-between);
+  }
+  &.justify-around {
+    @include justify-content(space-around);
+  }
+  &.justify-equal {
+    @include clearfix();
+  }
 }
 .col {
   @include flex(0 0 auto);
-  @include flex-direction(column);
   @include flex-basis(100%);
+  width: 100%;
   margin-left: 0;
   display: block;
   position: relative;

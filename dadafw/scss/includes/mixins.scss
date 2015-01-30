@@ -8,7 +8,7 @@
 
 // Used to contain floats without the need to use presentational HTML.
 // For more info, see <http://nicolasgallagher.com/micro-clearfix-hack/>.
-@mixin displayfix {
+@mixin clearfix() {
   &:before,
   &:after {
     line-height: 0;
@@ -45,15 +45,13 @@
 
 @mixin font-smoothing($value:"grayscale") {
   // Sets the font rendering method.
-  @if $ddfw-compatibility-mode == true {
-    @if $value == "grayscale" {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    @else {
-      -webkit-font-smoothing: subpixel-antialiased;
-      -moz-osx-font-smoothing: auto;
-    }
+  @if $value == "grayscale" {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
   }
 }
 

@@ -9,13 +9,6 @@
 // Set defaults, then override with theme settings.
 @import "includes/defaults.scss";           // Default settings
 @import "includes/theme-ante.scss";         // Theme-defined settings
-
-// Check whether we're generating code for browser compatibility (recommended).
-@if $ddfw-compatibility-mode == false {
-  @warn 'Not including vendor prefixes and browser hacks (CSS3 standards-'
-    +'compliance mode; see README note).';
-}
-
 @import "includes/externals.scss";          // External projects loader
 @import "includes/functions.scss";          // Internal functions
 @import "includes/mixins.scss";             // Internal mixins

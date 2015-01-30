@@ -31,11 +31,6 @@ $ddfw-resources-dir:        $ddfw-base-dir+'resources/' !default;
 $ddfw-fonts-dir:            $ddfw-resources-dir+'fonts/' !default;
 $ddfw-sprites-dir:          $ddfw-resources-dir+'img/' !default;
 
-// Whether to generate CSS code optimized for optimal browser
-// compatibility (recommended), or to generate standards-compliant CSS3.
-// See the note in readme for more information.
-$ddfw-compatibility-mode:   true !default;
-
 // 2. Grid size variables
 // ---------------------------------------------------------------------
 //
@@ -133,7 +128,7 @@ $color-gray-d1:             #666363 !default;
 $color-gray-d2:             #555252 !default;
 $color-gray-d3:             #454242 !default;
 $color-gray-d4:             #313030 !default;
-$color-gray-d5:             #0e0b0b !default;
+$color-gray-d5:             #181616 !default;
 $color-black:               #050202 !default;
 
 // Red
@@ -569,7 +564,7 @@ $nav-padding-v-sub-bottom:  $nav-padding-v-sub-top !default;
 $tag-padding-left:          6px !default;
 $tag-padding-right:         $tag-padding-left !default;
 $tag-padding-top:           0.19em !default;
-$tag-padding-bottom:        $tag-padding-top !default;
+$tag-padding-bottom:        0.21em !default;
 
 // Tag height
 $tag-height:                15px !default;
@@ -579,5 +574,5 @@ $tag-icon-width:            6px !default;
 $tag-icon-height:           17px !default;
 
 // Paragraph margin (and various other elements)
-$p-base-margin-top:         0.8em !default;
-$p-base-margin-bottom:      0.65em !default;
+$p-base-margin-top:         0.8em;
+$p-base-margin-bottom:      $p-base-margin-top;

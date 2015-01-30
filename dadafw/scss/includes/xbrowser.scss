@@ -14,10 +14,8 @@
 
 // Mixin for cross-browser box shadows
 @mixin box-shadow($shadow) {
-  @if $ddfw-compatibility-mode {
-    -webkit-box-shadow: $shadow; // iOS <= 4.2, Android <= 4.0
-  }
-  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow; // iOS <= 4.2, Android <= 4.0
+          box-shadow: $shadow;
 }
 
 // CSS attribute transitions
@@ -26,47 +24,37 @@
   // we need to do a string replacement on our $trns string
   // to make it work.
   // todo: string replacement
-  @if $ddfw-compatibility-mode {
-    -webkit-transition: $trns; // iOS <= 6.1
-  }
-  transition: $trns;
+  -webkit-transition: $trns; // iOS <= 6.1
+          transition: $trns;
 }
 
 // Disable click events (not standards compliant until probably CSS4)
 @mixin pointer-events($var:none) {
-  @if $ddfw-compatibility-mode {
-    // Gecko, Webkit and IE11 and up.
-    pointer-events: $var;
-  }
+  // Gecko, Webkit and IE11 and up.
+  pointer-events: $var;
 }
 
 // Box model setting
 // See <http://www.paulirish.com/2012/box-sizing-border-box-ftw/> for more info.
 // It's recommended to use either content-box or border-box.
 @mixin box-sizing($value:border-box) {
-  @if $ddfw-compatibility-mode {
-       -moz-box-sizing: $value; // Firefox current
-    -webkit-box-sizing: $value; // iOS <= 4, Android <= 2.3
-  }
-  box-sizing: $value;
+     -moz-box-sizing: $value; // Firefox current
+  -webkit-box-sizing: $value; // iOS <= 4, Android <= 2.3
+          box-sizing: $value;
 }
 
 // Text justification
 @mixin text-justify($value) {
-  @if $ddfw-compatibility-mode {
-    -ms-text-justify: $value; // IE 8 Standards Mode
-    text-justify: $value;
-  }
+  -ms-text-justify: $value; // IE 8 Standards Mode
+      text-justify: $value;
 }
 
 // A regular gradient from top to bottom
 @mixin linear-gradient($from, $to, $deg:180deg) {
-  @if $ddfw-compatibility-mode {
-    // Safari <= 6.0
-    background-image: -webkit-linear-gradient($deg, $from, $to);
-    // IE 8 and 9
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}'";
-  }
+  // Safari <= 6.0
+  background-image: -webkit-linear-gradient($deg, $from, $to);
+  // IE 8 and 9
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$from}', EndColorStr='#{$to}'";
   background-image: linear-gradient($deg, $from, $to);
 }
 
@@ -97,32 +85,26 @@
   @keyframes #{$name} {
     @include keyframes-args($args);
   }
-  @if $ddfw-compatibility-mode {
-    // Webkit current
-    @-webkit-keyframes #{$name} {
-      @include keyframes-args($args);
-    }
-    // Mozilla <= 3.6
-    @-moz-keyframes #{$name} {
-      @include keyframes-args($args);
-    }
+  // Webkit current
+  @-webkit-keyframes #{$name} {
+    @include keyframes-args($args);
+  }
+  // Mozilla <= 3.6
+  @-moz-keyframes #{$name} {
+    @include keyframes-args($args);
   }
 }
 
 // Sets column-count
 @mixin column-count($n) {
-  @if $ddfw-compatibility-mode == true {
-    -moz-column-count: $n;
-    -webkit-column-count: $n;
-  }
-  column-count: $n;
+     -moz-column-count: $n;
+  -webkit-column-count: $n;
+          column-count: $n;
 }
 
 // Sets column-gap
 @mixin column-gap($gap) {
-  @if $ddfw-compatibility-mode == true {
-    -moz-column-gap: $gap;
-    -webkit-column-gap: $gap;
-  }
-  column-count: $gap;
+     -moz-column-gap: $gap;
+  -webkit-column-gap: $gap;
+        column-count: $gap;
 }
