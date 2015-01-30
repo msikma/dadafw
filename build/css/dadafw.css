@@ -2137,7 +2137,7 @@ body {
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center; }
-  .row.justify-between, .row.justify-between {
+  .row.justify-between, .row.justify-equal {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
