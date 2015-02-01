@@ -403,7 +403,7 @@ $syn-print-prettify: (
 // ---------------------------------------------------------------------
 
 // Whether to include the grid debugging class.
-$grid-debug-include:        true !default;
+$grid-debug-include:        false !default;
 // Color used for the grid debugging display.
 $grid-debug-color:          $color-blue-m2 !default;
 
