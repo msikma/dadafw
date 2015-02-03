@@ -39,17 +39,12 @@
  * @returns {string} - media query string
  */
 @function get-width-query($min, $max:null) {
-  $width-query: '';
-  $media: 'screen ';
-  $min-query: '(min-width: ' + $min + ')';
-  $max-query: ' and (max-width: ' + $max + ')';
+  $media: 'screen';
+  $width-query: '(min-width: ' + $min + ')';
   @if $max {
-    $width-query: $min-query + $max-query;
+    $width-query: $width-query + ' and (max-width: ' + $max + ')';
   }
-  @else {
-    $width-query: $min-query;
-  }
-  $width-query: $media + $width-query;
+  $width-query: $media + ' and ' + $width-query;
   @return $width-query;
 }
 
