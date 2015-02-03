@@ -89,7 +89,7 @@
 
   $width-query: get-width-query($viewport-width, $viewport-limit);
 
-  @media screen and #{$width-query} {
+  @media #{$width-query} {
     .grid {
       width: $grid-width;
       padding-left: $col-half-gutter;
@@ -191,7 +191,7 @@
 
   $width-query: get-width-query($viewport-width, $viewport-limit);
 
-  @media screen and #{$width-query} {
+  @media #{$width-query} {
     // Basic column size:
     .col {
       padding-left: $col-half-gutter;
@@ -234,7 +234,7 @@
   $col-amount) {
   $width-query: get-width-query($viewport-width, $viewport-limit);
 
-  @media screen and #{$width-query} {
+  @media #{$width-query} {
     // Calculate the sizes of the grid columns.
     $i: $col-amount;
     @while $i > 0 {
@@ -265,6 +265,45 @@
   }
 }
 
+/**
+ * Constructs a grid in accordance with the parameters outlined in the
+ * $grid variable.
+ *
+ * An example $grid variable (the one we use as default):
+ *
+ *   $default-grid: (
+ *     // Small desktop (768px and up by default, e.g. tablets)
+ *     's': (
+ *       'viewport-width': $viewport-width-s,
+ *       'grid-width': $grid-width-s,
+ *       'col-amount': $col-amount-s,
+ *       'col-gutter': $col-gutter-s,
+ *       'is-mobile': true,
+ *     ),
+ *     // Medium desktop (992px and up by default)
+ *     'm': (
+ *       'viewport-width': $viewport-width-m,
+ *       'grid-width': $grid-width-m,
+ *       'col-amount': $col-amount-m,
+ *       'col-gutter': $col-gutter-m,
+ *       'is-mobile': false,
+ *     ),
+ *     // Large desktop (1200px and up by default)
+ *     'l': (
+ *       'viewport-width': $viewport-width-l,
+ *       'grid-width': $grid-width-l,
+ *       'col-amount': $col-amount-l,
+ *       'col-gutter': $col-gutter-l,
+ *       'is-mobile': false,
+ *     ),
+ *   );
+ *
+ * The mixin will first process this grid variable to extract some
+ * more information from the values provided.
+ *
+ * The grid variable must be in ascending size order, smallest responsive
+ * size first and largest size last.
+ */
 @mixin construct-grid($grid) {
   // Retrieve some additional information from our grid.
   $grid-data: process-grid($grid);

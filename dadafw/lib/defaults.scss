@@ -80,6 +80,9 @@ $viewport-width-l:          $grid-width-l + ($col-gutter-l) !default;
 // Whether to use the default grid (if false, you'll have to specify your own).
 $use-default-grid:          true !default;
 
+// Placeholder variable for the grid data. This can not be altered.
+$grid-data:                 null;
+
 // The default grid specification.
 $default-grid: (
   // Small desktop (768px and up by default, e.g. tablets)
