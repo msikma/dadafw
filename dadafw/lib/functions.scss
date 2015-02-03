@@ -80,6 +80,7 @@
  */
 @function media-query($args) {
   $query: '';
+  $media: 'screen';
 
   // Take the part of the $grid-data map that contains the keys (size names)
   // and responsive size values.
@@ -140,21 +141,14 @@
     @each $size in $sizes {
       $min-width: map-get($size, 'viewport-width');
       $max-width: map-get($size, 'viewport-limit');
-      $size-query: 'min-width: ' + $min-width;
+      $size-query: '(min-width: ' + $min-width + ')';
       @if $max-width {
-        $size-query: '(' + $size-query + ')';
         $size-query: $size-query + ' and (max-width: ' + $max-width + ')';
       }
-      $size-query: '(' + $size-query + ')';
-      @if $query != '' {
-        $query: $query + ' or ';
-      }
-      $query: $query + $size-query;
+      $size-query: $media + ' and ' + $size-query;
+      $query: if($query != '', $query + ', ', '') + $size-query;
     }
   }
-
-  $media: 'screen';
-  $query: $media + if($query, ' and (' + $query + ')', '');
 
   @return $query;
 }
