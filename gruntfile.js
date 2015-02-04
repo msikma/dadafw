@@ -60,6 +60,7 @@ module.exports = function(grunt)
   grunt.registerTask('compile', 'Compiles the complete framework', function() {
     grunt.log.write('Compiling the complete framework.\n');
     grunt.task.run('sass:dadafw-release');
+    grunt.task.run('sass:grid-only-release');
   });
 
   grunt.loadNpmTasks('grunt-sass');
