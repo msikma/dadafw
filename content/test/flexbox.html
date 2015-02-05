@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<!--
+Dada Framework - Grid test
+MIT license. (C) 2013-2015 Michiel Sikma <michiel@sikma.org>
+See <http://github.com/msikma/dadafw/> for more information.
+-->
+<head>
+  <meta charset="utf-8"/>
+  <title>Dada Framework - Grid test page</title>
+  <link rel="stylesheet" href="../build/grid-only.css" type="text/css" media="screen"/>
+  <style type="text/css">
+  .box {
+    outline: 1px solid blue;
+    flex: 1;
+  }
+  </style>
+</head>
+<body>
+<div class="grid">
+  <div class="row justify-center">
+    <div class="col w-10">
+      <div class="page-header">
+        <h1 id="ch_overview">Grid test page</h1>
+        <p>This is a test page used to develop the grid system. There's a watch task in the Gruntfile that compiles only the grid: <code>grunt dev:grid-only</code>.</p>
+      </div>
+      <div class="grid-debug">
+        <div class="row">
+          <div class="col w-4">
+            <div class="box">1</div>
+          </div>
+          <div class="col w-4">
+            <div class="box">1<br />2</div>
+          </div>
+          <div class="col w-4">
+            <div class="box">1</div>
+          </div>
+        </div>
+      </div>
+      <p><small>MIT license. (C) 2013-2015<br/><a href="http://github.com/msikma/dadafw/">http://github.com/msikma/dadafw/</a></small></p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
