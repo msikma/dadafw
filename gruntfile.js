@@ -27,15 +27,15 @@ module.exports = function(grunt) {
   var defaultTarget = 'dadafw';
   var entries = ['dadafw', 'grid-only', 'debug'];
   var targets = {};
-  entries.forEach(function(el) {
-    var src = dirSource + el + '.scss';
-    var target = dirBuild + el + '.css';
-    var watch = [dirSource + 'lib/**/*.scss', dirSource + el + '.scss'];
-    targets[el] = {
+  entries.forEach(function(entry) {
+    var src = dirSource + entry + '.scss';
+    var target = dirBuild + entry + '.css';
+    var watch = [dirSource + 'lib/**/*.scss', dirSource + entry + '.scss'];
+    targets[entry] = {
       watch: watch,
       files: {}
     };
-    targets[el].files[target] = src;
+    targets[entry].files[target] = src;
   });
 
   // Generate the Sass tasks that we'll be using. Release builds are
@@ -52,22 +52,22 @@ module.exports = function(grunt) {
     options: optionsRelease
   };
   // Generate '<entry>-release', '<entry>-dev'.
-  entries.forEach(function(el) {
-    sassOptions[el + '-release'] = {
-      files: targets[el].files
+  entries.forEach(function(entry) {
+    sassOptions[entry + '-release'] = {
+      files: targets[entry].files
     };
-    sassOptions[el + '-dev'] = {
-      files: targets[el].files,
+    sassOptions[entry + '-dev'] = {
+      files: targets[entry].files,
       options: optionsDev
     };
   });
 
   // Generate watch options. This is only for dev builds.
   var watchOptions = {};
-  entries.forEach(function(el) {
-    watchOptions[el] = {
-      files: targets[el].watch,
-      tasks: ['sass:' + el + '-dev']
+  entries.forEach(function(entry) {
+    watchOptions[entry] = {
+      files: targets[entry].watch,
+      tasks: ['sass:' + entry + '-dev']
     };
   });
 
@@ -75,9 +75,9 @@ module.exports = function(grunt) {
   // and a watch server at the same time, making it possible to develop
   // using the dev server.
   var concurrentOptions = {};
-  entries.forEach(function(el) {
-    concurrentOptions[el] = {
-      tasks: ['connect:dev', 'watch:' + el]
+  entries.forEach(function(entry) {
+    concurrentOptions[entry] = {
+      tasks: ['connect:dev', 'watch:' + entry]
     };
   });
   concurrentOptions['options'] = {
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
   grunt.registerTask('compile', 'Compile the framework', function(target) {
     printCopyright();
     if (target) {
-      grunt.log.writeln('Compiling target: ' + target + '.');
+      grunt.log.writeln('Compiling target: ' + target['cyan'] + '.');
       grunt.task.run('sass:' + target + '-release');
     } else {
       grunt.log.writeln('Compiling all framework targets.');
@@ -125,6 +125,7 @@ module.exports = function(grunt) {
       target = defaultTarget;
     }
     grunt.log.writeln('Starting a development server.');
+    grunt.log.writeln('Using target: ' + target['cyan'] + '.\n');
     grunt.task.run('concurrent:' + target);
   });
 
@@ -140,7 +141,10 @@ module.exports = function(grunt) {
       '  compile[:TARGET]      Compiles the framework.\n' +
       '  dev[:TARGET]          Starts a development server.\n' +
       '  info                  Displays build task info.\n' +
-      '\nFor more info, see the Dada Framework website.\n'
+      '\ntargets:\n' +
+      '  dadafw, grid-only, debug\n' +
+      '\nFor more information and a description of the targets, see\n' +
+      'the Dada Framework page on Github <http://github.com/msikma/dadafw/>.'
     );
   });
 
