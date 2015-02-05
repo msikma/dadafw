@@ -111,8 +111,8 @@ module.exports = function(grunt) {
       grunt.task.run('sass:' + target + '-release');
     } else {
       grunt.log.writeln('Compiling all framework targets.');
-      entries.each(function(el) {
-        grunt.task.run('sass:' + el + '-release');
+      entries.forEach(function(entry) {
+        grunt.task.run('sass:' + entry + '-release');
       });
     }
   });
