@@ -146,9 +146,9 @@ module.exports = function(grunt) {
       '  dev[:TARGET]          Starts a development server.\n' +
       '  info                  Displays build task info.\n' +
       '\ntargets:\n' +
-      '  dadafw, grid-only, debug\n' +
+      '  dadafw (default), grid-only, debug\n' +
       '\nFor more information and a description of the targets, see\n' +
-      'the Dada Framework page on Github <http://github.com/msikma/dadafw/>.'
+      'the Dada Framework page on Github <http://github.com/msikma/dadafw/>.\n'
     );
   });
 
