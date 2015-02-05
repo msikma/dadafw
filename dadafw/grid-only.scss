@@ -7,6 +7,10 @@
 @debug 'Dada Web Framework <https://github.com/msikma/dadafw> (MIT licensed)';
 @debug 'Grid-only build';
 
+// To test the grid, include the debugging code here:
+//
+//   $grid-debug-include: true;
+
 @import 'lib/defaults';               // Default settings
 @import 'lib/externals/sass-flex';    // Cross-browser Flexbox mixins
 @import 'lib/functions';              // Internal functions
