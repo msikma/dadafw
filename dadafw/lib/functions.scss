@@ -38,11 +38,16 @@
  * @param {value} - maximal width
  * @returns {string} - media query string
  */
-@function get-width-query($min, $max:null) {
+@function get-width-query($min:null, $max:null) {
   $media: 'screen';
-  $width-query: '(min-width: ' + $min + ')';
+  $width-query: '';
+
+  @if $min {
+    $width-query: '(min-width: ' + $min + ')';
+  }
   @if $max {
-    $width-query: $width-query + ' and (max-width: ' + $max + ')';
+    $width-query: if($width-query != '', $width-query + ' and ', '') +
+      '(max-width: ' + $max + ')';
   }
   $width-query: $media + ' and ' + $width-query;
   @return $width-query;

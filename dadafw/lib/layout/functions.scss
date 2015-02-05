@@ -22,8 +22,6 @@
 @function process-grid($grid) {
   $new-grid: map-merge($grid, ());
 
-  // Keep track of whether we've passed mobile sizes.
-  $post-mobile: false;
   // The threshold of where desktop sizes begin.
   $mobile-desktop-threshold: 0;
 
@@ -43,12 +41,15 @@
     $stage-data: map-get($grid, $stage);
     $viewport-width: map-get($stage-data, 'viewport-width');
     $is-mobile: map-get($stage-data, 'is-mobile');
+    $col-gutter: map-get($stage-data, 'col-gutter');
+
+    // Ensure that the gutter is a pixel value.
+    $col-gutter: if($col-gutter, $col-gutter, 0px);
 
     // When this loop ends, $mobile-desktop-threshold will contain
-    // the viewport width of the largest mobile responsive size.
-    @if $is-mobile == true {
+    // the viewport width of the smallest non-mobile responsive size.
+    @if $is-mobile == false {
       $mobile-desktop-threshold: $viewport-width;
-      $post-mobile: true;
     }
 
     // Save the data of the smallest desktop size.
@@ -61,7 +62,8 @@
     // Save the viewport limit, unless it's the first iteration.
     @if $viewport-limit > 0 {
       $stage-data: map-merge($stage-data, (
-        'viewport-limit': $viewport-limit - 1
+        'viewport-limit': $viewport-limit - 1,
+        'col-gutter': $col-gutter
       ));
     }
 
@@ -89,9 +91,14 @@
 
   $width-query: get-width-query($viewport-width, $viewport-limit);
 
+  // Some basic scaffolding.
   @media #{$width-query} {
     .grid {
       width: $grid-width;
+      padding-left: $col-half-gutter;
+      padding-right: $col-half-gutter;
+    }
+    .col {
       padding-left: $col-half-gutter;
       padding-right: $col-half-gutter;
     }
@@ -192,11 +199,6 @@
   $width-query: get-width-query($viewport-width, $viewport-limit);
 
   @media #{$width-query} {
-    // Basic column size:
-    .col {
-      padding-left: $col-half-gutter;
-      padding-right: $col-half-gutter;
-    }
     // An element can be hidden when a specific responsive size is active.
     // Hide the ones that pertain to this size.
     .xs-hidden {
@@ -272,6 +274,11 @@
  * An example $grid variable (the one we use as default):
  *
  *   $default-grid: (
+ *     // Mobile (anything below 768px)
+ *     'xs': (
+ *       'col-gutter': $col-gutter-xs,
+ *       'is-mobile': true,
+ *     ),
  *     // Small desktop (768px and up by default, e.g. tablets)
  *     's': (
  *       'viewport-width': $viewport-width-s,
@@ -340,10 +347,11 @@
   // Calculate the grid layout for each responsive stage.
   $i: 0;
   $prev-gutter: 0;
+  $prev-is-mobile: false;
   @while $i < length($grid) {
     $stage: nth(map-keys($grid), $i + 1);
     $stage-data: map-get($grid, $stage);
-    
+
     // Retrieve the stage's info and pass it along to the layout function.
     $viewport-width: map-get($stage-data, 'viewport-width');
     $viewport-limit: map-get($stage-data, 'viewport-limit');
@@ -351,20 +359,28 @@
     $col-amount: map-get($stage-data, 'col-amount');
     $col-gutter: map-get($stage-data, 'col-gutter');
     $semantic-cols: map-get($stage-data, 'semantic-cols');
-    
+    $is-mobile: map-get($stage-data, 'is-mobile');
+
     // Set up the basic grid settings and the size at which it activates.
-    @include grid-layout($stage, $viewport-width, $viewport-limit, $grid-width, $col-gutter);
-    
+    @include grid-layout($stage, $viewport-width, $viewport-limit,
+      $grid-width, $col-gutter);
+
     // Calculate the sizes and margins for the grid's columns.
-    @include grid-cols($stage, $viewport-width, $viewport-limit, $col-gutter, $col-amount,
-      $semantic-cols);
+    @if $is-mobile == false {
+      @include grid-cols($stage, $viewport-width, $viewport-limit,
+        $col-gutter, $col-amount, $semantic-cols);
+    }
 
     // Add stage-specific grid debugging rules, if needed.
-    @if $grid-debug-include == true and $col-gutter != $prev-gutter {
-      @include grid-debug-stage($viewport-width, $col-gutter);
+    @if $grid-debug-include == true and (
+      $col-gutter != $prev-gutter or $prev-is-mobile != $is-mobile
+    ) {
+      @include grid-debug-stage($viewport-width, $viewport-limit, $col-gutter,
+        $is-mobile);
       $prev-gutter: $col-gutter;
     }
 
+    $prev-is-mobile: $is-mobile;
     $i: $i + 1;
   }
 
@@ -381,11 +397,16 @@
   @while $i < length($grid) {
     $stage: nth(map-keys($grid), $i + 1);
     $stage-data: map-get($grid, $stage);
-    $viewport-width: map-get($stage-data, 'viewport-width');
-    $viewport-limit: map-get($stage-data, 'viewport-limit');
-    $col-amount: map-get($stage-data, 'col-amount');
-    @include grid-rel-cols-render($stage, $viewport-width, $viewport-limit,
-      $col-amount);
+    $is-mobile: map-get($stage-data, 'is-mobile');
+
+    @if $is-mobile == false {
+      $viewport-width: map-get($stage-data, 'viewport-width');
+      $viewport-limit: map-get($stage-data, 'viewport-limit');
+      $col-amount: map-get($stage-data, 'col-amount');
+      @include grid-rel-cols-render($stage, $viewport-width, $viewport-limit,
+        $col-amount);
+    }
+
     $i: $i + 1;
   }
 }

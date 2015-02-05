@@ -49,15 +49,6 @@
         .col {
           @include box-shadow($col-base-shadows);
         }
-
-        &:last-child {
-          .col:last-child {
-            @include box-shadow((
-              $col-base-shadows,
-              inset 0 -1px 0 rgba($grid-debug-color, 1.0)
-            ));
-          }
-        }
       }
     }
   }
@@ -99,28 +90,50 @@
 // Adds the grid debugging styles for a specific responsive size of the grid.
 // Since each stage of the grid can have its own column gutter, we need to
 // re-do this each time the gutter changes.
-@mixin grid-debug-stage($viewport-width, $col-gutter)
-{
-  @media screen and (min-width: $viewport-width) {
+@mixin grid-debug-stage($viewport-width, $viewport-limit, $col-gutter,
+  $is-mobile) {
+  @if $viewport-width {
+    $query: 'min-width: ' + $viewport-width;
+  }
+  @else {
+    $query: 'max-width: ' + $viewport-limit;
+  }
+  @media screen and (#{$query}) {
     .grid-debug {
       .row {
         // Top and left borders and the padding fills (base)
         $col-base-shadows: (
           inset (-$col-gutter / 2) 0 0 rgba($grid-debug-color, 0.45),
           inset ($col-gutter / 2) 0 0 rgba($grid-debug-color, 0.45),
-          inset 1px 1px 0 rgba($grid-debug-color, 1.0),
-          inset 1px -1px 0 rgba($grid-debug-color, 1.0)
+          inset 1px 1px 0 rgba($grid-debug-color, 1.0)
         );
+        $col-bottom-line: inset 1px -1px 0 rgba($grid-debug-color, 1.0);
+        $col-shadows: $col-base-shadows;
+
+        // Don't show the bottom line when on mobile (since this results
+        // in double lines).
+        @if $is-mobile == false {
+          $col-shadows: append($col-base-shadows, $col-bottom-line);
+        }
         margin-bottom: -1px;
+
+        // Show a line only on the last column of the last row if on mobile.
+        @if $is-mobile == true {
+          &:last-child {
+            .col:last-child {
+              @include box-shadow(append($col-base-shadows, $col-bottom-line));
+            }
+          }
+        }
 
         .col {
           // Base
-          @include box-shadow($col-base-shadows);
+          @include box-shadow($col-shadows);
 
           &:last-child {
             // Right border and base
             @include box-shadow((
-              $col-base-shadows,
+              $col-shadows,
               inset -1px 1px 0 rgba($grid-debug-color, 1.0)
             ));
           }
@@ -130,7 +143,7 @@
             .col:last-child {
               // Base
               @include box-shadow((
-                $col-base-shadows
+                $col-shadows
               ));
             }
           }

@@ -67,7 +67,7 @@ $col-amount-m:              12 !default;
 $col-amount-l:              12 !default;
 
 // Gutters are divided in half for the left and right sides.
-$col-gutter-xs:             30px !default;
+$col-gutter-xs:             40px !default;
 $col-gutter-s:              30px !default;
 $col-gutter-m:              30px !default;
 $col-gutter-l:              30px !default;
@@ -82,16 +82,21 @@ $use-default-grid:          true !default;
 
 // Placeholder variable for the grid data. This can not be altered.
 $grid-data:                 null;
-
+//
 // The default grid specification.
 $default-grid: (
+  // Mobile (anything below 768px)
+  'xs': (
+    'col-gutter': $col-gutter-xs,
+    'is-mobile': true,
+  ),
   // Small desktop (768px and up by default, e.g. tablets)
   's': (
     'viewport-width': $viewport-width-s,
     'grid-width': $grid-width-s,
     'col-amount': $col-amount-s,
     'col-gutter': $col-gutter-s,
-    'is-mobile': true,
+    'is-mobile': false,
   ),
   // Medium desktop (992px and up by default)
   'm': (
