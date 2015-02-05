@@ -22,7 +22,8 @@ html, body {
 }
 
 // Monospace entities should have the mono font family.
-// Note that <tt> is obsolete and should not be used.[1]
+// Note that <tt> is obsolete and should not be used.
+// See <http://www.w3.org/TR/html5/obsolete.html#obsolete> for alternatives.
 code, kbd, pre, samp, tt, var {
   font-family: $font-mono;
   // Slightly smaller font size (95% by default)
@@ -101,7 +102,9 @@ sub {
 }
 // Note: contrary to common belief, the <b>, <i> and <u> elements are
 // still usable and supported (neither obsolete nor at risk of removal)
-// as of HTML5.[2]
+// as of HTML5.
+// See <http://www.w3.org/TR/html5/text-level-semantics.html> for the
+// semantic value of these and other elements.
 dfn, u {
   text-decoration: underline;
 }
@@ -182,7 +185,7 @@ blockquote {
       // hm. 
     }
   }
-  
+
   &.align-center {
     border: none;
     padding: 0 1.25em;
@@ -336,8 +339,3 @@ dl {
   // The text cursor is not needed by default.
   cursor: default;
 }
-
-// [1] See <http://www.w3.org/TR/html5/obsolete.html#obsolete> for
-//  alternatives.
-// [2] See <http://www.w3.org/TR/html5/text-level-semantics.html#text-level-semantics>
-//  for the semantic value of these and other elements.
