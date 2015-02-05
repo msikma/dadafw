@@ -117,7 +117,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // Develop task - starts a development server and compiles the desired
+  // Develop task - starts a development server and rebuilds the desired
   // target upon any change to its relevant SCSS files.
   grunt.registerTask('dev', 'Start a development server', function(target) {
     printCopyright();
@@ -126,6 +126,10 @@ module.exports = function(grunt) {
     }
     grunt.log.writeln('Starting a development server.');
     grunt.log.writeln('Using target: ' + target['cyan'] + '.\n');
+
+    // Run the Sass task once to get an initial file, then run the
+    // concurrent task to watch and rebuild on changes.
+    grunt.task.run('sass:' + target + '-dev');
     grunt.task.run('concurrent:' + target);
   });
 
