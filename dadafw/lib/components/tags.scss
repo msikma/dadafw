@@ -10,6 +10,7 @@
   .tag {
     @include border-radius("s");
     @include transition((border 0.08s, opacity 0.08s));
+
     display: inline-block;
     border: 1px solid rgba($color-black, 0.08);
     border-bottom: 1px solid rgba($color-black, 0.22);
@@ -53,9 +54,11 @@
         @include fa-icon();
         @include box-sizing(content-box);
         @include border-radius("s", ("tr", "br"));
+
         // Add a border, and move the button around to overlap with the
-        // main tag body's border.
-        // The border starts out transparent and becomes visible on hover.
+        // main tag body's border. The border starts out transparent
+        // and becomes visible on hover.
+        position: absolute;
         border: 1px solid transparent;
         top: -1px;
         bottom: -1px;
