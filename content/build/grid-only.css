@@ -177,6 +177,11 @@ body {
     clear: both; }
 
 .col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -moz-box-flex: 0;
@@ -187,9 +192,14 @@ body {
   -moz-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   margin-left: 0;
-  display: block;
   position: relative;
   min-width: 0;
   min-height: 1px; }
@@ -288,6 +298,37 @@ body {
  * The default grid. Note that the comments are only accurate
  * when using the default settings.
  */
+.grid-debug .row {
+  background: rgba(73, 153, 246, 0.2); }
+  .grid-debug .row .col {
+    background: rgba(73, 153, 246, 0.2);
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em; }
+
+@media screen and (max-width: 764px) {
+  .grid-debug {
+    margin-bottom: -1px; }
+    .grid-debug .row .col {
+      -webkit-box-shadow: inset 1px 1px 0 #4999f6, inset -1px 1px 0 #4999f6;
+      box-shadow: inset 1px 1px 0 #4999f6, inset -1px 1px 0 #4999f6; }
+    .grid-debug .row:last-child .col:last-child {
+      -webkit-box-shadow: inset 1px 1px 0 #4999f6, inset -1px 1px 0 #4999f6, inset 0 -1px 0 #4999f6;
+      box-shadow: inset 1px 1px 0 #4999f6, inset -1px 1px 0 #4999f6, inset 0 -1px 0 #4999f6; }
+ }
+
+@media screen and (min-width: 765px) {
+  .grid-debug .row:first-child:last-child {
+    -webkit-box-shadow: inset 1px 1px 0 #4999f6, inset -1px -1px 0 #4999f6;
+    box-shadow: inset 1px 1px 0 #4999f6, inset -1px -1px 0 #4999f6; }
+  .grid-debug .row:last-child {
+    -webkit-box-shadow: inset -1px -1px 0 #4999f6;
+    box-shadow: inset -1px -1px 0 #4999f6; }
+  .grid-debug .row .col .row:last-child {
+    -webkit-box-shadow: inset 1px -1px 0 #4999f6;
+    box-shadow: inset 1px -1px 0 #4999f6; }
+ }
+
 @media screen and (min-width: 765px) {
   body {
     padding-left: 0;
@@ -658,6 +699,20 @@ body {
     -moz-column-count: 1;
     -webkit-column-count: 1;
     column-count: 1; }
+ }
+
+@media screen and (min-width: 765px) {
+  .grid-debug .row {
+    margin-bottom: -1px; }
+    .grid-debug .row .col {
+      -webkit-box-shadow: inset -15px 0 0 rgba(73, 153, 246, 0.45), inset 15px 0 0 rgba(73, 153, 246, 0.45), inset 1px 1px 0 #4999f6, inset 1px -1px 0 #4999f6;
+      box-shadow: inset -15px 0 0 rgba(73, 153, 246, 0.45), inset 15px 0 0 rgba(73, 153, 246, 0.45), inset 1px 1px 0 #4999f6, inset 1px -1px 0 #4999f6; }
+      .grid-debug .row .col:last-child {
+        -webkit-box-shadow: inset -15px 0 0 rgba(73, 153, 246, 0.45), inset 15px 0 0 rgba(73, 153, 246, 0.45), inset 1px 1px 0 #4999f6, inset 1px -1px 0 #4999f6, inset -1px 1px 0 #4999f6;
+        box-shadow: inset -15px 0 0 rgba(73, 153, 246, 0.45), inset 15px 0 0 rgba(73, 153, 246, 0.45), inset 1px 1px 0 #4999f6, inset 1px -1px 0 #4999f6, inset -1px 1px 0 #4999f6; }
+      .grid-debug .row .col .row:last-child .col:last-child {
+        -webkit-box-shadow: inset -15px 0 0 rgba(73, 153, 246, 0.45), inset 15px 0 0 rgba(73, 153, 246, 0.45), inset 1px 1px 0 #4999f6, inset 1px -1px 0 #4999f6;
+        box-shadow: inset -15px 0 0 rgba(73, 153, 246, 0.45), inset 15px 0 0 rgba(73, 153, 246, 0.45), inset 1px 1px 0 #4999f6, inset 1px -1px 0 #4999f6; }
  }
 
 @media screen and (min-width: 996px) and (max-width: 1199px) {
