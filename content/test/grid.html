@@ -16,8 +16,10 @@ See <http://github.com/msikma/dadafw/> for more information.
     <div class="col w-12">
       <div class="page-header">
         <h1 id="ch_overview">Grid test page</h1>
-        <p>This is a test page used to develop the grid system. There's a watch task in the Gruntfile that compiles only the grid: <code>grunt dev:grid-only</code>.</p>
+        <p>This is a test page used to develop the grid system. Some of the grids may have a slightly buggy debugging style, but that's no big deal.</p>
+        <p>There's a watch task in the Gruntfile that compiles only the grid: <code>grunt dev:grid-only</code>. This can be used to test and develop the grids in this file.</p>
       </div>
+      <p>Standard grid:</p>
       <div class="grid-debug">
         <div class="row">
           <div class="col w-1">1</div>
@@ -52,6 +54,14 @@ See <http://github.com/msikma/dadafw/> for more information.
         </div>
         <div class="row">
           <div class="col w-12">12</div>
+        </div>
+      </div>
+      <p>XS collapse and overrides:</p>
+      <div class="grid-debug">
+        <div class="row">
+          <div class="col w-4"><code>col w-4</code></div>
+          <div class="col w-4 relw-xs-2"><code>col w-4 relw-xs-2</code></div>
+          <div class="col w-4 relw-xs-2"><code>col w-4 relw-xs-2</code></div>
         </div>
       </div>
       <p><small>MIT license. (C) 2013-2015<br/><a href="http://github.com/msikma/dadafw/">http://github.com/msikma/dadafw/</a></small></p>
