@@ -24,8 +24,7 @@
  * are accounted for; see the documentation for a complete overview.
  */
 
-// Target .btn and elements with the "button" ARIA role.
-button,
+// Button elements require .btn to avoid collisions.
 .btn {
   @include border-radius('m');
   @include pill('m');
@@ -322,8 +321,7 @@ button,
   & + .btn-group {
     margin-left: 2px;
   }
-  
-  button,
+
   .btn {
     margin-left: 0;
     float: left;
