@@ -1,0 +1,54 @@
+# Unsorted files, backups and WIPs
+_src
+
+# Editors
+.idea
+
+# Dependency directory
+node_modules
+
+# node-waf configuration
+.lock-wscript
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Mac OS X-specific
+Network Trash Folder
+Temporary Items
+.AppleDB
+.AppleDesktop
+.Spotlight-V100
+.Trashes
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+
+# Linux-specific
+*~
+.directory
+
+# SASS cache files
+*.sass-cache*
+**/.sass-cache
+**/.sass-cache/*
+
+# SASS map files
+*.map
+
+# Font Studio backup files
+*.vfbak
