@@ -41,7 +41,8 @@
         // fixme: make wrapper for search-icon so we don't have to do this
         .search-icon {
           &:before {
-            top: (($font-base-lineheight + 0.75em) / 2) - ($font-base-lineheight + 0.75em);
+            $base-offset: $font-base-lineheight + 0.75em;
+            top: (($base-offset) / 2) - ($base-offset);
           }
         }
       }
@@ -67,7 +68,7 @@
       // Add a shadow to the bottom element.
       &:last-child {
         border-bottom-color: rgba($color-black, 0.15);
-        @include box-shadow((0 1px 0 rgba($color-black, 0.07)));
+        box-shadow: 0 1px 0 rgba($color-black, 0.07);
       }
 
       // Apply some fixes to the breadcrumbs.

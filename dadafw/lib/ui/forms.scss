@@ -63,21 +63,21 @@ form {
     @include general-reset();
     @include pill('m');
     @include border-radius('m');
-    @include box-shadow((
-      $form-focus-shadow-off,
-      inset 0 1px 1px rgba($color-black, 0.12)
-    ));
+
     // Firefox seems to override the inherited box-sizing value when using
     // the type="search", so we'll set it again here.
     @include box-sizing(border-box);
     display: block;
     width: 100%;
     border: 1px solid $color-gray-m1;
-    padding: $input-padding-top-m $input-padding-left-m $input-padding-bottom-m $input-padding-right-m;
+    padding: $input-padding-top-m $input-padding-left-m
+      $input-padding-bottom-m $input-padding-right-m;
     font-size: $font-base-size;
     // Set the height to be consistent with <button> elements.
     height: $font-base-lineheight + 1em;
     position: relative;
+    box-shadow: $form-focus-shadow-off,
+      inset 0 1px 1px rgba($color-black, 0.12);
   }
   
   // For <input type="search"> elements, we need to add a
@@ -125,7 +125,8 @@ form {
   textarea.line:focus,
   textarea.multiline:focus {
     @include transition(box-shadow 0.1s);
-    @include box-shadow($form-focus-shadow-on);
+
+    box-shadow: $form-focus-shadow-on;
     border-color: $color-bondi-m2;
     // Place the input field just above regular buttons (so that the
     // glowing border shows above the button).
@@ -160,7 +161,8 @@ form {
         @include border-radius('m', ('tl', 'bl'));
         border: 1px solid $color-gray-m1;
         background: $color-gray-l2;
-        padding: $input-padding-top-m $input-padding-left-m $input-padding-bottom-m $input-padding-right-m;
+        padding: $input-padding-top-m $input-padding-left-m
+          $input-padding-bottom-m $input-padding-right-m;
         height: $font-base-lineheight + 1em;
         border-right: none;
       }

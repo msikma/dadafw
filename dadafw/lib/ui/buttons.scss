@@ -29,7 +29,6 @@
   @include border-radius('m');
   @include pill('m');
   @include transition(box-shadow 0.1s);
-  @include box-shadow($form-focus-shadow-off);
   @include interface-font();
   
   // Buttons are inline-blocks by default, blocks if specified.
@@ -42,6 +41,7 @@
   background-color: $color-gray-l1;
   color: $color-text;
   margin-bottom: 6px;
+  box-shadow: $form-focus-shadow-off;
   
   // Some (older?) browsers don't have cursor:pointer by default
   // for <button> elements. (Note: cursor:hand is unnecessary since IE5.5).
@@ -120,7 +120,7 @@
     // Keyboard navigation focus
     outline: 0;
     @include transition(box-shadow 0.1s);
-    @include box-shadow($form-focus-shadow-on);
+    box-shadow: $form-focus-shadow-on;
     border-color: $color-cyan-m2 !important;
   }
   &:focus, &:hover {
@@ -244,14 +244,16 @@
   // Buttons that have a dropdown menu should have the .has-dropdown
   // class so that we can display the caret.
   &.has-dropdown {
-    padding-right: $button-icon-padding-left-m + $button-icon-padding-right-m + $font-base-size;
+    padding-right: $button-icon-padding-left-m + $button-icon-padding-right-m
+      + $font-base-size;
     
     &:before {
       content: $fa-var-caret-down;
       @include fa-icon();
       font-size: $button-icon-size-m;
       // Position it in the center right of the button.
-      top: ($button-padding-top-m + $button-padding-bottom-m + $font-base-size) / 2;
+      top: ($button-padding-top-m + $button-padding-bottom-m
+        + $font-base-size) / 2;
       right: $button-icon-padding-right-m;
       line-height: $button-icon-lineheight-m;
       margin-top: -($font-base-size / 2);
@@ -263,32 +265,38 @@
     
     // Fix the positioning for other size variants.
     &.l {
-      padding-right: $button-icon-padding-left-l + $button-icon-padding-right-l + $font-base-size;
+      padding-right: $button-icon-padding-left-l + $button-icon-padding-right-l
+        + $font-base-size;
       
       &:before {
         font-size: $button-icon-size-l;
         line-height: $button-icon-lineheight-l;
-        top: ($button-padding-top-l + $button-padding-bottom-l + $font-base-size) / 2;
+        top: ($button-padding-top-l + $button-padding-bottom-l
+          + $font-base-size) / 2;
         right: $button-icon-padding-right-l;
       }
     }
     &.s {
-      padding-right: $button-icon-padding-left-s + $button-icon-padding-right-s + $font-base-size;
+      padding-right: $button-icon-padding-left-s
+        + $button-icon-padding-right-s + $font-base-size;
       
       &:before {
         font-size: $button-icon-size-s;
         line-height: $button-icon-lineheight-s;
-        top: ($button-padding-top-s + $button-padding-bottom-s + $font-base-size) / 2;
+        top: ($button-padding-top-s + $button-padding-bottom-s
+          + $font-base-size) / 2;
         right: $button-icon-padding-right-s;
       }
     }
     &.xs {
-      padding-right: $button-icon-padding-left-xs + $button-icon-padding-right-xs + $font-base-size;
+      padding-right: $button-icon-padding-left-xs
+        + $button-icon-padding-right-xs + $font-base-size;
       
       &:before {
         font-size: $button-icon-size-xs;
         line-height: $button-icon-lineheight-xs;
-        top: ($button-padding-top-xs + $button-padding-bottom-xs + $font-base-size) / 2;
+        top: ($button-padding-top-xs + $button-padding-bottom-xs
+          + $font-base-size) / 2;
         right: $button-icon-padding-right-xs;
       }
     }

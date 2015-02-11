@@ -28,9 +28,11 @@
 // A large drop shadow for elements that are designed to look like
 // they're lying on top of the screen.
 @mixin modal-shadow() {
-  @include box-shadow((
-    $modal-shadow-offset-left $modal-shadow-offset-top $modal-shadow-blur rgba($color-black, $modal-shadow-opacity),
-  ));
+  $left: $modal-shadow-offset-left;
+  $top: $modal-shadow-offset-top;
+  $blur: $modal-shadow-blur;
+  $color: rgba($color-black, $modal-shadow-opacity);
+  box-shadow: $left $top $blur $color;
 }
 
 // Removes all default bullet styling from a list.
@@ -112,10 +114,8 @@
 // Note: currently unused.
 @mixin box-bevel() {
   border: 1px solid rgba($color-black, 0.15);
-  @include box-shadow((
-    inset 0 -1px 0 rgba($color-black, 0.06),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08)
-  ));
+  box-shadow: inset 0 -1px 0 rgba($color-black, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
 }
 
 // Removes margins on the first and last element.

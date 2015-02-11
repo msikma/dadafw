@@ -47,7 +47,7 @@
 
       .row {
         .col {
-          @include box-shadow($col-base-shadows);
+          box-shadow: $col-base-shadows;
         }
       }
     }
@@ -62,24 +62,18 @@
       .row {
         &:first-child:last-child {
           // Bottom border
-          @include box-shadow((
-            inset 1px 1px 0 rgba($grid-debug-color, 1.0),
-            inset -1px -1px 0 rgba($grid-debug-color, 1.0)
-          ));
+          box-shadow: inset 1px 1px 0 rgba($grid-debug-color, 1.0),
+            inset -1px -1px 0 rgba($grid-debug-color, 1.0);
         }
         &:last-child {
           // Bottom border
-          @include box-shadow((
-            inset -1px -1px 0 rgba($grid-debug-color, 1.0)
-          ));
+          box-shadow: inset -1px -1px 0 rgba($grid-debug-color, 1.0);
         }
         .col {
           // Nested rows inside a column don't need the extra line.
           .row:last-child {
             // Bottom border (no right border)
-            @include box-shadow((
-              inset 1px -1px 0 rgba($grid-debug-color, 1.0)
-            ));
+            box-shadow: inset 1px -1px 0 rgba($grid-debug-color, 1.0);
           }
         }
       }
@@ -121,30 +115,26 @@
         @if $is-mobile == true {
           &:last-child {
             .col:last-child {
-              @include box-shadow(append($col-base-shadows, $col-bottom-line));
+              box-shadow: append($col-base-shadows, $col-bottom-line);
             }
           }
         }
 
         .col {
           // Base
-          @include box-shadow($col-shadows);
+          box-shadow: $col-shadows;
 
           &:last-child {
             // Right border and base
-            @include box-shadow((
-              $col-shadows,
-              inset -1px 1px 0 rgba($grid-debug-color, 1.0)
-            ));
+            box-shadow: $col-shadows,
+              inset -1px 1px 0 rgba($grid-debug-color, 1.0);
           }
 
           // Nested rows inside a column don't need the extra line.
           .row:last-child {
             .col:last-child {
               // Base
-              @include box-shadow((
-                $col-shadows
-              ));
+              box-shadow: $col-shadows;
             }
           }
         }

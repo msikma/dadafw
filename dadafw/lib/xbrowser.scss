@@ -12,22 +12,6 @@
  * cases, they're slightly more specific, such as linear-gradient().
  */
 
-// Mixin for cross-browser box shadows
-@mixin box-shadow($shadow) {
-  -webkit-box-shadow: $shadow; // iOS <= 4.2, Android <= 4.0
-          box-shadow: $shadow;
-}
-
-// CSS attribute transitions
-@mixin transition($trns) {
-  // Since Webkit requires the use of the -webkit-transform argument,
-  // we need to do a string replacement on our $trns string
-  // to make it work.
-  // todo: string replacement
-  -webkit-transition: $trns; // iOS <= 6.1
-          transition: $trns;
-}
-
 // Disable click events (not standards compliant until probably CSS4)
 @mixin pointer-events($var:none) {
   // Gecko, Webkit and IE11 and up.
