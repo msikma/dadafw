@@ -1,7 +1,7 @@
 {
   "name": "dadafw",
   "version": "0.0.4",
-  "description": "A general-purpose SCSS framework, AngularJS-compatible",
+  "description": "A general-purpose SCSS framework",
   "author": "Michiel Sikma <michiel@sikma.org>",
   "contributors": [
     "Pascal Scheepers <pascal@privax.com>"
