@@ -146,9 +146,15 @@
     @each $size in $sizes {
       $min-width: map-get($size, 'viewport-width');
       $max-width: map-get($size, 'viewport-limit');
-      $size-query: '(min-width: ' + $min-width + ')';
+      $size-query: '';
+      @if $min-width {
+        $size-query: '(min-width: ' + $min-width + ')';
+      }
       @if $max-width {
-        $size-query: $size-query + ' and (max-width: ' + $max-width + ')';
+        @if $min-width {
+          $size-query: $size-query + ' and ';
+        }
+        $size-query: $size-query + '(max-width: ' + $max-width + ')';
       }
       $size-query: $media + ' and ' + $size-query;
       $query: if($query != '', $query + ', ', '') + $size-query;
