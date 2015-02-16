@@ -85,27 +85,27 @@ html, body {
   min-height: 1px;
 
   // Cross-platform classes for setting the self alignment.
-  &.align-start {
+  &.col-align-start {
     @include align-self(flex-start);
   }
 
-  &.align-center {
+  &.col-align-center {
     @include align-self(center);
   }
 
-  &.align-baseline {
+  &.col-align-baseline {
     @include align-self(baseline);
   }
 
-  &.align-end {
+  &.col-align-end {
     @include align-self(flex-end);
   }
 
-  &.align-auto {
+  &.col-align-auto {
     @include align-self(auto);
   }
 
-  &.align-stretch {
+  &.col-align-stretch {
     @include align-self(stretch);
   }
 }
