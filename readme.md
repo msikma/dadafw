@@ -20,7 +20,7 @@ See also the following projects:
 Philosophy
 ----------
 
-The core of the framework is a flexible, semantic grid system that can be
+The core of the framework is a Flexbox-based grid system that can be
 used to quickly scaffold basic layouts. It's fully responsive (mobile-first)
 and allows you to set specific column structures per responsive target
 layout, and can be used in liquid (percentage-based container width)
@@ -45,6 +45,10 @@ in watching things unfold.
 
 There's some information on [our Github wiki](https://github.com/msikma/dadafw/wiki)
 on how to get started if you want to contribute code.
+
+If you just want to add a quick note, or give some general feedback,
+feel free to [open an issue](https://github.com/msikma/dadafw/issues). All
+feedback is greatly appreciated.
 
 
 Installation
