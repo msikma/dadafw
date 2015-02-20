@@ -417,4 +417,16 @@
 
     $i: $i + 1;
   }
+
+  // Finally, generate a way for the JS to know which responsive size
+  // we're dealing with at any time by publishing the name of the size
+  // in the HTML tag as the 'content' attribute.
+  // todo rewrite
+  html {
+    @each $size, $values in map-get($grid-data, 'grid') {
+      @media #{media-query($size)} {
+        content: $size;
+      }
+    }
+  }
 }
