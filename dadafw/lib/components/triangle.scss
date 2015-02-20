@@ -1,0 +1,55 @@
+// Dada Web Framework <https://github.com/msikma/dadafw>
+// Copyright (C) 2013-2015, Michiel Sikma <michiel@sikma.org> and contributors
+// MIT licensed
+
+/**
+ * Creates a triangle through the use of HTML borders.
+ */
+@mixin triangle($width:20px, $height:20px, $direction:up, $color:red,
+  $pseudo:false) {
+  width: 0;
+  height: 0;
+  display: block;
+
+  // If we're adding this code inside a pseudo-element,
+  // add some content.
+  @if $pseudo {
+    content: '';
+  }
+
+  $horizontal-transparent: $height / 2 solid transparent;
+  $horizontal-opaque: $width solid $color;
+  $vertical-transparent: $width / 2 solid transparent;
+  $vertical-opaque: $height solid $color;
+
+  @if $direction == right {
+    border-top: $horizontal-transparent;
+    border-bottom: $horizontal-transparent;
+    border-left: $horizontal-opaque;
+  }
+
+  @if $direction == left {
+    border-top: $horizontal-transparent;
+    border-bottom: $horizontal-transparent;
+    border-right: $horizontal-opaque;
+  }
+
+  @if $direction == up {
+    border-left: $vertical-transparent;
+    border-right: $vertical-transparent;
+    border-bottom: $vertical-opaque;
+  }
+
+  @if $direction == down {
+    border-left: $vertical-transparent;
+    border-right: $vertical-transparent;
+    border-top: $vertical-opaque;
+  }
+}
+
+/**
+ * Same as the triangle mixin, but for targeting pseudoelements.
+ */
+@mixin triangle-pseudo($width:20px, $height:20px, $direction:up, $color:red) {
+  @include triangle($width, $height, $direction, $color, true);
+}
