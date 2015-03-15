@@ -22,15 +22,7 @@
 
     > li {
       display: inline-block;
-
-      &.home, &.index {
-        &:before {
-          @include fa-icon();
-          content: $fa-var-home;
-          margin-right: 0.2em;
-          position: static;
-        }
-      }
+      
       &:before {
         content: " / ";
       }

@@ -1,1 +1,130 @@
-.swatches .row{margin:0}.swatches .row .col{text-align:center;padding-top:0.4em;padding-bottom:0.325em;padding-left:0;padding-right:0;border-top:1px solid rgba(5,2,2,0.2);border-left:1px solid rgba(5,2,2,0.2);font-size:11px}.swatches .row .col:last-child{border-right:1px solid rgba(5,2,2,0.2)}.swatches .row .col[class*=-m2],.swatches .row .col[class*=-m3],.swatches .row .col[class*=-m4],.swatches .row .col[class*=-d],.swatches .row .col[class*=-black]{color:white}.swatches .row:first-child .col{border-radius:0;border-top-right-radius:3px;border-top-left-radius:3px}.swatches .row:last-child .col{border-radius:0;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.main-content{margin-top:80px;padding-top:20px}.manual-text{padding-bottom:80px}.docs-bigger-col{padding-top:1.6em !important;padding-bottom:1.3em !important}
+/**
+ * Default Settings
+ *
+ * The values in this file should never be modified unless you're
+ * developing the framework itself.
+ *
+ * Override the values in a theme file instead, if necessary.
+ * See the readme for how to include a theme file in your project.
+ *
+ * Index:
+ *
+ *   1. Core settings
+ *   2. Grid size variables
+ *   3. Font and typography settings
+ *   4. Color variables
+ *   5. Syntax highlighting variables
+ *   6. Debugging settings
+ *   7. Component settings
+ */
+/**
+ * Cross-Browser Support Functions
+ *
+ * These mixins replace regular CSS values in case they have
+ * inadequate browser support and need vendor prefixes.
+ *
+ * Most of these mixins have a usage based on the W3 standard. In some
+ * cases, they're slightly more specific, such as linear-gradient().
+ */
+/**
+ * Internal Mixins
+ */
+/**
+ * Internal Functions
+ *
+ * Note that functions that are specific only to particular files
+ * will not be included here. For example, functions used by the
+ * grid system exclusively will be in 'layout/functions.scss'.
+ */
+/**
+ * Returns the first item of a list.
+ * @param {list} - list object
+ * @returns {*} - first item of a list
+ */
+/**
+ * Returns the last item of a list.
+ * @param {list} - list object
+ * @returns {*} - last item of the list
+ */
+/**
+ * Returns a width query containing at least (min-width: n),
+ * and additionally (max-width: n) if a max width is passed.
+ *
+ * The query also contains the 'screen' media type.
+ *
+ * @param {value} - minimal width
+ * @param {value} - maximal width
+ * @returns {string} - media query string
+ */
+/**
+ * Returns a string containing a responsive media query.
+ *
+ * The returned query string is built according to the user's grid.
+ * E.g. for the default grid, using get-responsive('m', 'l')
+ * would return 'screen and (min-width: <m>) and (max-width: <l>)',
+ * where <m> and <l> are the responsive sizes for medium and large.
+ *
+ * If only one argument is passed, that value is used as the min-width.
+ * If two arguments are passed, they are used as min-width and max-width,
+ * respectively.
+ *
+ * Example usage:
+ *
+ *   @media media-query(m) {
+ *     // styles for size 'm' only.
+ *   }
+ *
+ *   @media media-query(m above) {
+ *     // styles for size 'm' and above.
+ *   }
+ *
+ *   @media media-query(m below) {
+ *     // styles for size 'm' and below ('s' and mobile).
+ *   }
+ *
+ *   @media media-query(m l) {
+ *     // styles for anything inside of 'm' and 'l'.
+ *   }
+ */
+.swatches .row {
+  margin: 0; }
+  .swatches .row .col {
+    text-align: center;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid rgba(5, 2, 2, 0.2);
+    border-left: 1px solid rgba(5, 2, 2, 0.2);
+    font-size: 11px; }
+    .swatches .row .col:last-child {
+      border-right: 1px solid rgba(5, 2, 2, 0.2); }
+    .swatches .row .col[class*=-m2], .swatches .row .col[class*=-m3], .swatches .row .col[class*=-m4], .swatches .row .col[class*=-d], .swatches .row .col[class*=-black] {
+      color: white; }
+  .swatches .row:first-child .col {
+    border-radius: 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px; }
+  .swatches .row:last-child .col {
+    border-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px; }
+
+.footer-section {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 8px 0; }
+
+.main-content {
+  margin-top: 80px;
+  padding-top: 20px; }
+
+.manual-text {
+  padding-bottom: 80px; }
+
+.docs-bigger-col {
+  padding-top: 1.6em !important;
+  padding-bottom: 1.6em !important; }
+
+/*# sourceMappingURL=docs.css.map */

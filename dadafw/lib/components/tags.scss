@@ -51,13 +51,13 @@
       .remove {
         @include border-radius(1px);
         @include transition((color 0.08s, background 0.08s, border 0.08s));
-        @include fa-icon();
         @include box-sizing(content-box);
         @include border-radius("s", ("tr", "br"));
 
         // Add a border, and move the button around to overlap with the
         // main tag body's border. The border starts out transparent
         // and becomes visible on hover.
+        content: '';
         position: absolute;
         border: 1px solid transparent;
         top: -1px;

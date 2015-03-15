@@ -6,9 +6,10 @@
 // This is the SCSS for the framework's usage tutorial and reference page.
 // It contains a number of extra styles used to show how the framework is used.
 
-@import "../../dadafw/scss/includes/defaults.scss";
-@import "../../dadafw/scss/includes/xbrowser.scss";
-@import "../../dadafw/scss/includes/functions.scss";
+@import "../../../../dadafw/lib/defaults.scss";
+@import "../../../../dadafw/lib/xbrowser.scss";
+@import "../../../../dadafw/lib/mixins.scss";
+@import "../../../../dadafw/lib/functions.scss";
 
 // Color guide CSS
 $swatches-border: rgba($color-black, 0.2);
@@ -49,6 +50,13 @@ $swatches-border: rgba($color-black, 0.2);
       @include border-radius("m", ("bl", "br"));
     }
   }
+}
+
+.footer-section {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
 }
 
 // Main content should account for the top header.

@@ -1616,24 +1616,7 @@ function get_geometry(geo_size, world)
         <aside class="box bordered warning icon">
           <p>Make sure to use a <code>&lt;div class="input-addon"&gt;</code> instead of a <code>&lt;span class="input-addon"&gt;</code> in case you're adding block elements to the add-on, such as a dropdown menu as described further below.</p>
         </aside>
-        <!-- [6.1.3 Search input field] -->
-        <h3>Search input field</h3>
-        <p>In order to make a search input field, you need to either make an input field with <code><mark>type="search"</mark></code>, or add the <code>search</code> class to a regular <code>text</code> input field. To get the hourglass icon to show up, a <code>&lt;span class="search-icon"&gt;</code> needs to be added after the input.</p>
-        <div class="box example with-label">
-          <p class="label">Example</p>
-          <div class="result">
-            <form role="form" method="post" action="test.php">
-              <fieldset>
-                <p>
-                  <label class="line" for="ex8">Search</label><input type="text" name="search-term" id="ex8" class="line search"/><span class="search-icon"></span>
-                </p>
-              </fieldset>
-            </form>
-          </div>
-          <pre class="code">&lt;input type="search" name="search-term" class="line" /&gt;
-&lt;span class="search-icon"&gt;&lt;/span&gt;</pre>
-        </div>
-        <!-- [6.1.4 Dropdown menus] -->
+        <!-- [6.1.3 Dropdown menus] -->
         <h3>Dropdown menus</h3>
         <p>Occasionally, you'll want to hide a number of options inside of a dropdown menu. It's possible to attach such a menu to a button by adding the <code><mark>has-dropdown</mark></code> class to the button, and then adding the menu itself right <em>after</em> the button.</p>
         <div class="box example with-label">
@@ -1700,7 +1683,7 @@ function get_geometry(geo_size, world)
 &lt;input type="text" class="line" name="url" /&gt;
 &lt;/div&gt;</pre>
         </div>
-        <!-- [6.1.5 Input field tags] -->
+        <!-- [6.1.4 Input field tags] -->
         <h3>Tag input field</h3>
         <p>One of the more complex form hacks is the ability to add tags inside of an input field. This is done by replacing the input field with a <code>&lt;div&gt;</code> containing the tags while the user types in a JS-controlled input field with an invisible background. To easily set one up in Dada Framework, you need to decorate an input field with the <code><mark>tag-input</mark></code></p>
         <div class="box example with-label">
@@ -1893,70 +1876,13 @@ DadaFW.decorate("#picture_tags");
 &lt;li&gt;Number Theory&lt;/li&gt;
 &lt;/ol&gt;</pre>
         </div>
-        <!-- [7.3 Boxes] -->
-        <h2>Boxes</h2>
-        <p>Boxes can be used for a variety of purposes, such as a user comment, an aside that needs extra emphasis, a form, or a navigation list. Basically any type of data that can exist inside its own square.</p>
-        <p>The most basic box just adds a border, but we've specifically added styling support for data that has a header and/or footer.</p>
-        <p>The best way to explain the concept is simply to give a run down of the various styles we've included.</p>
-        <div class="row">
-          <div class="col w-6">
-            <div class="box bordered">
-              <pre class="inline"><code>&lt;div class="box bordered"&gt;
-  content</code></pre>
-            </div>
-            <div class="box bordered">
-              <div class="inner">
-                <pre class="inline"><code>&lt;div class="box bordered"&gt;
-  &lt;div class="inner"&gt;
-    content</code></pre>
-              </div>
-            </div>
-            <div class="box bg">
-              <pre class="inline"><code>&lt;div class="box bg"&gt;
-  content</code></pre>
-            </div>
-          </div>
-          <div class="col w-6">
-            <div class="box bg">
-              <div class="inner">
-                <pre class="inline"><code>&lt;div class="box bg"&gt;
-  &lt;div class="inner"&gt;
-    content</code></pre>
-              </div>
-            </div>
-            <div class="box bg bg-yellow-l4">
-              <div class="inner">
-                <pre class="inline"><code>&lt;div class="box bg bg-yellow-l4"&gt;
-  &lt;div class="inner"&gt;
-    content</code></pre>
-              </div>
-            </div>
-            <div class="box bg bg-yellow-l4">
-              <div class="head">Header</div>
-              <div class="inner">
-                <pre class="inline"><code>&lt;div class="box bg bg-yellow-l4"&gt;
-  &lt;div class="inner"&gt;
-    content</code></pre>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p>There are also semantic boxes for relaying feedback to your users. We use them here in the documentation as well. An icon can be included by adding the <code>icon</code> class to the box. We recommend using an <code>&lt;aside&gt;</code> element for this content.</p>
-        <aside class="box bordered info icon">
-          <p>Example standard information aside.</p>
-        </aside>
-        <aside class="box bordered warning icon">
-          <p>Warning class.</p>
-        </aside>
-        <aside class="box bordered error icon">
-          <p>Something went seriously wrong...</p>
-        </aside>
-        <!-- [7.4 Landing page] -->
-        <h2>Landing page</h2>
-        <p>Make a nice first impression on your users by opening your website with a full-page image spread, sized to fill up the full screen height regardless of the viewport size. The image will be sized to cover the entire area.</p>
-        <p><small>MIT license. (C) 2013-2015<br/><a href="http://github.com/msikma/dadafw/">http://github.com/msikma/dadafw/</a></small></p>
       </div>
     </article>
+  </div>
+  <div class="footer-section small row">
+    <div class="col w-12">
+      <p><small>MIT license. (C) 2013-2015 - <a href="http://github.com/msikma/dadafw/">http://github.com/msikma/dadafw/</a></small></p>
+    </div>
   </div>
 </div>
 </body>

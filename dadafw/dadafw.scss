@@ -5,7 +5,7 @@
  */
 
 @debug 'Dada Web Framework <https://github.com/msikma/dadafw> (MIT licensed)';
-
+$grid-debug-include: true;
 // Set defaults, then override with theme settings.
 @import 'lib/defaults';               // Default settings
 @import 'lib/theme-ante';             // Theme-defined settings

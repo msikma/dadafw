@@ -80,41 +80,6 @@ form {
       inset 0 1px 1px rgba($color-black, 0.12);
   }
   
-  // For <input type="search"> elements, we need to add a
-  // <span class="search-icon"> after the input field to show the hourglass.
-  // (We can't abuse generated content for presentation on <input> fields.)
-  .search-icon {
-    position: relative;
-    display: block;
-    height: 1px;
-    margin-bottom: -1px;
-    
-    &:before {
-      // We'll animate the hourglass icon at the same speed as the input field.
-      @include transition(color 0.2s);
-      // Note: Font Awesome doesn't have a mixin that provides the standard
-      // styling needed to display an icon, so we've simply copied their
-      // styles from the _core.scss file to our own mixin.
-      content: $fa-var-search;
-      @include fa-icon();
-      font-size: $font-base-size;
-      // Position it in the middle of the input element.
-      top: (($font-base-lineheight + 1em) / 2) - ($font-base-lineheight + 1em);
-      margin-top: -($font-base-size / 2);
-      right: $input-padding-right-m;
-      width: $font-base-size;
-      height: $font-base-size;
-      color: $color-gray-m4;
-      z-index: 10;
-    }
-  }
-  // When the input is selected, we need to colorize the hourglass too.
-  input.line[type='search']:focus + .search-icon:before,
-  input.line.search:focus + .search-icon:before, {
-    @include transition(color 0.1s);
-    color: $color-bondi-m3;
-  }
-  
   // Open question: anything we can do to make type="number" more usable?
   
   // Specific styles for the <textarea> element
