@@ -246,22 +246,8 @@
   &.has-dropdown {
     padding-right: $button-icon-padding-left-m + $button-icon-padding-right-m
       + $font-base-size;
-    
-    &:before {
-      content: $fa-var-caret-down;
-      @include fa-icon();
-      font-size: $button-icon-size-m;
-      // Position it in the center right of the button.
-      top: ($button-padding-top-m + $button-padding-bottom-m
-        + $font-base-size) / 2;
-      right: $button-icon-padding-right-m;
-      line-height: $button-icon-lineheight-m;
-      margin-top: -($font-base-size / 2);
-      width: $font-base-size;
-      height: $font-base-size;
-      color: $color-black;
-      z-index: 10;
-    }
+
+    // Todo: add a caret.
     
     // Fix the positioning for other size variants.
     &.l {
