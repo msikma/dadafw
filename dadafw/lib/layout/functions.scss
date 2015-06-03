@@ -320,7 +320,7 @@
  */
 @mixin construct-grid($grid) {
   // Retrieve some additional information from our grid.
-  $grid-data: process-grid($grid);
+  $grid-data: process-grid($grid) !global;
 
   $grid: map-get($grid-data, 'grid');
   $generic-stage-data: map-get($grid-data, 'generic-stage-data');
