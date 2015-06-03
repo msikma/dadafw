@@ -20,6 +20,13 @@
   }
 }
 
+// Wrapper for IE10 and IE11 hacks.
+@mixin ie-10-11-hack() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
 // Change the font family to the standard interface set.
 @mixin interface-font() {
   font-family: $font-interface;

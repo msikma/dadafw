@@ -76,6 +76,20 @@ html, body {
   @include flex-basis(100%);
   @include flex-direction(column);
 
+  // IE11 has a bug causing the size of a Flexbox container not
+  // being calculated properly in case the border-box format
+  // is in effect.
+  //
+  // We hack around this by setting flex: auto and setting the
+  // width of the column using a plain max-width value instead
+  // of flex-basis (in layout/functions.scss).
+  //
+  // This causes the grid system to behave as expected
+  // without breaking Webkit/Gecko.
+  @include ie-10-11-hack() {
+    @include flex(auto !important);
+  }
+
   width: 100%;
   margin-left: 0;
   position: relative;

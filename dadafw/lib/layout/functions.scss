@@ -109,6 +109,12 @@
   }
 }
 
+// Set the column width value.
+@mixin col-width($size) {
+  @include flex-basis($size);
+  max-width: $size;
+}
+
 // Calculate the sizes of the grid columns.
 @mixin grid-cols-render($col-amount, $stage) {
   $i: $col-amount;
@@ -119,7 +125,7 @@
     // Generate columns for the generic desktop grid.
     @if $stage == 'generic' {
       .w-#{$i} {
-        @include flex-basis($size);
+        @include col-width($size);
       }
       .offset-#{$i} {
         margin-left: $size;
@@ -129,7 +135,7 @@
     // specific to that stage.
     @else {
       .col.w-#{$stage}-#{$i} {
-        @include flex-basis($size);
+        @include col-width($size);
       }
       .col.offset-#{$stage}-#{$i} {
         margin-left: $size;
@@ -244,12 +250,12 @@
       $size: percentage(1 / $i);
       @if $stage == 'generic' {
         .relw-#{$i} {
-          @include flex-basis($size);
+          @include col-width($size);
         }
       }
       @else {
         .col.relw-#{$stage}-#{$i} {
-          @include flex-basis($size);
+          @include col-width($size);
         }
       }
       $i: $i - 1;
